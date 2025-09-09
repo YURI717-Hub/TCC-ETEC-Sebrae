@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <script src="../js/home.js"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="header-linear-content">
+        <a href="../../home.html">
+          <h1 class="logo"> AutoPeças <span> Express </span></h1>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="./assets/pages/">Meu Perfil</a></li>
+            <li><a href="../pages/produto.html">Produtos</a></li>
+            <li><a href="../pages/sobre.html">Sobre</a></li>
+          </ul>
+        </nav>
+
+        <div class="pesquisa">
+          <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?">
+
+        </div>
+        <div>
+          <figure class="nav-icon-container">
+            <a href="./carrinho.html"> <img src="../images/carrinho.png" alt=""></a>
+          </figure>
+
+
+          <ul class="login">
+            <li><a href="../pages/login.html">Entrar</a></li>
+            <li>|</li>
+            <li><a href="../pages/cadastro.html">Cadastro</a></li>
+            </li>
+          </ul>
+          <figure>
+            <img onclick="menu();" src="../images/menu.png" alt="" class="menu-button">
+          </figure>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="product">
+    <div class="product-details-container">
+      <div class="product-images">
+        <img id=".image-product" src="../images/Produtos/produtos/palhetas-do-limpador-onix.jpg"
+          alt="Imagem do produto" />
+      </div>
+      <div class="produto-detalhes">
+        <p class="avaliacao">★★★★★ 4.5 (1.200 avaliações)</p><br>
+        <h1 id="produto-nome">Nome do Produto</h1>
+        <p class="preco" id=".produto-preco">R$ 0,00</p>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" value="1" min="1" />
+
+        <!-- ... -->
+        </select>
+        <button id="adicionar-carrinho" class="button-colors">Adicionar ao Carrinho</button>
+        <button id="comprar-agora" class="button-colors">Comprar Agora</button>
+        <br>
+        <br>
+        <hr>
+
+        <p id=".produto-descricao"><strong>Descrição do Produto:</strong>
+          <br>
+          Com parabarro o seu carro está protegido dos respingos de barro, lama e sujeira nas peças internas.
+          Além de ser um item para cuidar da estética, também é uma medida de segurança.
+          <br>
+          ESPECIFICAÇÕES DO PRODUTO
+          <br>
+          - Textura Lisa
+          <br>
+          - Material em Plástico
+          <br>
+          Compatível com:
+          <br>
+          - Gol 2018 - Saveiro 2018 - Voyage 2018
+          <br>- Gol 2019 - Saveiro 2019 - Voyage 2019
+          <br>- Gol 2020 - Saveiro 2020 - Voyage 2020
+          <br>- Gol 2021 - Saveiro 2021 - Voyage 2021
+          <br>- Gol 2022 - Saveiro 2022 - Voyage 2022
+          <br>- Gol 2023 - Saveiro 2023 - Voyage 2023
+          <br>
+          <br>Especificação Técnica:
+          <br>• Peça Dianteira
+          <br>• Não Acompanha Presilhas
+          <br>
+          O QUE VEM NA EMBALAGEM
+          <br>Conteúdo da Embalagem:
+          <br>• 02 Parabarros Dianteiros
+          <br>
+          FINALIZAÇÃO
+          <br>
+          As imagens representam o real estado de conservação dos produtos.
+          Detalhes técnicos e funcionalidades podem ser obtidos no chat!
+          Compare o produto anunciado com o seu modelo de referência.
+          Postaremos a sua mercadoria dentro de algumas horas após a confirmação da compra
+          Não esqueça! Tire todas as suas dúvidas conosco antes de comprar o seu produto.
+          Auto Peças Nova Kennedy Agradece sua preferência!
+          <br>
+          Garantia do vendedor: 30 dias
+        </p>
+      </div>
+    </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-superior-completa">
+      <div class="footer-superior-esquerdo">
+        <h4 class="footer-topico">Institucional</h4>
+        <ul class="sub-topicos">
+          <li><a href="">Sobre a empresa</a></li>
+          <li><a href="">Política de Privacidade</a></li>
+          <li><a href="">Termos de Uso</a></li>
+        </ul>
+      </div>
+      <div class="footer-superior-meio">
+        <h4 class="footer-topico">Ajuda</h4>
+        <ul class="sub-topicos">
+          <li><a href="">Fale Conosco/Suporte</a></li>
+          <li><a href="">Trocas e Devoluções</a></li>
+          <li><a href="">Formas de Pagamento</a></li>
+          <li><a href="">Prazo de Entrega</a></li>
+        </ul>
+      </div>
+      <div class="footer-superior-direito">
+        <h4 class="footer-topico">Contato</h4>
+        <ul class="lista-contato">
+          <li>Telefone:(11) 99999-9999</li>
+          <li>Email: contato@autoexpress.com.br</li>
+          <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divisao" />
+    <div class="footer-inferior-completa">
+      <div class="footer-inferior-esquerdo">
+        <h4 class="footer-topico">Meios de pagamento:</h4>
+        <figure class="image-pag">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+          <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+
+        </figure>
+      </div>
+      <div class="footer-inferior-direito">
+        <h4 class="footer-topico">Redes Sociais</h4>
+        <div class="espacamento-icone-sociais">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
+
+        </div>
+      </div>
+</body>
+
+</html>

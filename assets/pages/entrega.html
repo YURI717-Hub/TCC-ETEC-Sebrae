@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem Vindo - Auto Peças Express</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/home.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="header-linear-content">
+        <h1 class="logo"> AutoPeças <span> Express </span></h1>
+        <nav>
+          <ul>
+            <li><a href="./assets/pages/">Meu Perfil</a></li>
+            <li><a href="./assets/pages/produto.html">Produtos</a></li>
+            <li><a href="./assets/pages/sobre.html">Sobre</a></li>
+          </ul>
+        </nav>
+
+        <div class="pesquisa">
+          <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?">
+
+        </div>
+        <div>
+          <figure class="nav-icon-container">
+            <a href="./carrinho.html"> <img src="../images/carrinho.png" alt=""></a>
+          </figure>
+
+
+          <ul class="login">
+            <li><a href="./assets/pages/login.html">Entrar</a></li>
+            <li>|</li>
+            <li><a href="./assets/pages/cadastro.html">Cadastro</a></li>
+            </li>
+          </ul>
+          <figure>
+            <img onclick="menu();" src="../assets/images/menu.png" alt="" class="menu-button">
+          </figure>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="caminho-ativo-E">
+    <span>Carrinho ></span>
+    <span>Identificação ></span>
+    <span class="ativo-entrega">Entrega ></span>
+    <span>Pagamento</span>
+  </div>
+
+  <main class="conteudo-entrega">
+    <h2>ENTREGA</h2>
+    <div class="entrega-box-entrega">
+      <div class="coluna-esquerda-entrega">
+
+        <div class="radio-group-E">
+          <input type="radio" id="receber" name="tipo-entrega" checked>
+          <label for="receber">Receber Entrega</label>
+        </div>
+
+        <div class="endereco">
+          <p><strong>Endereço Selecionado</strong>
+            <span class="link">inserir novo endereço</span>
+          </p>
+          <p>Fulano de TAL</p>
+          <p>Rua Andaraí, 839</p>
+          <p>Vila Maria</p>
+          <p>São Paulo - SP</p>
+          <p>CEP: 02117-000</p>
+        </div>
+      </div>
+
+      <div class="coluna-direita">
+        <div class="opcao-entrega">
+          <div>
+            <p><strong>Normal</strong></p>
+            <p>R$ 00,00</p>
+            <p>5 A 7 DIAS ÚTEIS</p>
+          </div>
+          <input type="radio" name="frete" checked>
+        </div>
+
+        <div class="opcao-entrega">
+          <div>
+            <p><strong>SPEED</strong></p>
+            <p>R$ 00,00</p>
+            <p>2 DIAS ÚTEIS</p>
+          </div>
+          <input type="radio" name="frete">
+        </div>
+
+        <button class="botao-avancar"> <a href="pagamento.html">AVANÇAR</a></button>
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer>
+    <div class="footer-superior-completa">
+      <div class="footer-superior-esquerdo">
+        <h4 class="footer-topico">Institucional</h4>
+        <ul class="sub-topicos">
+          <li><a href="sobre.html">Sobre a empresa</a></li>
+          <li><a href="lgpd.html">Política de Privacidade</a></li>
+          <li><a href="">Termos de Uso</a></li>
+        </ul>
+      </div>
+      <div class="footer-superior-meio">
+        <h4 class="footer-topico">Ajuda</h4>
+        <ul class="sub-topicos">
+          <li><a href="">Fale Conosco/Suporte</a></li>
+          <li><a href="">Trocas e Devoluções</a></li>
+          <li><a href="">Formas de Pagamento</a></li>
+          <li><a href="">Prazo de Entrega</a></li>
+        </ul>
+      </div>
+      <div class="footer-superior-direito">
+        <h4 class="footer-topico">Contato</h4>
+        <ul class="lista-contato">
+          <li>Telefone:(11) 99999-9999</li>
+          <li>Email: contato@autoexpress.com.br</li>
+          <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divisao" />
+    <div class="footer-inferior-completa">
+      <div class="footer-inferior-esquerdo">
+        <h4 class="footer-topico">Meios de pagamento:</h4>
+        <figure class="image-pag">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+          <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+
+        </figure>
+      </div>
+      <div class="footer-inferior-direito">
+        <h4 class="footer-topico">Redes Sociais</h4>
+        <div class="espacamento-icone-sociais">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-creditos">
+      <p>Creditos</p>
+    </div>
+  </footer>
+</body>

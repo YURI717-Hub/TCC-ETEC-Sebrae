@@ -1,0 +1,35 @@
+09/09/2025
+Comandos de instalação - para uso de git bash + LInux/Unix
+     1. Instala Maquina Virtual Linux para sintaxe Unix - O WSL (Windows Subsystem for Linux) ubuntu
+        wsl --install 
+     2. Instalar uma distribuição Linux
+        wsl --install -d Ubuntu
+      Criar nome e conta de usuario de sistema:                                       vvendasmeJc*
+      Criar Senha de Usuario
+      vvendasme@DESKTOP-2Q5IQ2R:/mnt/c/Users/vvendasme/Documents/autopecasexpress$
+      sudo apt update
+      sudo apt install git   
+
+     Para Uso em Windows powershell e CMD
+     1. https://git-scm.com/downloads/win
+        Selecionar - Use Visual Studio Code as Git's default editor - Caso esteja usando o Visual Studio Code
+     Esta inclusa na instalçao o OpenSSH - Pesquisar opções Antes de aceita-las ou seleciona-las.
+
+
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+     sudo apt update - Para garantir que você está com os pacotes mais recentes
+     
+  
