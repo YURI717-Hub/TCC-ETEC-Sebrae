@@ -87,7 +87,9 @@ Antes Crie um repositório no GitHub
 
 ⦁	Entre no vscode e abra o seu projeto, ou seja, seguir o caminho ate o diretório onde esta o projeto.
 ⦁	Va na aba Terminal e mude para Git bash
+⦁        (echo "# nome do projeto" >> README.md) - opcional podera ser feito de pois
 ⦁	Digite git init - Inicia o Git no projeto.
+⦁	(Digite git add READ.md - Prepara todos os arquivos pra salvar.) - se feito o comando com echo
 ⦁	Digite git add . - Prepara todos os arquivos pra salvar.
 ⦁	Digite git commit -m "primeiro commit(mudança)" - Salva uma versão com mensagem.
 ⦁	Digite git branch -M main - Renomeia a branch para main.
@@ -114,5 +116,10 @@ Obs.: Não será necessário apagar o arquivo antigo para colocar o novo, ele fa
 ======
 3. Fazer pelo celular(vou ver se é possível)
 
+======
+======
+Limpar reposito - $ rm -rf .git
+
+Retirar credenciais salvas em projeto e pasta - git credential-manager erase
 
 
