@@ -101,7 +101,7 @@ obs.2: Verifique se sua branch esta main ou master.
 
 Como alterar arquivos de um projeto do GitHub:
 Ex.: 
-Digite "git add caminho/arquivo1 caminho/arquivo2"
+Digite "git add caminho/arquivo1 caminho/arquivo2" ou git add .
 Digite "git commit -m "Atualizei os arquivos X e Y""
 Digite "git push"
 
