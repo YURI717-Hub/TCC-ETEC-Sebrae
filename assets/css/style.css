@@ -5,7 +5,9 @@
 }
 
 body {
-  font-family: "Comic Sans Ms";
+  font-family: 'Roboto', sans-serif;
+ 
+ 
 }
 
 /*INICIO CÓDIGO - HOMEcss */
@@ -21,11 +23,12 @@ body {
 .logo {
   color: #ffff;
   display: flex;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .logo span {
 
-  color: #a80707;
+  color: #8F0700;
 }
 
 
@@ -112,6 +115,7 @@ nav ul li:hover {
 
 
 /* Inicio Main*/
+
 .titulo01 {
 
   width: 400px;
@@ -124,7 +128,8 @@ nav ul li:hover {
 }
 
 .clique-button {
-  background-color: #ff2134;
+  background-color: #8F0700;
+  color: #ffffff;
   border-radius: 10px;
   width: 200px;
   padding: 5px;
@@ -230,7 +235,7 @@ nav ul li:hover {
   margin: 1rem;
   background-color: #a80707;
   border-radius: 8px;
-  color: rgb(169, 162, 162);
+  color: rgb(255, 255, 255);
 }
 
 .selecao label {
@@ -292,9 +297,13 @@ nav ul li:hover {
   margin-bottom: 0.5rem;
 }
 
+h3{
+  font-family: 'Roboto', sans-serif;
+}
+
 .preco {
   font-weight: bold;
-  color: #ff2134;
+  color: #4AC741;
 }
 
 
@@ -461,7 +470,7 @@ footer {
 
 .footer-divisao {
   border: none;
-  border-top: 1px solid #33FFFFFF;
+  border-top: 1px solid #8F0700;
 }
 
 .footer-superior-completa,
@@ -505,6 +514,7 @@ footer {
 
 /* INICIO CÓDIGO  CADASTRO */
 /* Inicio Main: Cadastro*/
+
 .form-descricao {
   margin: 2%;
 }
@@ -532,6 +542,7 @@ form {
   justify-content: space-between;
   gap: 2%;
   width: 100%;
+  
 }
 
 fieldset {
@@ -542,6 +553,7 @@ fieldset {
 
 .form-dados-pessoa {
   width: 48%;
+  
 }
 
 .form-dados-endereco {
@@ -586,7 +598,7 @@ input[type="submit"] {
   margin: 20px auto 0 auto;
   padding: 10px 30px;
   font-size: 16px;
-  background-color: #ff2134;
+  background-color: #8F0700;
   color: white;
   border: none;
   border-radius: 5px;
@@ -594,14 +606,14 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #990d18;
+  background-color:  #8F0700;
 }
 
 /*FIM CODIGO - CADASTROcss  */
 
 /*INICIO CÓDIGO - LOGIN*/
 .login-informacoes {
-  background-color: white;
+  background-color:#f0ebeb;
   padding: 2%;
   margin: 5% auto;
   border: 1px solid black;
@@ -660,7 +672,7 @@ input[type="submit"]:hover {
 
 .login-form input[type="submit"] {
   padding: 10px;
-  background-color: #ff2134;
+  background-color: #8F0700;
   color: white;
   border: none;
   border-radius: 4px;
@@ -669,7 +681,7 @@ input[type="submit"]:hover {
 }
 
 .login-form input[type="submit"]:hover {
-  background-color: #b81a27;
+  background-color: #8F0700;
 }
 
 .opcao-cadastro {
@@ -688,13 +700,16 @@ input[type="submit"]:hover {
 
 .info-obrigatorio:after {
   content: " *";
-  color: red;
+  color: red #8F0700;;
 }
 
 /*FIM CÓDIGO - LOGIN */
 
 /*INICIO CÓDIGO - CARRINHO*/
 
+body{
+  background-color: #f0ebeb;
+}
 .cart-table {
   width: 100%;
   border-collapse: collapse;
@@ -732,10 +747,11 @@ input[type="submit"]:hover {
 .product-title {
   margin-left: 16px;
   font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .product-price {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Roboto', sans-serif;
 
 }
 
@@ -745,12 +761,12 @@ input[type="submit"]:hover {
   border-radius: 6px;
   border: 2px solid #000000;
   text-align: center;
-  background-color: #eee;
+  background-color: #f0ebeb;
 }
 
 .remove-button {
   color: #fff;
-  background-color: #ff2134;
+  background-color:  #8F0700;
   border-radius: 6px;
   padding: 5px 10px;
   cursor: pointer;
@@ -762,7 +778,7 @@ input[type="submit"]:hover {
 
 .remove-button:hover {
   background-color: #ffff;
-  color: #ff2134;
+  color: #8F0700;
 }
 
 .total {
@@ -783,7 +799,7 @@ input[type="submit"]:hover {
 }
 
 .final-button {
-  background-color: #ff2134;
+  background-color:#8F0700;
   border: none;
   cursor: pointer;
   padding: 0.8rem 3.8rem;
@@ -798,13 +814,16 @@ input[type="submit"]:hover {
 
 
 .final-button:hover {
-  background-color: #ffff;
-  border: 1px solid #ff2134;
+  background-color: #000000;
+  border: 1px solid #8F0700;
   transition: 0.2s;
 }
 
 .final-button a:hover {
-  color: #ff2134;
+  color: #8F0700;
+}
+a{
+  color: #ffffff;
 }
 
 /*FIM CÓDIGO - CARRINHO*/
@@ -816,20 +835,20 @@ input[type="submit"]:hover {
 /* INICIO CÓDIGO - PAGAMENTOcss */
 .caminho-ativo-P {
   padding: 15px 20px;
-  background-color: #e0e0e0;
+  background-color: #ece7e7;
   font-size: 14px;
 }
 
 .ativo-pagamento {
-  color: green;
+  color: #4AC741;
   font-weight: bold;
 }
 
 /* Conteúdo da página pagamento */
 .conteudo-pagamento-H2 {
   padding: 20px;
-  background-color: #dfdede;
-  font-family: Arial, Helvetica, sans-serif
+  background-color: #f0ebeb;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Box de entrega */
@@ -869,6 +888,7 @@ input[type="submit"]:hover {
   font-size: 0.875rem;
   color: #374151;
   line-height: 1.4;
+  font-family: 'Roboto', sans-serif;
 }
 
 .checkout-shipping {
@@ -910,20 +930,20 @@ input[type="submit"]:hover {
 }
 
 .boleto {
-  background-color: #af1e1e;
+  background-color: #8F0700;
 }
 
 .pix {
-  background-color: #eb2525;
+  background-color:#8F0700;
 }
 
 .credito {
-  background-color: #f63b3b;
+  background-color: #8F0700;
 }
 
 /* Produtos seção */
 .products-section {
-  background-color: #f3f4f6;
+  background-color: #f0ebeb;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -939,7 +959,9 @@ input[type="submit"]:hover {
   list-style: none;
   padding: 0;
 }
-
+.valor{
+  color: #4AC741;
+}
 .product-item {
   display: flex;
   justify-content: space-between;
@@ -956,7 +978,7 @@ input[type="submit"]:hover {
 .btn-finalizar {
   width: 100%;
   margin-top: 1.5rem;
-  background-color: #af1e1e;
+  background-color:#8F0700;
   color: #ffffff;
   padding: 0.75rem;
   border: none;
@@ -969,22 +991,22 @@ input[type="submit"]:hover {
 
 
 
-/*INICIO CÓDIGO - ENTREGAcss */
+/*INICIO CÓDIGO - css */
 .caminho-ativo-E {
   padding: 15px 20px;
-  background-color: #e0e0e0;
+  background-color: #ece7e7;
   font-size: 14px;
 }
 
 .ativo-entrega {
-  color: green;
+  color: #4AC741;
   font-weight: bold;
 }
 
 .conteudo-entrega {
   padding: 20px;
-  background-color: #cecece;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0ebeb;
+  font-family: 'Roboto', sans-serif;
 }
 
 .entrega-box-entrega {
@@ -1026,11 +1048,11 @@ input[type="submit"]:hover {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   border-radius: 6px;
   padding: 10px 15px;
   align-items: center;
-  background-color: #f9f9f9;
+  background-color: #f0ebeb;
 }
 
 .opcao-entrega input {
@@ -1039,7 +1061,7 @@ input[type="submit"]:hover {
 }
 
 .botao-avancar {
-  background-color: #aa0000;
+  background-color: #8F0700;
   color: #fff;
   padding: 10px 30px;
   border: none;
@@ -1116,7 +1138,7 @@ img {
 .subtitle-underline {
   width: 100px;
   height: 5px;
-  background: #ff2134;
+  background: #8F0700;
   border-radius: 9999px;
   margin: 8px auto 0 auto;
 
@@ -1148,12 +1170,13 @@ img {
 .product:hover {
 
   transform: translateY(-5px);
-  box-shadow: 2rem 2rem 2rem #2c2c2c;
-  transition: all 0.2s;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+
+  transition: all 0.5s;
 }
 
 .button-colors {
-  background-color: #ff2134;
+  background-color: #8F0700;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -1167,8 +1190,8 @@ img {
 
 .button-colors:hover {
   background-color: white;
-  color: #ff2134;
-  border: 1px solid #ff2134;
+  color:#8F0700;
+  border: 1px solid #8F0700;
 }
 
 .product-name {
@@ -1184,7 +1207,7 @@ img {
 }
 
 .rate {
-  color: #ff2134;
+  color:#8F0700;
   font-size: 1.3rem;
   font-weight: bold;
 }
@@ -1238,11 +1261,13 @@ img {
   font-size: 2rem;
   color: #2c2c2c;
 }
-
+.produto-preco{
+  color: #4AC741;
+}
 .product-info .product-price {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #ff2134;
+  color:#8F0700;
 }
 
 #add-ao-carrinho {
@@ -1296,7 +1321,7 @@ img {
   position: absolute;
   top: -5px;
   right: -5px;
-  background: red;
+  background: #8F0700;
   color: white;
   border-radius: 50%;
   padding: 2px 6px;
@@ -1311,7 +1336,7 @@ img {
 
 /*FIM CODIGO - PRODUTOcss*/
 
-/*INICIO CÓDIGO - LGPDcss*/
+/*INICIO CÓDIGO - PDcss*/
 .container {
   display: flex;
   gap: 50px;
@@ -1367,6 +1392,10 @@ img {
 /* ****FIM CODIGO - LGPDcss*****/
 
 /*INICIO CÓDIGO - SOBREcss*/
+p{
+  font-family: 'Roboto', sans-serif;
+}
+
 .mainsobre {
   display: flex;
   flex-wrap: wrap;
@@ -1406,7 +1435,7 @@ img {
 .image-section img {
   max-width: 100%;
   height: auto;
-  border: 2px solid #ddd;
+  border: 2px solid #000000;
   border-radius: 8px;
 }
 
