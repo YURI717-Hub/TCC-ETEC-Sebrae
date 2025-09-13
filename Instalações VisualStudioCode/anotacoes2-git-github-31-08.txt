@@ -121,5 +121,5 @@ Obs.: Não será necessário apagar o arquivo antigo para colocar o novo, ele fa
 Limpar reposito - $ rm -rf .git
 
 Retirar credenciais salvas em projeto e pasta - git credential-manager erase
-
-
+------------------------------------------------------
+ Digite - git pull origin main - para atualizar o diretório local
