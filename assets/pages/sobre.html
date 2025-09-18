@@ -3,10 +3,10 @@
 
 <head>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/stely.css">
+  <link rel="stylesheet" href="../css/lgpd.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="..//js/home.js"></script>
+  <script src="..//js/menu.js"></script>
   <title>AutoPeças Expres</title>
 </head>
 
@@ -41,7 +41,7 @@
             </li>
           </ul>
           <figure>
-            <img onclick="menu();" src="../images/menu.png" alt="" class="menu-button">
+            <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
           </figure>
         </div>
       </div>
@@ -82,24 +82,24 @@
   <footer>
     <div class="footer-superior-completa">
       <div class="footer-superior-esquerdo">
-        <h4>Institucional</h4>
-        <ul>
-          <li><a href="sobre.html">Sobre a empresa</a></li>
-          <li><a href="lgpd.html">Política de Privacidade</a></li>
+        <h4 class="footer-topico">Institucional</h4>
+        <ul class="sub-topicos">
+          <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
+          <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
           <li><a href="">Termos de Uso</a></li>
         </ul>
       </div>
       <div class="footer-superior-meio">
-        <h4>Ajuda</h4>
-        <ul>
+        <h4 class="footer-topico">Ajuda</h4>
+        <ul class="sub-topicos">
           <li><a href="">Fale Conosco/Suporte</a></li>
           <li><a href="">Trocas e Devoluções</a></li>
           <li><a href="">Formas de Pagamento</a></li>
-          <li><a href="">Prazo de Entraga</a></li>
+          <li><a href="">Prazo de Entrega</a></li>
         </ul>
       </div>
       <div class="footer-superior-direito">
-        <h4>Contato</h4>
+        <h4 class="footer-topico">Contato</h4>
         <ul class="lista-contato">
           <li>Telefone:(11) 99999-9999</li>
           <li>Email: contato@autoexpress.com.br</li>
@@ -107,10 +107,10 @@
         </ul>
       </div>
     </div>
-    <hr />
+    <hr class="footer-divisao" />
     <div class="footer-inferior-completa">
       <div class="footer-inferior-esquerdo">
-        <h4>Meios de pagamento:</h4>
+        <h4 class="footer-topico">Meios de pagamento:</h4>
         <figure class="image-pag">
           <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
           <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
@@ -119,7 +119,7 @@
         </figure>
       </div>
       <div class="footer-inferior-direito">
-        <h4>Redes Sociais</h4>
+        <h4 class="footer-topico">Redes Sociais</h4>
         <div class="espacamento-icone-sociais">
           <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
           <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
@@ -127,6 +127,10 @@
 
         </div>
       </div>
+    </div>
+
+    <div class="footer-creditos">
+      <p>Créditos</p>
     </div>
   </footer>
 

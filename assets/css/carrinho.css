@@ -1,0 +1,125 @@
+
+/*INICIO CÓDIGO - CARRINHO*/
+
+body{
+  background-color: #f0ebeb;
+}
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.head-item {
+  text-align: start;
+  border-bottom: 0.1rem solid #2c2c2c;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.col-2,
+.col-3 {
+  width: 26%;
+}
+
+
+.cart-product td {
+  padding: 8px 0;
+
+}
+
+.product-indentification {
+  display: flex;
+  align-items: center;
+}
+
+.product-imagem {
+  width: 120px;
+  height: 70px;
+
+}
+
+.product-title {
+  margin-left: 16px;
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.product-price {
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.product-qtd {
+  width: 45px;
+  height: 31px;
+  border-radius: 6px;
+  border: 2px solid #000000;
+  text-align: center;
+  background-color: #f0ebeb;
+}
+
+.remove-button {
+  color: #fff;
+  background-color:  #8F0700;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+
+
+
+}
+
+.remove-button:hover {
+  background-color: #ffff;
+  color: #8F0700;
+}
+
+.total {
+  border-top: 1px solid #000000;
+  text-align: end;
+  padding: 6px 16px 0 0;
+  font-size: 1.2rem;
+  margin-bottom: 12rem;
+}
+
+.total strong {
+  margin-right: 12px;
+
+}
+
+.final-button button a {
+  text-decoration: none;
+}
+
+.final-button {
+  background-color:#8F0700;
+  border: none;
+  cursor: pointer;
+  padding: 0.8rem 3.8rem;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 12rem;
+
+}
+
+
+.final-button:hover {
+  background-color: #000000;
+  border: 1px solid #8F0700;
+  transition: 0.2s;
+}
+
+.final-button a:hover {
+  color: #8F0700;
+}
+
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/*FIM CÓDIGO - CARRINHO*/

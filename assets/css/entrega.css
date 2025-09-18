@@ -1,0 +1,88 @@
+
+
+/*INICIO CÓDIGO - css */
+.caminho-ativo-E {
+  padding: 15px 20px;
+  background-color: #ece7e7;
+  font-size: 14px;
+}
+
+.ativo-entrega {
+  color: #4AC741;
+  font-weight: bold;
+}
+
+.conteudo-entrega {
+  padding: 20px;
+  background-color: #f0ebeb;
+  font-family: 'Roboto', sans-serif;
+}
+
+.entrega-box-entrega {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10%;
+}
+
+.coluna-esquerda-entrega {
+  flex: 1;
+}
+
+.coluna-direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.radio-group-E {
+  margin-bottom: 20px;
+}
+
+.endereco .link {
+  color: #1d49a8;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+.opcao-entrega {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  padding: 10px 15px;
+  align-items: center;
+  background-color: #f0ebeb;
+}
+
+.opcao-entrega input {
+  width: 18px;
+  height: 18px;
+}
+
+.botao-avancar {
+  background-color: #8F0700;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.botao-avancar a {
+  text-decoration: none;
+  color: white;
+}
+
+/*FIM CODIGO - ENTREGAcss*/

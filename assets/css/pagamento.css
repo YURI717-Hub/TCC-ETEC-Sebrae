@@ -1,0 +1,153 @@
+/* INICIO CÓDIGO - PAGAMENTOcss */
+.caminho-ativo-P {
+  padding: 15px 20px;
+  background-color: #ece7e7;
+  font-size: 14px;
+}
+
+.ativo-pagamento {
+  color: #4AC741;
+  font-weight: bold;
+}
+
+/* Conteúdo da página pagamento */
+.conteudo-pagamento-H2 {
+  padding: 20px;
+  background-color: #f0ebeb;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Box de entrega */
+.entrega-box-pagamento {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.coluna-esquerda-pagamento {
+  flex: 1;
+}
+
+/* Radio group pagamento */
+.radio-group-P {
+  margin-bottom: 20px;
+}
+
+/* Grid do checkout */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.checkout-address {
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.4;
+  font-family: 'Roboto', sans-serif;
+}
+
+.checkout-shipping {
+  margin-top: 1rem;
+}
+
+.shipping-title {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.shipping-info {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Pagamento opcoes */
+.pagamento-opcoes {
+  margin-top: 1.5rem;
+}
+
+.pagamento-title {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.pagamento-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  padding: 0.75rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.boleto {
+  background-color: #8F0700;
+}
+
+.pix {
+  background-color:#8F0700;
+}
+
+.credito {
+  background-color: #8F0700;
+}
+
+/* Produtos seção */
+.products-section {
+  background-color: #f0ebeb;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.products-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.products-list {
+  list-style: none;
+  padding: 0;
+}
+.valor{
+  color: #4AC741;
+}
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-total {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.btn-finalizar {
+  width: 100%;
+  margin-top: 1.5rem;
+  background-color:#8F0700;
+  color: #ffffff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

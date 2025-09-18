@@ -1,0 +1,106 @@
+
+/*INICIO CÓDIGO - PDcss*/
+.container {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.sidebar {
+  flex: 1;
+  max-width: 35%;
+}
+
+.sidebar h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.content {
+  flex: 2;
+  max-width: 60%;
+}
+
+.content h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.content p {
+  font-size: 15px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* ****FIM CODIGO - LGPDcss*****/
+
+/*INICIO CÓDIGO - SOBREcss*/
+p{
+  font-family: 'Roboto', sans-serif;
+}
+
+.mainsobre {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 30px;
+  gap: 30px;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 55%;
+}
+
+.text-content h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.text-content p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.image-section {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #000000;
+  border-radius: 8px;
+}
+/* INICIO PERFIL CSS*/
+
+/*FIM CODIGO - SOBREcss*/

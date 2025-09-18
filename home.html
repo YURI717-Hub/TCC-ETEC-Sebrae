@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bem Vindo - Auto Peças Express</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="../assets/js/home.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/menu.js"></script>
 </head>
 
 <body>
@@ -18,9 +19,9 @@
         </a>
         <nav>
           <ul>
-            <li><a href="./assets/pages/">Meu Perfil</a></li>
-            <li><a href="./assets/pages/produto.html">Produtos</a></li>
-            <li><a href="./assets/pages/sobre.html">Sobre</a></li>
+            <li><a href="assets/pages/perfil.php">Meu Perfil</a></li>
+            <li><a href="assets/pages/produto.html">Produtos</a></li>
+            <li><a href="assets/pages/sobre.html">Sobre</a></li>
           </ul>
         </nav>
 
@@ -30,41 +31,42 @@
         </div>
         <div>
           <figure class="nav-icon-container">
-            <a href="./assets/pages/carrinho.html"> <img src="./assets/images/carrinho.png" alt=""></a>
+            <a href="assets/pages/carrinho.html"> <img src="assets/images/carrinho.png" alt=""></a>
           </figure>
 
 
           <ul class="login">
-            <li><a href="./assets/pages/login.html">Entrar</a></li>
+            <li><a href="assets/pages/login.html">Entrar</a></li>
             <li>|</li>
-            <li><a href="./assets/pages/cadastro.html">Cadastro</a></li>
+            <li><a href="assets/pages/cadastro.html">Cadastro</a></li>
             </li>
           </ul>
           <figure>
-            <img onclick="menu();" src="../assets/images/menu.png" alt="" class="menu-button">
+            <img onload="menu();" src="assets/images/menu.png" alt="" class="menu-button">
           </figure>
         </div>
       </div>
 
     </div>
   </header>
+  
 
   <main>
     <div class="secao-horizontal">
       <div class="conteudo-esquerdo">
         <h2 class="titulo01"> Acelere Suas Compras com Peças de Confiança e Entrega Expressa </h2>
         <div class="clique-button">
-          <p class="cliqueaqui"><span>Clique aqui</span></p>
+          <button class="cliqueaqui"><span><a href="assets/pages/produto.html">Clique aqui</a></span></button>
         </div>
       </div>
 
       <div class="carrossel-container">
         <div class="carrossel">
-          <img src="../assets/images/carrocel/carrocel01.png" alt="Suspensão Palio">
-          <img src="../assets/images/carrocel/carrocel02.png" alt="Farol Opala">
-          <img src="../assets/images/carrocel/carrocel03.png" alt="Peças Diversas">
-          <img src="../assets/images/carrocel/carrocel04.png" alt="Gol 16V">
-          <img src="../assets/images/carrocel/carrocel05.png" alt="Opala Peças">
+          <img src="assets/images/carrocel/carrocel01.png" alt="Suspensão Palio">
+          <img src="assets/images/carrocel/carrocel02.png" alt="Farol Opala">
+          <img src="assets/images/carrocel/carrocel03.png" alt="Peças Diversas">
+          <img src="assets/images/carrocel/carrocel04.png" alt="Gol 16V">
+          <img src="assets/images/carrocel/carrocel05.png" alt="Opala Peças">
         </div>
       </div>
     </div>
@@ -130,28 +132,28 @@
 
         <div class="produto">
           <h3>Vela Motor</h3>
-          <img src="../assets/images/Produtos/vela.png" alt="Vela Motor">
+          <img src="assets/images/Produtos/vela.png" alt="Vela Motor">
           <p>Kit lâmpada do farol - Osram</p>
           <span class="preco">R$ 29,90</span>
         </div>
 
         <div class="produto">
           <h3>Radio MP3 e CD</h3>
-          <img src="../assets/images/Produtos/radio.png" alt="Radio MP3">
+          <img src="assets/images/Produtos/radio.png" alt="Radio MP3">
           <p>Auto rádio MP3 player - Roadstar/Bluetooth</p>
           <span class="preco">R$ 299,90</span>
         </div>
 
         <div class="produto">
           <h3>Tapete de Borracha</h3>
-          <img src="../assets/images/Produtos/tapete.png" alt="Tapete Borracha">
+          <img src="assets/images/Produtos/tapete.png" alt="Tapete Borracha">
           <p>Tapete de borracha - 4 peças - Preto</p>
           <span class="preco">R$ 99,80</span>
         </div>
 
         <div class="produto">
           <h3>Palhete Limpador</h3>
-          <img src="../assets/images/Produtos/paletalimpador.png" alt="Palheta Limpador">
+          <img src="assets/images/Produtos/paletalimpador.png" alt="Palheta Limpador">
           <p>Palheta do limpador do para-brisa-Trico</p>
           <span class="preco">R$ 159,90</span>
         </div>
@@ -159,42 +161,42 @@
 
         <div class="produto">
           <h3>Oléo Mobil 1 Litro</h3>
-          <img src="../assets/images/Produtos/oleomobil.png" alt="Oleo Mobil">
+          <img src="assets/images/Produtos/oleomobil.png" alt="Oleo Mobil">
           <p>Óleo de motor - Mobil 1L -Unidade</p>
           <span class="preco">R$ 29,90</span>
         </div>
 
         <div class="produto">
           <h3>Lampada Led</h3>
-          <img src="../assets/images/Produtos/lampadafarol.png" alt="Lâmpada Farol">
+          <img src="assets/images/Produtos/lampadafarol.png" alt="Lâmpada Farol">
           <p>Lâmpada Led Farol - Osram</p>
           <span class="preco">R$ 19,90</span>
         </div>
 
         <div class="produto">
           <h3>Shampoo Para Carro</h3>
-          <img src="../assets/images/Produtos/lubrificante.png" alt="Lubrificante">
+          <img src="assets/images/Produtos/lubrificante.png" alt="Lubrificante">
           <p>Sãbao Veicular - Minerva</p>
           <span class="preco">R$ 39,40</span>
         </div>
 
         <div class="produto">
           <h3>Farol Parati</h3>
-          <img src="../assets/images/Produtos/farolparati.png" alt="Vela Motor">
+          <img src="assets/images/Produtos/farolparati.png" alt="Vela Motor">
           <p>Farol Parati 96</p>
           <span class="preco">R$ 315,90</span>
         </div>
 
         <div class="produto">
           <h3>Palheta de Limpador</h3>
-          <img src="../assets/images/Produtos/limpadorparabrisa.png" alt="Vela Motor">
+          <img src="assets/images/Produtos/limpadorparabrisa.png" alt="Vela Motor">
           <p>Palheta Limpador - Gol 16V</p>
           <span class="preco">R$ 129,90</span>
         </div>
 
         <div class="produto">
           <h3>Oléo de Motor</h3>
-          <img src="../assets/images/Produtos/oleomotor.png" alt="Vela Motor">
+          <img src="assets/images/Produtos/oleomotor.png" alt="Vela Motor">
           <p>Óleo Mobil - Super Dexos 1L - (Unidade)</p>
           <span class="preco">R$ 29,90</span>
         </div>
