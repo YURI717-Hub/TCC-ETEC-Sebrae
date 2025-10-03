@@ -53,3 +53,53 @@ function menu(){
 function fecharModal() {
   document.getElementById('modal').style.display = 'none';
 }
+
+
+// pesquisa de poduto
+
+function filtrarProdutos() {
+    let input = document.querySelector(".busca-input").value.toLowerCase();
+    let produtos = document.querySelectorAll(".product");
+
+    produtos.forEach(produto => {
+      let descricao = produto.querySelector(".produto-descricao").innerText.toLowerCase();
+
+      if (descricao.includes(input)) {
+        produto.style.display = "block"; // mostra o produto
+      } else {
+        produto.style.display = "none"; // esconde o produto
+      }
+    });
+  }
+
+//   
+  // MENSAGEM ENVIO AO CARRINHO
+          // funciona mesmo se produtos forem adicionados depois
+    document.addEventListener('DOMContentLoaded', () => {
+        const msg = document.getElementById('mensagem-carrinho');
+        let hideTimeout = null;
+  
+        const container = document.querySelector('.products-container') || document.body;
+        container.addEventListener('click', (e) => {
+          const btn = e.target.closest('.button-colors');
+          if (!btn) return; 
+  
+          const product = btn.closest('.product');
+          const descricaoElem = product ? product.querySelector('.produto-descricao') : null;
+          let nome = 'Produto';
+  
+          if (descricaoElem) {
+            nome = descricaoElem.innerText.trim().split(/\n/)[0];
+            if (nome.length > 40) nome = nome.slice(0, 40).trim() + '...';
+          }
+  
+          // mostra a mensagem
+          msg.textContent = `${nome} adicionado ao carrinho!`;
+          msg.classList.add('show');
+  
+          if (hideTimeout) clearTimeout(hideTimeout);
+          hideTimeout = setTimeout(() => {
+            msg.classList.remove('show');
+          }, 3300);
+        });
+      });

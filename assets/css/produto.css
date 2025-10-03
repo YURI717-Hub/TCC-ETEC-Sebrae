@@ -217,6 +217,51 @@ img {
 }
 
 
+/* mensagem de envio pro carrinho */
+
+.mensagem-carrinho {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #4AC741;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  z-index: 9999;
+  max-width: 320px;
+}
+.mensagem-carrinho.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.product { 
+  border: 1px solid #eee;
+  padding: 12px;
+  margin: 10px;
+  max-width: 360px;
+   }
+
+.rodape {
+  display:flex;
+  Justify-content:space-between;
+  gap:8px;
+  margin-top:8px; 
+    }
+
+.button-colors {
+  margin-top:10px;
+  padding:8px 12px; 
+  cursor:pointer; 
+  }
+  
 /* Responsividade */
 @media screen and (max-width: 768px) {
   .product-details-container {

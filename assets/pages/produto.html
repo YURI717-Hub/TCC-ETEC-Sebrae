@@ -27,9 +27,9 @@
         </nav>
 
         <div class="pesquisa">
-          <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?">
-
+          <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?" onkeyup="filtrarProdutos()">
         </div>
+        
         <div>
           <figure class="nav-icon-container">
             <a href="./carrinho.html"> <img src="../images/carrinho.png" alt=""></a>
@@ -328,6 +328,11 @@
         </div>
       </div>
     </div>
+
+  <!-- MENSAGEM DE ENVIO AO CARRINHO-->
+  <div id="mensagem-carrinho" class="mensagem-carrinho" role="status" aria-live="polite">
+  </div>
+
   </main>
 
   <footer>
