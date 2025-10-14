@@ -86,3 +86,127 @@
 }
 
 /*FIM CODIGO - ENTREGAcss*/
+
+/* RESPONSIVIDADE  */
+
+/* Telas pequenas  */
+@media screen and (max-width: 677px) {
+  body, html {
+    overflow-x: hidden; 
+  }
+
+  .entrega-box-entrega {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .coluna-direita, .coluna-esquerda-entrega {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .opcao-entrega {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .botao-avancar {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  .caminho-ativo-E {
+    padding: 8px;
+    font-size: 11px;
+    box-sizing: border-box;
+  }
+
+  .endereco p {
+    font-size: 13px;
+  }
+
+  .radio-group-E input {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/*  Telas médias */
+@media screen and (min-width: 678px) and (max-width: 1024px) {
+  .entrega-box-entrega {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .coluna-direita {
+    align-items: stretch;
+  }
+
+  .opcao-entrega {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 12px;
+  }
+
+  .botao-avancar {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  .caminho-ativo-E {
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+
+  .endereco p {
+    font-size: 14px;
+  }
+}
+
+/* Telas grandes */
+@media screen and (min-width: 1025px) {
+  .entrega-box-entrega {
+    flex-direction: row;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .coluna-direita {
+    align-items: flex-end;
+  }
+
+  .opcao-entrega {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .botao-avancar {
+    width: auto;
+    padding: 10px 30px;
+    text-align: center;
+  }
+
+  .caminho-ativo-E {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+
+  .endereco p {
+    font-size: 14px;
+  }
+}

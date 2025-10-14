@@ -243,3 +243,131 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
+/* RESPONSIVIDADE */
+
+/* RESPONSIVIDADE PAGAMENTO  */
+
+/* Telas pequenas */
+@media screen and (max-width: 677px) {
+  body, html { overflow-x: hidden; }
+
+  .entrega-box-pagamento {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .coluna-esquerda-pagamento, .products-section {
+    width: 100%;
+  }
+
+  .checkout-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .pagamento-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-finalizar {
+    width: 100%;
+  }
+
+  .caminho-ativo-P {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .products-section .products-list li {
+    font-size: 13px;
+  }
+
+  #modal .modal-content {
+    width: 95%;
+    margin: 20px auto;
+  }
+}
+
+/* Telas médias*/
+@media screen and (min-width: 678px) and (max-width: 1024px) {
+  .entrega-box-pagamento {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .coluna-esquerda-pagamento, .products-section {
+    width: 100%;
+  }
+
+  .checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .pagamento-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .btn-finalizar {
+    width: 100%;
+  }
+
+  .caminho-ativo-P {
+    font-size: 13px;
+    padding: 12px 15px;
+  }
+
+  #modal .modal-content {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .products-section .products-list li {
+    font-size: 14px;
+  }
+}
+
+/* telas grandes  */
+@media screen and (min-width: 1025px) {
+  .entrega-box-pagamento {
+    flex-direction: row;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  .coluna-esquerda-pagamento { flex: 2; }
+  .products-section { flex: 1; }
+
+  .btn {
+    padding: 0.75rem; 
+    border-radius: 6px;
+    color: white;
+  }
+
+  .btn-finalizar {
+    width: 100%;      
+    padding: 0.75rem;
+    border-radius: 6px;
+  }
+
+  .caminho-ativo-P {
+    font-size: 14px;
+    padding: 15px 20px;
+  }
+
+  #modal .modal-content {
+    width: 50%;
+    margin: 40px auto;
+  }
+}
