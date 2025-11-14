@@ -1,6 +1,7 @@
 
 
 /*INICIO CÓDIGO - css */
+
 .caminho-ativo-E {
   padding: 15px 20px;
   background-color: #ece7e7;
@@ -11,7 +12,7 @@
   color: #4AC741;
   font-weight: bold;
 }
-
+/* entrega */
 .conteudo-entrega {
   padding: 20px;
   background-color: #f0ebeb;
@@ -28,7 +29,9 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10%;
 }
-
+p{
+  font-size: 20;
+}
 .coluna-esquerda-entrega {
   flex: 1;
 }
@@ -52,6 +55,9 @@
   cursor: pointer;
   line-height: 1.6;
 }
+
+/* opcao de entrega */
+
 
 .opcao-entrega {
   display: flex;
@@ -83,6 +89,83 @@
 .botao-avancar a {
   text-decoration: none;
   color: white;
+}
+
+
+
+
+#novo-endereco {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+#novo-endereco input {
+  display: block;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#novo-endereco button {
+  background-color: #4AC741;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* cupom */
+.cupom-desconto {
+  margin-bottom: 1rem;
+}
+
+.cupom-desconto input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.cupom-desconto button {
+  background-color: #8F0700;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#mensagem-cupom {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+/* dicas */
+.dicas-entrega {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.dicas-entrega h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.dicas-entrega p {
+  margin-bottom: 0.5rem;
+}
+
+.dicas-entrega i {
+  margin-right: 0.5rem;
+  color: #4AC741;
 }
 
 /*FIM CODIGO - ENTREGAcss*/
@@ -138,6 +221,27 @@
     width: 16px;
     height: 16px;
   }
+
+  .resumo-pedido {
+    padding: 0.5rem;
+  }
+
+  .lista-produtos li {
+    font-size: 12px;
+  }
+
+  #novo-endereco {
+    padding: 0.5rem;
+  }
+
+  .cupom-desconto input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .dicas-entrega {
+    padding: 0.5rem;
+  }
 }
 
 /*  Telas médias */
@@ -175,6 +279,18 @@
   .endereco p {
     font-size: 14px;
   }
+
+  .resumo-pedido {
+    padding: 0.75rem;
+  }
+
+  .cupom-desconto input {
+    width: 60%;
+  }
+
+  .dicas-entrega {
+    padding: 0.75rem;
+  }
 }
 
 /* Telas grandes */
@@ -208,5 +324,17 @@
 
   .endereco p {
     font-size: 14px;
+  }
+
+  .resumo-pedido {
+    padding: 1rem;
+  }
+
+  .cupom-desconto input {
+    width: 200px;
+  }
+
+  .dicas-entrega {
+    padding: 1rem;
   }
 }

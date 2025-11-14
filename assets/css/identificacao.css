@@ -1,0 +1,162 @@
+
+.caminho-ativo-P {
+    padding: 15px 20px;
+    background-color: #ece7e7;
+    font-size: 14px;
+  }
+  
+  .ativo-pagamento {
+    color: #4AC741;
+    font-weight: bold;
+  }
+
+body {
+    background-color: #f7f7f7;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.login-informacoes {
+    background-color: #fff;
+    padding: 40px 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    margin: 20px auto; 
+}
+
+.login-informacoes:hover {
+    transform: translateY(-2px);
+}
+
+
+.login-superior {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icone-usuario {
+    font-size: 50px;
+    color: #8F0700;
+    margin-bottom: 10px;
+}
+
+.login-superior h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Formulário */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form label {
+    font-weight: 500;
+    color: #444;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: #8F0700;
+    outline: none;
+}
+
+
+.form-opcoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.form-opcoes input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.form-opcoes a {
+    color: #8F0700;
+    text-decoration: none;
+}
+
+.form-opcoes a:hover {
+    text-decoration: underline;
+}
+
+
+.login-form input[type="submit"] {
+    padding: 12px;
+    background-color: #8F0700;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #a10a00;
+    transform: scale(1.02);
+}
+
+/* Opção de cadastro */
+.opcao-cadastro {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.opcao-cadastro a {
+    color: #8F0700;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.opcao-cadastro a:hover {
+    text-decoration: underline;
+}
+
+/* Campo obrigatório */
+.info-obrigatorio::after {
+    content: " *";
+    color: #8F0700;
+    font-weight: bold;
+}
+
+/* Responsivo */
+@media screen and (max-width: 600px) {
+    .login-informacoes {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .login-form input[type="submit"] {
+        width: 100%;
+    }
+
+    .form-opcoes {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

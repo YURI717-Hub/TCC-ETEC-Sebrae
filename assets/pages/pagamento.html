@@ -21,7 +21,7 @@
         </a>
         <nav>
           <ul>
-            <li><a href="./assets/pages/">Meu Perfil</a></li>
+            <li><a href="../pages/perfil.html">Meu Perfil</a></li>
             <li><a href="../pages/produto.html">Produtos</a></li>
             <li><a href="../pages/sobre.html">Sobre</a></li>
           </ul>
@@ -60,41 +60,33 @@
       <span class="ativo-pagamento">Pagamento</span>
     </div>
 
-    <main class="conteudo-pagamento-H2">
-      <h2>ENTREGA</h2>
-      <div class="entrega-box-pagamento">
-        <div class="coluna-esquerda-pagamento">
 
-          <div class="radio-group-P">
-            <input type="radio" id="receber" name="tipo-entrega" checked>
-            <label for="receber">Receber Entrega</label>
+    <div class="checkout-container">
+      <section class="conteudo-pagamento-H2">
+        <h2 class="section-title">PAGAMENTO</h2>
+        <address class="checkout-address">
+          Rua Andaraí, 839<br />
+          Vila Maria<br />
+          São Paulo - SP<br />
+          CEP: 02117-000
+        </address>
+    
+        <div class="checkout-shipping">
+          <p class="shipping-title">Transportadora</p>
+          <p class="shipping-info">Entrega de 2 a 5 Dias Úteis</p>
+        </div>
+    
+        <div class="pagamento-opcoes">
+          <p class="pagamento-title">Escolha a forma de Pagamento:</p>
+          <div class="pagamento-buttons">
+            <button class="btn boleto">BOLETO</button>
+            <button class="btn pix">PIX - Instantâneo<br />Ganhe Desconto</button>
+            <button class="btn credito">Cartão de Crédito<br />Parcele em 10x</button>
           </div>
-
-          <div class="checkout-grid">
-            <section>
-              <h2 class="section-title">PAGAMENTO</h2>
-              <address class="checkout-address">
-                Rua Andaraí, 839<br />
-                Vila Maria<br />
-                São Paulo - SP<br />
-                CEP: 02117-000
-              </address>
-
-              <div class="checkout-shipping">
-                <p class="shipping-title">Transportadora</p>
-                <p class="shipping-info">Entrega de 2 a 5 Dias Úteis</p>
-              </div>
-
-              <div class="pagamento-opcoes">
-                <p class="pagamento-title">Escolha a forma de Pagamento:</p>
-                <div class="pagamento-buttons">
-                  <button class="btn boleto">BOLETO</button>
-                  <button class="btn pix">PIX - Instantâneo<br />Ganhe Desconto</button>
-                  <button class="btn credito">Cartão de Crédito<br />Parcele em 10x</button>
-                </div>
-              </div>
-
-              
+        </div>
+      </section>
+    
+           
 <!-- Formulário do cartão -->
 <div id="modal" class="modal">
   <div class="modal-content">
@@ -129,43 +121,48 @@
     <!-- Mensagem de sucesso -->
     <div id="sucesso" class="sucesso">
       <p>Sucesso! Cartão pronto para uso.</p>
-  </div>
+  </div></section>
 
-
-
-
-
-            </section>
-
-            <section class="products-section">
-              <h3 class="products-title">Produtos</h3>
-              <ul class="products-list">
-                <li class="product-item">
-                  <span>Lâmpada 12v 60/55w H4 Máscara Marília (5x)</span>
-                  <p class="valor">R$ 45,90</p>
-                </li>
-                <li class="product-item">
-                  <span>Farol de Milha Quadrado Universal (2x)</span>
-                  <p class="valor">R$ 49,90</p>
-                </li>
-                <li class="product-item">
-                  <span>Terminal de Direção Duplo Par (2x)</span>
-                  <p class="valor">R$ 144,90</p>
-                </li>
-                <hr />
-                <li class="product-total">
-                  <span>SubTotal (9 itens)</span>
-                  <span>R$ 713,80</span>
-                </li>
-              </ul>
-              <button class="btn-finalizar">FINALIZAR COMPRA</button>
-            </section>
+            
+  <section class="products-section">
+    <h3 class="products-title">Produtos</h3>
+    <ul class="products-list">
+      <li class="product-item">
+        <div class="product-details">
+          <span class="product-name">Lâmpada 12v 60/55w H4 Máscara Marília (5x)</span>
+          <span class="product-quantity">5x</span>
+        </div>
+        <p class="valor">R$ 45,90</p>
+      </li>
+      <li class="product-item">
+        <div class="product-details">
+          <span class="product-name">Farol de Milha Quadrado Universal (2x)</span>
+          <span class="product-quantity">2x</span>
+        </div>
+        <p class="valor">R$ 49,90</p>
+      </li>
+      <li class="product-item">
+        <div class="product-details">
+          <span class="product-name">Terminal de Direção Duplo Par (2x)</span>
+          <span class="product-quantity">2x</span>
+        </div>
+        <p class="valor">R$ 144,90</p>
+      </li>
+    </ul><br>
+    <hr class="divider" />
+    <div class="product-total">
+      <span class="total-label">SubTotal (9 itens)</span>
+      <span class="total-value">R$ 713,80</span>
+    </div>
+    <a href="pagina do juan"><button class="btn-finalizar">FINALIZAR COMPRA</button></a>
+  </section>
+</div>
           </div>
           <br><br>
 
 
 
-    </main>
+    
 
     <footer>
       <div class="footer-superior-completa">

@@ -32,7 +32,7 @@ function menu(){
           modal.style.display = 'none';
       }
   }
-  // Enviar formulário
+  // Enviar formulário cartao de credito
   form.onsubmit = function(e) {
       e.preventDefault();
 
@@ -103,3 +103,92 @@ function filtrarProdutos() {
           }, 3300);
         });
       });
+
+      // pagina meu perfil
+      
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.add-to-cart');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+
+              const messageDiv = document.createElement('div');
+                messageDiv.textContent = 'FOI ADICIONADO AO CARRINHO!';
+                messageDiv.style.position = 'fixed';
+                messageDiv.style.top = '20px';
+                messageDiv.style.right = '20px';
+                messageDiv.style.backgroundColor = 'green';
+                messageDiv.style.color = 'white';
+                messageDiv.style.padding = '10px';
+                messageDiv.style.borderRadius = '5px';
+                messageDiv.style.zIndex = '1000';
+                
+                document.body.appendChild(messageDiv);
+                
+                // Remove a mensagem após 3 segundos
+                setTimeout(() => {
+                    messageDiv.remove();
+                }, 6000);
+            });
+        });
+    });
+
+
+    // pagina entrega
+  
+  
+    function toggleNovoEndereco() {
+      const div = document.getElementById('novo-endereco');
+      div.style.display = div.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function aplicarCupom() {
+      const cupom = document.getElementById('cupom').value;
+      const msg = document.getElementById('mensagem-cupom');
+      if (cupom === 'DESCONTO10') {
+        msg.textContent = 'Cupom aplicado! Desconto de R$ 10.';
+        msg.style.color = 'green';
+      } else {
+        msg.textContent = 'Cupom inválido.';
+        msg.style.color = 'red';
+      }
+    }
+
+
+// pagina identificacao//
+
+ // Função para o menu (igual ao anterior)
+ document.getElementById('menuButton').addEventListener('load', menu);
+
+ // Novo: Redirecionamento ao submeter o formulário de login
+ document.getElementById('loginForm').addEventListener('submit', function(event) {
+     event.preventDefault(); // Impede o reload da página
+
+     // Validação simples (opcional): Verifica se os campos estão preenchidos
+     const email = document.getElementById('email').value.trim();
+     const senha = document.getElementById('senha').value.trim();
+     
+     if (!email || !senha) {
+         alert('Por favor, preencha todos os campos obrigatórios.');
+         return;
+     }
+
+     // Redireciona para a página de entrega
+     window.location.href = '../pages/entrega.html'; // Ajuste o caminho se necessário
+ });
+
+
+
+// pagina cadastro 
+
+function showForm(type) {
+  // Hide all forms
+  document.querySelectorAll('.form').forEach(form => form.classList.remove('active'));
+  // Show the selected form
+  document.getElementById(type + '-form').classList.add('active');
+}
+  
+
+

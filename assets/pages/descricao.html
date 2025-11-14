@@ -1,173 +1,406 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/produto.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem Vindo - Auto Peças Express</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/descricao.css">
   <script src="../js/menu.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+      tailwind.config = {
+          darkMode: "class",
+          theme: {
+              extend: {
+                  colors: {
+                      primary: '#D90429', // Red
+                      secondary: '#FFC700', // Yellow
+                      'accent-dark': '#121212',
+                      'background-light': '#F5F5F5',
+                      'surface-light': '#FFFFFF',
+                      'text-dark': '#212121',
+                      'text-light': '#6B7280',
+                      'border-light': '#E5E7EB',
+                  },
+                  fontFamily: {
+                      display: ["Roboto", "sans-serif"],
+                  },
+                  borderRadius: {
+                      DEFAULT: "0.5rem",
+                      lg: "0.75rem",
+                      xl: "1rem",
+                      full: "9999px"
+                  },
+                  boxShadow: {
+                      'glow-primary': '0 0 15px 5px rgba(217, 4, 41, 0.3)',
+                      'glow-secondary': '0 0 15px 5px rgba(255, 199, 0, 0.2)',
+                      'subtle': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)',
+                  }
+              },
+          },
+      };</script>
+ 
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header>
-    <div class="navbar">
-      <div class="header-linear-content">
-        <a href="../../home.html">
-          <h1 class="logo"> AutoPeças <span> Express </span></h1>
-        </a>
-        <nav>
-          <ul>
-            <li><a href="./assets/pages/">Meu Perfil</a></li>
-            <li><a href="../pages/produto.html">Produtos</a></li>
-            <li><a href="../pages/sobre.html">Sobre</a></li>
-          </ul>
-        </nav>
+    <div class="flex flex-col min-h-screen">
 
-        <div class="pesquisa">
-          <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?">
-
-        </div>
-        <div>
-          <figure class="nav-icon-container">
-            <a href="./carrinho.html"> <img src="../images/carrinho.png" alt=""></a>
-          </figure>
-
-
-          <ul class="login">
-            <li><a href="../pages/login.html">Entrar</a></li>
-            <li>|</li>
-            <li><a href="../pages/cadastro.html">Cadastro</a></li>
-            </li>
-          </ul>
-          <figure>
-            <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
-          </figure>
-        </div>
-      </div>
-
-    </div>
-  </header>
-
-
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main class="product">
-    <div class="product-details-container">
-      <div class="product-images">
-        <img id=".image-product" src="../images/Produtos/produtos/palhetas-do-limpador-onix.jpg"
-          alt="Imagem do produto" />
-      </div>
-      <div class="produto-detalhes">
-        <p class="avaliacao">★★★★★ 4.5 (1.200 avaliações)</p><br>
-        <h1 id="produto-nome">Nome do Produto</h1>
-        <p class="preco" id=".produto-preco">R$ 0,00</p>
-        <label for="quantidade">Quantidade:</label>
-        <input type="number" id="quantidade" value="1" min="1" />
-
-        <!-- ... -->
-        </select>
-        <button id="adicionar-carrinho" class="button-colors">Adicionar ao Carrinho</button>
-        <button id="comprar-agora" class="button-colors">Comprar Agora</button>
-        <br>
-        <br>
-        <hr>
-
-        <p id=".produto-descricao"><strong>Descrição do Produto:</strong>
-          <br>
-          Com parabarro o seu carro está protegido dos respingos de barro, lama e sujeira nas peças internas.
-          Além de ser um item para cuidar da estética, também é uma medida de segurança.
-          <br>
-          ESPECIFICAÇÕES DO PRODUTO
-          <br>
-          - Textura Lisa
-          <br>
-          - Material em Plástico
-          <br>
-          Compatível com:
-          <br>
-          - Gol 2018 - Saveiro 2018 - Voyage 2018
-          <br>- Gol 2019 - Saveiro 2019 - Voyage 2019
-          <br>- Gol 2020 - Saveiro 2020 - Voyage 2020
-          <br>- Gol 2021 - Saveiro 2021 - Voyage 2021
-          <br>- Gol 2022 - Saveiro 2022 - Voyage 2022
-          <br>- Gol 2023 - Saveiro 2023 - Voyage 2023
-          <br>
-          <br>Especificação Técnica:
-          <br>• Peça Dianteira
-          <br>• Não Acompanha Presilhas
-          <br>
-          O QUE VEM NA EMBALAGEM
-          <br>Conteúdo da Embalagem:
-          <br>• 02 Parabarros Dianteiros
-          <br>
-          FINALIZAÇÃO
-          <br>
-          As imagens representam o real estado de conservação dos produtos.
-          Detalhes técnicos e funcionalidades podem ser obtidos no chat!
-          Compare o produto anunciado com o seu modelo de referência.
-          Postaremos a sua mercadoria dentro de algumas horas após a confirmação da compra
-          Não esqueça! Tire todas as suas dúvidas conosco antes de comprar o seu produto.
-          Auto Peças Nova Kennedy Agradece sua preferência!
-          <br>
-          Garantia do vendedor: 30 dias
-        </p>
-      </div>
-    </div>
-    </div>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-superior-completa">
-      <div class="footer-superior-esquerdo">
-        <h4 class="footer-topico">Institucional</h4>
-        <ul class="sub-topicos">
-          <li><a href="">Sobre a empresa</a></li>
-          <li><a href="">Política de Privacidade</a></li>
-          <li><a href="">Termos de Uso</a></li>
-        </ul>
-      </div>
-      <div class="footer-superior-meio">
-        <h4 class="footer-topico">Ajuda</h4>
-        <ul class="sub-topicos">
-          <li><a href="">Fale Conosco/Suporte</a></li>
-          <li><a href="">Trocas e Devoluções</a></li>
-          <li><a href="">Formas de Pagamento</a></li>
-          <li><a href="">Prazo de Entrega</a></li>
-        </ul>
-      </div>
-      <div class="footer-superior-direito">
-        <h4 class="footer-topico">Contato</h4>
-        <ul class="lista-contato">
-          <li>Telefone:(11) 99999-9999</li>
-          <li>Email: contato@autoexpress.com.br</li>
-          <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
-        </ul>
-      </div>
-    </div>
+      <header>
+        <div class="navbar">
+          <div class="header-linear-content">
+            <a href="../../home.html">
+              <h1 class="logo"> AutoPeças <span> Express </span></h1>
+            </a>
+            <nav>
+              <ul>
+                <li><a href="../pages/perfil.html">Meu Perfil</a></li>
+                <li><a href="../pages/produto.html">Produtos</a></li>
+                <li><a href="../pages/sobre.html">Sobre</a></li>
+              </ul>
+            </nav>
     
-    <hr class="footer-divisao" />
-    <div class="footer-inferior-completa">
-      <div class="footer-inferior-esquerdo">
-        <h4 class="footer-topico">Meios de pagamento:</h4>
-        <figure class="image-pag">
-          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
-          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
-          <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
-
-        </figure>
-      </div>
-      <div class="footer-inferior-direito">
-        <h4 class="footer-topico">Redes Sociais</h4>
-        <div class="espacamento-icone-sociais">
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
-
+            <div class="pesquisa">
+              <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?" onkeyup="filtrarProdutos()">
+            </div>
+            
+            <div>
+              <figure class="nav-icon-container">
+                <a href="./carrinho.html"> <img src="../images/carrinho.png" alt=""></a>
+              </figure>
+    
+    
+              <ul class="login">
+                <li><a href="../pages/login.html">Entrar</a></li>
+                <li>|</li>
+                <li><a href="../pages/cadastro.html">Cadastro</a></li>
+                </li>
+              </ul>
+              <figure>
+                <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
+              </figure>
+            </div>
+          </div>
+    
         </div>
-      </div>
-</body>
+      </header>
+<br>
+<br>
+        <main>
+          <div style="max-width: 1450px; margin: 0 auto; padding: 0 20px;">
 
+              
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              
+                <div>
+                    <div class="grid grid-cols-1 gap-4">
+                      <br>
+                        <div class="aspect-w-4 aspect-h-3 rounded-xl overflow-hidden bg-surface-light border-2 border-border-light group cursor-zoom-in shadow-subtle">
+                            <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwx_IJGMKbgOp6KDBNsU05H0OG_-WcOVZ41S2so6m0-Bk6EXAh0FVB39v4WJaf13F6ZCZKOJXxeBu9KmEGROo7ZtnynJLtHL64eG4txLbooOLAdPP5yeifIt3ocD7jDfSCGYGG7Zy2cYGSnW-Sl17ZYkREe8jAfhWFGg5YI0siU4eqsTOI7MbHXgXSSrwfCPZmqzmQGJwPJI8tdZ7XeoHBkvxRpzJXnP9eO4xCk58CFVOtXjCtuO-iXpuzXlrwohBCIBvXZZYvewfe");'></div>
+                        </div>
+                         <br>
+                        <figure>
+                          <img src="../images/produtos/produtos/disco-de-freio.jpg" alt="" width="500px" style="margin-left: 100px;">
+                        </figure>
+                        <br>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="aspect-w-1 aspect-h-1 rounded-xl overflow-hidden bg-surface-light border-2 border-border-light group cursor-zoom-in shadow-subtle">
+                                <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhASKShy4vwn6jopVgIhJ2x1qVDWLF_yXiCubiQprKnoh6CKCXtwCynj5wVc34pb7eNB9Y6BbgcW6dIHbLaH_W5VgbriUsE-TQyehsVNbyEYrQ2Yp-Jaj_7-gVf4ZqMJrZfDs7_h1Iq_j5IWjVA1HZrQvVaDoX3Yg8OzKtYSkgklhNBpuHlXZKUEmdEsUYIS3JN1f8kjXn-C_K_Ob-y7jKy1IegiLZMycuRSvpu7LKiwNu9EtZZje8dOUagAjHSCtQJL7HN2TJ9bK8");'></div>
+                            </div>
+                            <div class="aspect-w-1 aspect-h-1 rounded-xl overflow-hidden bg-surface-light border-2 border-border-light group cursor-zoom-in shadow-subtle">
+                                <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBq3hJ5mIJQyZRXEIvqkUhPefF1tklEjxVMEQUJ0VknibLLMXT5PmFuK8Twtd3iH_8yuyxQ36ynGxo3zkpfk2HLNrJFNZ3pXxIr8DEuwQ_RGiAJmogskmz-mWwRUUdryCmU4wnY1AgAjZHgx9L_OMCdfMeFJ2Qfqn6pTQgt5GAtF61BBic7mojjaTucfRVpdYMXxMGprMdZiucjyr6VZJB7cucOLSBh6ijhBif3yUOMXA0YSL-KfjSHwexsnUxcV6D8auyFmJSBtrp");'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-6">
+                    <div>
+                        <h1 class="text-4xl font-black text-accent-dark uppercase tracking-wide">Filtro de Óleo - X100</h1>
+                        <p class="mt-4 text-text-light leading-relaxed">
+                            Potencialize a performance do seu motor. Este filtro de óleo de alta vazão assegura máxima proteção e eficiência, construído com tecnologia de ponta para resistir a condições extremas. Instalação rápida e vedação perfeita para um motor sempre limpo e potente.
+                        </p>
+                        <div class="mt-6 flex flex-col gap-3">
+                            <div class="flex items-center gap-3 text-green-800 bg-green-100 rounded-lg p-3 text-sm font-bold border border-green-200">
+                                <span class="material-symbols-outlined"> verified_user </span>
+                                <span>100% COMPATÍVEL COM SEU CARRO</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-green-800 bg-green-100 rounded-lg p-3 text-sm font-bold border border-green-200">
+                                <span class="material-symbols-outlined"> aod </span>
+                                <span>VALIDADO POR INTELIGÊNCIA ARTIFICIAL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t-2 border-border-light pt-6">
+                        <h3 class="text-xl font-bold text-accent-dark uppercase tracking-wider">Especificações</h3>
+                        <ul class="mt-4 space-y-3 text-sm">
+                            <li class="flex justify-between border-b border-border-light py-3">
+                                <span class="text-text-light font-medium">Código OEM</span>
+                                <span class="font-bold text-text-dark">12345-ABCDE</span>
+                            </li>
+                            <li class="flex justify-between border-b border-border-light py-3">
+                                <span class="text-text-light font-medium">Marca</span>
+                                <span class="font-bold text-text-dark">Marca X</span>
+                            </li>
+                            <li class="flex justify-between border-b border-border-light py-3">
+                                <span class="text-text-light font-medium">Modelo</span>
+                                <span class="font-bold text-text-dark">Modelo X100</span>
+                            </li>
+                            <li class="flex justify-between py-3">
+                                <span class="text-text-light font-medium">Ano de Fabricação</span>
+                                <span class="font-bold text-text-dark">2018-2023</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="flex-1 h-14 px-6 rounded-lg bg-primary text-white font-bold text-base uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-red-700 transform hover:-translate-y-1 shadow-lg hover:shadow-glow-primary transition-all duration-300">
+                            <span class="material-symbols-outlined">  </span>
+                            <span>Adicionar ao Carrinho</span>
+                        </button>
+                    <a href="./identificacao.html"> <button class="flex-1 h-14 px-6 rounded-lg bg-surface-light text-accent-dark font-bold text-base uppercase tracking-wider border border-border-light hover:bg-gray-100 hover:text-primary transition-colors duration-300">Comprar Agora</button></a>                    </div>
+                </div>
+            </div>
+
+
+            <div class="mt-20">
+                <div class="border-b-2 border-border-light mb-8">
+                    <h2 class="text-3xl font-black text-accent-dark uppercase tracking-wider pb-4">Avaliações de Clientes</h2>
+                </div>
+                <div class="flex flex-col md:flex-row gap-10">
+                    <div class="flex flex-col items-center justify-center p-8 rounded-xl bg-surface-light shadow-subtle">
+                        <p class="text-6xl font-black text-accent-dark">4.5</p>
+                        <div class="flex text-secondary my-3">
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star_half</span>
+                        </div>
+                        <p class="text-sm text-text-light">Baseado em 125 avaliações</p>
+                    </div>
+                    <div class="flex-1 space-y-3">
+                        <div class="flex items-center gap-4 text-sm">
+                            <span class="text-text-light w-16">5 estrelas</span>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-secondary to-primary h-3 rounded-full" style="width: 40%"></div>
+                            </div>
+                            <span class="text-text-light w-8 text-right">40%</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm">
+                            <span class="text-text-light w-16">4 estrelas</span>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-secondary to-primary h-3 rounded-full" style="width: 30%"></div>
+                            </div>
+                            <span class="text-text-light w-8 text-right">30%</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm">
+                            <span class="text-text-light w-16">3 estrelas</span>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-secondary to-primary h-3 rounded-full" style="width: 15%"></div>
+                            </div>
+                            <span class="text-text-light w-8 text-right">15%</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm">
+                            <span class="text-text-light w-16">2 estrelas</span>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-secondary to-primary h-3 rounded-full" style="width: 10%"></div>
+                            </div>
+                            <span class="text-text-light w-8 text-right">10%</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-sm">
+                            <span class="text-text-light w-16">1 estrela</span>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-secondary to-primary h-3 rounded-full" style="width: 5%"></div>
+                            </div>
+                            <span class="text-text-light w-8 text-right">5%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 space-y-8">
+                  <div class="flex gap-4 p-6 rounded-lg bg-surface-light/50 border border-border-light shadow-subtle">
+                      <img alt="Avatar João Pedro" class="w-12 h-12 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzDcVpwnpz6sFU05qpYZ-ILw_zoef250Fx5gzz9ohT9DRozr121r0Hn2ytRVfqrsEqRKJ6rn0xTAy_g9a8Mwp0ukFQLdBUQk4C3nb4DimNd4roIVkpX4Dwk1x0AjNggAQn4Q2wmeLPJAjXoVS_bzrPdGklMH9A7eQ_8oJ-q2XWSAxukHO4gM8asISrbEbaNeUexU1MwkBrnfnWE8F6XcJ1dFLdinprgLTMObitnYnRbPYI_kH8mxX1OFvVXwtsgBiMm2XFZ0Pj4JUh"/>
+                      <div>
+                          <div class="flex items-center gap-4">
+                              <h4 class="font-bold text-accent-dark">João Pedro</h4>
+                              <span class="text-xs text-text-light">15 de Julho de 2023</span>
+                          </div>
+                          <div class="flex text-secondary my-1">
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                          </div>
+                          <p class="text-text-dark leading-relaxed">Excelente produto! Encaixou perfeitamente no meu carro e a qualidade é visivelmente superior. Recomendo!</p>
+                      </div>
+                  </div>
+                  <div class="flex gap-4 p-6 rounded-lg bg-surface-light/50 border border-border-light shadow-subtle">
+                      <img alt="Avatar Maria Silva" class="w-12 h-12 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5-n5uA3OTUV26EN5h42OY-xYahjjJWhJW3b9u9-MfWUCEw2Rh-bL_JIbDMm6BYHVagYl4ZeHI8ZeHB7dTg-jZtTVsbeJbFuohtVk84-WrlsQbe37RWJ6_t6ucJGZSoYlHyuyhHUlC9PQ9JmM3H1okKiSpKS0YJYBK8veol2BtIROKLtpKDt_iwZN9BdrdvrArQckAeIqIjpYu3yq-m35m31klieYBQgJpFk_kszwoBtIvm3HKfWj_f2JmgDh5PdXH6IszDGMVEeFN"/>
+                      <div>
+                          <div class="flex items-center gap-4">
+                              <h4 class="font-bold text-accent-dark">Maria Silva</h4>
+                              <span class="text-xs text-text-light">20 de Junho de 2023</span>
+                          </div>
+                          <div class="flex text-secondary my-1">
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base text-gray-300">star</span>
+                          </div>
+                          <p class="text-text-dark leading-relaxed">Bom filtro, mas achei o preço um pouco elevado. No entanto, a entrega foi rápida e o produto chegou em ótimo estado.</p>
+                      </div>
+                  </div>
+
+
+                  <div class="flex gap-4 p-6 rounded-lg bg-surface-light/50 border border-border-light shadow-subtle">
+                      <img alt="Avatar Pedro Santos" class="w-12 h-12 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzDcVpwnpz6sFU05qpYZ-ILw_zoef250Fx5gzz9ohT9DRozr121r0Hn2ytRVfqrsEqRKJ6rn0xTAy_g9a8Mwp0ukFQLdBUQk4C3nb4DimNd4roIVkpX4Dwk1x0AjNggAQn4Q2wmeLPJAjXoVS_bzrPdGklMH9A7eQ_8oJ-q2XWSAxukHO4gM8asISrbEbaNeUexU1MwkBrnfnWE8F6XcJ1dFLdinprgLTMObitnYnRbPYI_kH8mxX1OFvVXwtsgBiMm2XFZ0Pj4JUh"/>
+                      <div>
+                          <div class="flex items-center gap-4">
+                              <h4 class="font-bold text-accent-dark">Pedro Santos</h4>
+                              <span class="text-xs text-text-light">10 de Agosto de 2023</span>
+                          </div>
+                          <div class="flex text-secondary my-1">
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                          </div>
+                          <p class="text-text-dark leading-relaxed">Produto de qualidade, instalação fácil e durabilidade comprovada. Vale a pena!</p>
+                      </div>
+                  </div>
+
+
+                  <div class="flex gap-4 p-6 rounded-lg bg-surface-light/50 border border-border-light shadow-subtle">
+                      <img alt="Avatar Ana Costa" class="w-12 h-12 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5-n5uA3OTUV26EN5h42OY-xYahjjJWhJW3b9u9-MfWUCEw2Rh-bL_JIbDMm6BYHVagYl4ZeHI8ZeHB7dTg-jZtTVsbeJbFuohtVk84-WrlsQbe37RWJ6_t6ucJGZSoYlHyuyhHUlC9PQ9JmM3H1okKiSpKS0YJYBK8veol2BtIROKLtpKDt_iwZN9BdrdvrArQckAeIqIjpYu3yq-m35m31klieYBQgJpFk_kszwoBtIvm3HKfWj_f2JmgDh5PdXH6IszDGMVEeFN"/>
+                      <div>
+                          <div class="flex items-center gap-4">
+                              <h4 class="font-bold text-accent-dark">Ana Costa</h4>
+                              <span class="text-xs text-text-light">5 de Setembro de 2023</span>
+                          </div>
+                          <div class="flex text-secondary my-1">
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base">star</span>
+                              <span class="material-symbols-outlined text-base text-gray-300">star</span>
+                          </div>
+                          <p class="text-text-dark leading-relaxed">Satisfeita com a compra, o filtro funciona bem, mas o atendimento poderia ser melhor.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+ 
+
+          <div class="mt-20">
+              <div class="border-b-2 border-border-light mb-8">
+                  <h2 class="text-3xl font-black text-accent-dark uppercase tracking-wider pb-4 flex items-center gap-3">
+                      <span class="material-symbols-outlined text-primary text-4xl">auto_awesome</span> Peças Relacionadas
+                  </h2>
+              </div>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  <div class="group bg-surface-light p-4 rounded-xl border border-border-light hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary/20 shadow-subtle">
+                      <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-background-light">
+                          <img alt="Pastilhas de Freio" class="h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-300" src="../images/Produtos/produtos/filtro-de-combustivel.jpg"/>
+                      </div>
+                      <h3 class="mt-4 text-base font-bold text-accent-dark">Pastilhas de Freio</h3>
+                      <p class="text-sm text-text-light">Para Modelo X100</p>
+                  </div>
+                  <div class="group bg-surface-light p-4 rounded-xl border border-border-light hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary/20 shadow-subtle">
+                      <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-background-light">
+                          <img alt="Filtro de filtro-de-combustivel" class="h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-300" src="../images/Produtos/produtos/fltro-de-ar-uno.jpg"/>
+                      </div>
+                      <h3 class="mt-4 text-base font-bold text-accent-dark">Filtro de Ar</h3>
+                      <p class="text-sm text-text-light">Para Modelo X100</p>
+                  </div>
+                  <div class="group bg-surface-light p-4 rounded-xl border border-border-light hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary/20 shadow-subtle">
+                      <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-background-light">
+                          <img alt="pastilhas de freio" class="h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-300" src="../images/Produtos/produtos/pastilhas-de-freio.jpg"/>
+                      </div>
+                      <h3 class="mt-4 text-base font-bold text-accent-dark">Velas de Ignição</h3>
+                      <p class="text-sm text-text-light">Para Modelo X100</p>
+                  </div>
+                  <div class="group bg-surface-light p-4 rounded-xl border border-border-light hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary/20 shadow-subtle">
+                      <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-background-light">
+                          <img alt="filtro de oleo" class="h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-300" src="../images/Produtos/produtos/-filtro-de-oleo.jpg"/>
+                      </div>
+                      <h3 class="mt-4 text-base font-bold text-accent-dark">Óleo de Motor 5W30</h3>
+                      <p class="text-sm text-text-light">Sintético</p>
+                  </div>
+              </div>
+          </div>
+          
+      </main>
+<br><br>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+</div>
+
+<!-- resto do conteúdo -->
+
+</div>
+
+      <footer>
+        <div class="footer-superior-completa">
+          <div class="footer-superior-esquerdo">
+            <h4 class="footer-topico">Institucional</h4>
+            <ul class="sub-topicos">
+              <li><a href="sobre.html">Sobre a empresa</a></li>
+              <li><a href="lgpd.html">Política de Privacidade</a></li>
+              <li><a href="">Termos de Uso</a></li>
+            </ul>
+          </div>
+          <div class="footer-superior-meio">
+            <h4 class="footer-topico">Ajuda</h4>
+            <ul class="sub-topicos">
+              <li><a href="">Fale Conosco/Suporte</a></li>
+              <li><a href="">Trocas e Devoluções</a></li>
+              <li><a href="">Formas de Pagamento</a></li>
+              <li><a href="">Prazo de Entrega</a></li>
+            </ul>
+          </div>
+          <div class="footer-superior-direito">
+            <h4 class="footer-topico">Contato</h4>
+            <ul class="lista-contato">
+              <li>Telefone:(11) 99999-9999</li>
+              <li>Email: contato@autoexpress.com.br</li>
+              <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
+            </ul>
+          </div>
+        </div>
+        <hr class="footer-divisao" />
+        <div class="footer-inferior-completa">
+          <div class="footer-inferior-esquerdo">
+            <h4 class="footer-topico">Meios de pagamento:</h4>
+            <figure class="image-pag">
+              <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+              <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+              <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+    
+            </figure>
+          </div>
+          <div class="footer-inferior-direito">
+            <h4 class="footer-topico">Redes Sociais</h4>
+            <div class="espacamento-icone-sociais">
+              <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
+              <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
+              <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
+    
+            </div>
+          </div>
+        </div>
+    
+        <div class="footer-creditos">
+          <p>Creditos</p>
+        </div>
+      </footer>
+
+  </div>
+</body>
 </html>
+  </footer>

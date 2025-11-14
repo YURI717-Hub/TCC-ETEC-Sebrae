@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link rel="stylesheet" href="../css/identificacao.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/menu.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="header-linear-content">
+                <a href="../../home.html">
+                    <h1 class="logo">AutoPeças <span>Express</span></h1>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="../pages/perfil.html">Meu Perfil</a></li>
+                        <li><a href="../pages/produto.html">Produtos</a></li>
+                        <li><a href="../pages/sobre.html">Sobre</a></li>
+                    </ul>
+                </nav>
+
+                <div class="pesquisa">
+                    <input type="text" class="busca-input" placeholder="Qual Peça está Procurando?">
+                </div>
+                <div>
+                    <figure class="nav-icon-container">
+                        <a href="./carrinho.html"><img src="../images/carrinho.png" alt="Ícone do carrinho de compras"></a>
+                    </figure>
+
+                    <ul class="login">
+                        <li><a href="../pages/login.html">Entrar</a></li>
+                        <li>|</li>
+                        <li><a href="../pages/cadastro.html">Cadastro</a></li>
+                    </ul>
+                    <figure>
+                        <img src="../images/menu.png" alt="Ícone do menu" class="menu-button" id="menuButton">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="caminho-ativo-P">
+        <span>Carrinho ></span>
+        <span class="ativo-pagamento">Identificação ></span>
+        <span>Entrega ></span>
+        <span>Pagamento</span>
+      </div>
+
+    <main>
+
+        <div class="login-informacoes">
+            <div class="login-superior">
+                <div class="icone-usuario">👤</div>
+                <h2>Identifique-se </h2>
+            </div>
+            
+            <form class="login-form" id="loginForm">
+                <label for="email" class="info-obrigatorio">Email</label>
+                <input type="email" id="email" name="email" required />
+              
+                <label for="senha" class="info-obrigatorio">Senha</label>
+                <input type="password" id="senha" name="senha" required />
+              
+                <div class="form-opcoes">
+                    <label><input type="checkbox" name="lembrar" /> Lembrar-me</label>
+                    <a href="#">Esqueci minha senha</a>
+                </div>
+              
+                <input type="submit" value="Entrar" />
+            </form>
+            
+            <div class="opcao-cadastro">
+                <p>Ainda não tem conta? <a href="../pages/cadastro.html">Cadastre-se</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+        <div class="footer-superior-completa">
+            <div class="footer-superior-esquerdo">
+                <h4 class="footer-topico">Institucional</h4>
+                <ul class="sub-topicos">
+                    <li><a href="sobre.html">Sobre a empresa</a></li>
+                    <li><a href="lgpd.html">Política de Privacidade</a></li>
+                    <li><a href="termos.html">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-superior-meio">
+                <h4 class="footer-topico">Ajuda</h4>
+                <ul class="sub-topicos">
+                    <li><a href="suporte.html">Fale Conosco/Suporte</a></li>
+                    <li><a href="trocas.html">Trocas e Devoluções</a></li>
+                    <li><a href="pagamento.html">Formas de Pagamento</a></li>
+                    <li><a href="entrega.html">Prazo de Entrega</a></li>
+                </ul>
+            </div>
+            <div class="footer-superior-direito">
+                <h4 class="footer-topico">Contato</h4>
+                <ul class="lista-contato">
+                    <li>Telefone: (11) 99999-9999</li>
+                    <li>Email: contato@autoexpress.com.br</li>
+                    <li>Horário de atendimento: Seg a Sex, das 8h às 18h</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="footer-divisao">
+        <div class="footer-inferior-completa">
+            <div class="footer-inferior-esquerdo">
+                <h4 class="footer-topico">Meios de pagamento:</h4>
+                <figure class="image-pag">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Ícone Visa">
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Ícone Mastercard">
+                    <img src="https://img.icons8.com/fluency/48/pix.png" alt="Ícone Pix">
+                </figure>
+            </div>
+            <div class="footer-inferior-direito">
+                <h4 class="footer-topico">Redes Sociais</h4>
+                <div class="espacamento-icone-sociais">
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-creditos">
+            <p>Créditos</p>
+        </div>
+    </footer>
+
+
+    <script>
+         document.getElementById('menuButton').addEventListener('load', menu);
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    const email = document.getElementById('email').value.trim();
+    const senha = document.getElementById('senha').value.trim();
+    
+    if (!email || !senha) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+    }
+
+    window.location.href = '../pages/entrega.html'; 
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutopeçasExpress - Minha Conta</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/menu.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link rel="stylesheet" href="../css/perfil.css"/>
+</head>
+
+<header class="navbar">
+    <div class="header-linear-content">
+      <a href="/autopecas_express/home.html">
+        <h1 class="logo">AutoPeças <span>Express</span></h1>
+      </a>
+  
+      <nav>
+        <ul>
+          <li><a href="perfil.html">Meu Perfil</a></li>
+          <li><a href="./produto.html">Produtos</a></li>
+          <li><a href="./sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+  
+      <div class="pesquisa">
+        <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?">
+
+      </div>
+  
+      <div class="icons-login">
+        <figure class="nav-icon-container">
+          <a href="./carrinho.html">
+            <img src="../images/carrinho.png" alt="Carrinho">
+          </a>
+        </figure>
+  
+        <ul class="login">
+          <li><a href="./login.html">Entrar</a></li>
+          <li><a href="./cadastro.html">Cadastro</a></li>
+        </ul>
+  
+        <figure>
+          <img src="assets/images/menu.png" alt="Menu" class="menu-button">
+        </figure>
+      </div>
+    </div>
+  </header>
+  
+
+<body>
+    <div class="container flex min-h-screen"> 
+  
+      <aside class="menu-lateral flex flex-col justify-between w-80 p-6 border-r border-gray-200 shadow-lg">
+        <div>
+          <div class="perfil-usuario mb-10 flex items-center gap-4">
+            <div class="foto-usuario w-16 h-16 rounded-full border-2 border-secondary bg-cover bg-center" 
+                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9jJDDM9w8ZqxWkE4lmVdoTnVfoAA3Nyz5qRkRmXkl1f0fLxGRSezLiLsxLM8eWQh9Ego4fMcLyQyQrjQbbfTV0HplWsO__pT6z8cuLy-zGjmHY5jN-daojgbiCoxItnScuwsccf-iTqB-PGONOWL8LGCJaVRE7jM1d3laZxsyAr6s_WA2ItCht18h1_UTYJvk0ih1oskhtAmnzZZlLjAL040rZrjL3fQ6nu7EvnNJNvAWmQmpXFxgugdcJHoSw5Zs-tbYufkZBnvE');"></div>
+            <div class="info-usuario">
+              <h1 class="text-xl font-bold">Sophia Clark</h1>
+              <p class="text-sm text-gray-500">Membro desde 2021</p>
+            </div>
+          </div>
+  
+          <nav class="menu-links flex flex-col gap-3">
+            <a href="#" class="nav-link active flex items-center gap-2 font-bold"> 
+              <span class="material-symbols-outlined">person</span> Visão Geral
+            </a>
+            <a href="./carrinho.html" class="flex items-center gap-2"> 
+              <span class="material-symbols-outlined">local_shipping</span> Carrinho
+            </a>
+            <a href="#" class="flex items-center gap-2">
+              <span class="material-symbols-outlined">favorite</span> Lista de Desejos
+            </a>
+            
+            <a href="#" class="flex items-center gap-2">
+              <span class="material-symbols-outlined">settings</span> Configurações
+            </a>
+          </nav>
+        </div>
+  
+        <button class="botao-sair">
+          <a href="/autopecas_express/home.html"><span class="material-symbols-outlined">logout</span> Sair</a>
+        </button>
+      </aside>
+  
+      <main class="conteudo-principal flex-1 p-6 overflow-y-auto">
+        <header class="mb-6">
+          <h1 class="text-3xl font-bold">Minha Conta</h1>
+        </header>
+  
+        <section class="informacoes-pessoais mb-6">
+          <h2 class="text-xl font-bold mb-2">Informações Pessoais</h2>
+          <div class="form-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="name">Nome</label>
+              <input type="text" id="name" value="Sophia Clark" class="border p-2 w-full rounded"/>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" value="sophia.clark@gmail.com" class="border p-2 w-full rounded"/>
+            </div>
+            <div>
+              <label for="phone">Telefone</label>
+              <input type="tel" id="phone" value="+55 (11) 98123-4567" class="border p-2 w-full rounded"/>
+            </div>
+            <div>
+                <label for="tetx">Endereço</label>
+                <input type="tel" id="tetx" value="rua azurita 38" class="border p-2 w-full rounded"/>
+              </div>
+            <div class="flex justify-end">
+              <button class="btnsalvar">Salvar Alterações</button>
+            </div>
+          </div>
+        </section>
+  
+        <section class="historico-pedidos mb-6">
+          <h2 class="text-xl font-bold mb-2">Histórico de Pedidos</h2>
+          <table class="w-full border-collapse border">
+            <thead>
+              <tr>
+                <th class="border p-2">ID do Pedido</th>
+                <th class="border p-2">Data</th>
+                <th class="border p-2">Status</th>
+                <th class="border p-2 text-right">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border p-2">#12345</td>
+                <td class="border p-2">15/08/2023</td>
+                <td class="border p-2 text-blue-600 font-bold">Enviado</td>
+                <td class="border p-2 text-right">R$150,00</td>
+              </tr>
+              <tr>
+                <td class="border p-2">#67890</td>
+                <td class="border p-2">20/07/2023</td>
+                <td class="border p-2 text-green-600 font-bold">Entregue</td>
+                <td class="border p-2 text-right">R$200,00</td>
+              </tr>
+              <tr>
+                <td class="border p-2">#11223</td>
+                <td class="border p-2">05/06/2023</td>
+                <td class="border p-2 text-red-600 font-bold">Cancelado</td>
+                <td class="border p-2 text-right">R$50,00</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+<section class="lista-desejos mb-6">
+    <h2 class="text-xl font-bold mb-2">Lista de Desejos</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="produto relative rounded border overflow-hidden" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaY9WWtPq_8JZ0-wfqKgw5fIqcK_qhTRhuDpHfH-MXj8Vkn0M5Y8H7r_1cBUz5RDzs-QPw7tzDgEo6qUDrOoN2SbLRaAEYDlDZjm8rgWnBhpeJeaA_bhCgU8g9UU8Vo9ErYlSg39-NkDI61jlplMmIK5CtFy8eeQlx5kXvRdDIVHE2JdAxbdb4-d3elQhueMcTsZsEjMecF9M1qFhHkZKfHfLGDQYz0m-d-aKOsDnHny-bJX1d6XFl7eZU9GZaZtfrW9ZcVv59boFE'); background-size:cover; background-position:center;">
+            <div class="overlay absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <button class="bg-yellow-500 p-2 rounded text-white add-to-cart">
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
+                </button>
+            </div>
+            <p class="absolute bottom-2 left-2 text-white font-bold">Pastilhas de Freio</p>
+        </div>
+    </div>
+</section>
+
+
+      </main>
+  
+    </div>
+  </body>
+  
+  
+  <footer>
+    <div class="footer-superior-completa">
+      <div class="footer-superior-esquerdo">
+        <h4 class="footer-topico">Institucional</h4>
+        <ul class="sub-topicos">
+          <li><a href="sobre.html">Sobre a empresa</a></li>
+          <li><a href="lgpd.html">Política de Privacidade</a></li>
+          <li><a href="">Termos de Uso</a></li>
+        </ul>
+      </div>
+      <div class="footer-superior-meio">
+        <h4 class="footer-topico">Ajuda</h4>
+        <ul class="sub-topicos">
+          <li><a href="">Fale Conosco/Suporte</a></li>
+          <li><a href="">Trocas e Devoluções</a></li>
+          <li><a href="">Formas de Pagamento</a></li>
+          <li><a href="">Prazo de Entrega</a></li>
+        </ul>
+      </div>
+      <div class="footer-superior-direito">
+        <h4 class="footer-topico">Contato</h4>
+        <ul class="lista-contato">
+          <li>Telefone:(11) 99999-9999</li>
+          <li>Email: contato@autoexpress.com.br</li>
+          <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divisao" />
+    <div class="footer-inferior-completa">
+      <div class="footer-inferior-esquerdo">
+        <h4 class="footer-topico">Meios de pagamento:</h4>
+        <figure class="image-pag">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+          <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+
+        </figure>
+      </div>
+      <div class="footer-inferior-direito">
+        <h4 class="footer-topico">Redes Sociais</h4>
+        <div class="espacamento-icone-sociais">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-creditos">
+      <p>Creditos</p>
+    </div>
+  </footer>
+</html>
