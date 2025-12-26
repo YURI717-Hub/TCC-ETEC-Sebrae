@@ -1,0 +1,20 @@
+{
+    "from": {
+        "postal_code": "01216000"
+    },
+    "to": {
+        "postal_code": "02461011"
+    },
+    "package": {
+        "height": 6,
+        "width": 16,
+        "length": 20,
+        "weight": 1,
+        "format": 1
+    },
+    "options": {
+        "receipt": false,
+        "own_hand": false,
+        "collect": false
+    }
+}

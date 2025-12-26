@@ -4,7 +4,7 @@
 
 .caminho-ativo-E {
   padding: 15px 20px;
-  background-color: #ece7e7;
+  background-color: #ffffff;
   font-size: 14px;
 }
 
@@ -15,7 +15,7 @@
 /* entrega */
 .conteudo-entrega {
   padding: 20px;
-  background-color: #f0ebeb;
+  background-color: #ffffff;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -67,7 +67,7 @@ p{
   border-radius: 6px;
   padding: 10px 15px;
   align-items: center;
-  background-color: #f0ebeb;
+  background-color: #ffffff;
 }
 
 .opcao-entrega input {
@@ -91,7 +91,9 @@ p{
   color: white;
 }
 
-
+p .ende{
+  font-size: large;
+}
 
 
 #novo-endereco {
@@ -277,7 +279,7 @@ p{
   }
 
   .endereco p {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .resumo-pedido {
@@ -323,7 +325,7 @@ p{
   }
 
   .endereco p {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .resumo-pedido {

@@ -1,277 +1,332 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bem Vindo - Auto Peças Express</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="assets/js/index.js"></script>
-  <script src="assets/js/menu.js"></script>
-</head>
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Vindo - Auto Peças Express</title>
+    <link rel="stylesheet" href="assets/css/headerfooter.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+   
+    <script src="assets/js/menu.js"> </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+      
+    </style>
+  </head>
+  <body>
+ <header>
+  <div class="navbar">
 
-<body>
-  <header>
-    <div class="navbar">
-      <div class="header-linear-content">
-        <a href="./home.html">
-          <h1 class="logo">AutoPeças <span> Express </span></h1>
-        </a>
-        <nav>
-          <ul>
-            <li><a href="assets/pages/perfil.html">Meu Perfil</a></li>
-            <li><a href="assets/pages/produto.html">Produtos</a></li>
-            <li><a href="assets/pages/sobre.html">Sobre</a></li>
-          </ul>
-        </nav>
+    <div class="header-linear-content">
 
-        <div class="pesquisa">
-          <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?">
+      <a href="home.html">
+        <h1 class="logo"> AutoPeças <span> Express </span></h1>
+      </a>
 
-        </div>
-        <div>
-          <figure class="nav-icon-container">
-            <a href="assets/pages/carrinho.html"> <img src="assets/images/carrinho.png" alt=""></a>
-          </figure>
+      <nav>
+        <ul>
+          <li><a href="assets/pages/perfil.html">Meu Perfil</a></li>
+          <li><a href="assets/pages/produto.html">Produtos</a></li>
+          <li><a href="assets/pages/sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
 
+      
 
-          <ul class="login">
-            <li><a href="assets/pages/login.html">Entrar</a></li>
-            <li>|</li>
-            <li><a href="assets/pages/cadastro.html">Cadastro</a></li>
-            </li>
-          </ul>
-          <figure>
-            <img onload="menu();" src="assets/images/menu.png" alt="" class="menu-button">
-          </figure>
-        </div>
+      <!-- NOVO AGRUPAMENTO FLEX PARA CARRINHO + LOGIN + MENU -->
+      <div class="right-items">
+
+        <figure class="nav-icon-container">
+          <a href="assets/pages/carrinho.html">
+            <img src="assets/images/carrinho.png" alt="">
+          </a>
+        </figure>
+
+        <ul class="login">
+          <li><a href="assets/pages/login.html">Entrar</a></li>
+          <li>|</li>
+          <li><a href="assets/pages/cadastro.html">Cadastro</a></li>
+        </ul>
+
+        <figure>
+          <img onload="menu();" src="assets/images/menu.png" alt="" class="menu-button">
+        </figure>
+
       </div>
 
     </div>
-  </header>
+
+  </div>
+</header>
+<br><br><br>
+  
+    <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-12">
+        <div id="hero-slider" class="relative min-h-[400px] w-full overflow-hidden rounded-xl bg-cover bg-center shadow-2xl shadow-black/30" style='background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%), url("assets/images/Produtos/fundo.jpg");'>
+          <div class="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2.5" id="indicators">
+            <div class="h-2.5 w-6 rounded-full bg-primary cursor-pointer" data-slide="0"></div>
+            <div class="h-2.5 w-2.5 rounded-full bg-white/50 transition-all hover:bg-white cursor-pointer" data-slide="1"></div>
+            <div class="h-2.5 w-2.5 rounded-full bg-white/50 transition-all hover:bg-white cursor-pointer" data-slide="2"></div>
+            <div class="h-2.5 w-2.5 rounded-full bg-white/50 transition-all hover:bg-white cursor-pointer" data-slide="3"></div>
+            <div class="h-2.5 w-2.5 rounded-full bg-white/50 transition-all hover:bg-white cursor-pointer" data-slide="4"></div>
+          </div>
+          <div class="absolute left-10 top-1/2 -translate-y-1/2 text-white">
+            <h1 class="font-display text-6xl tracking-wider text-white">PEÇAS DE ALTA<br/><span class="text-secondary">PERFORMANCE</span></h1>
+            <p class="mt-2 max-w-md text-lg text-text-dark">Encontre as peças certas para o seu carro.</p>
+          </div>
+        </div>
+      </div>
   
 
-  <main>
-    <div class="secao-horizontal">
-      <div class="conteudo-esquerdo">
-        <h2 class="titulo01"> Acelere Suas Compras com Peças de Confiança e Entrega Expressa </h2>
-        <div class="clique-button">
-          <button class="cliqueaqui"><span><a href="assets/pages/produto.html">Clique aqui</a></span></button>
-        </div>
+<div class="search-container">
+  <h2>Buscar por</h2>
+  <div class="search-bar">
+    <input type="text" class="search-input" placeholder="Digite o que você procura, ex: pastilhas de freio" id="search-input">
+    <button class="search-btn" id="search-btn"><i class="fas fa-search"></i> Buscar</button>
+  </div>
+  <div class="filters">
+    <div class="filter-group">
+      <label class="filter-label">Categoria</label>
+      <select class="filter-select" id="categoria">
+        <option value="">Todas as categorias</option>
+        <option value="motor">Motor</option>
+        <option value="suspensao">Suspensão</option>
+        <option value="eletrica">Elétrica</option>
+        <option value="freios">Freios</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">Marca do veículo</label>
+      <select class="filter-select" id="marca">
+        <option value="">Todas as marcas</option>
+        <option value="volkswagen">Volkswagen</option>
+        <option value="ford">Ford</option>
+        <option value="chevrolet">Chevrolet</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">Modelo do veículo</label>
+      <select class="filter-select" id="modelo">
+        <option value="">Todos os modelos</option>
+        <option value="gol">Gol</option>
+        <option value="fiesta">Fiesta</option>
+        <option value="corsa">Corsa</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">Localização</label>
+      <select class="filter-select" id="localizacao">
+        <option value="">Todo o Brasil</option>
+        <option value="sp">São Paulo</option>
+        <option value="rj">Rio de Janeiro</option>
+        <option value="mg">Minas Gerais</option>
+      </select>
+    </div>
+  </div>
+  <div class="advanced-toggle" id="toggle-advanced">Mais filtros <i class="fas fa-chevron-down"></i></div>
+  <div class="advanced-filters" id="advanced-filters">
+    <div class="filters">
+      <div class="filter-group">
+        <label class="filter-label">Preço</label>
+        <select class="filter-select" id="preco">
+          <option value="">Qualquer preço</option>
+          <option value="0-500">Até R$ 500</option>
+          <option value="500-1000">R$ 500 - R$ 1.000</option>
+          <option value="1000+">Acima de R$ 1.000</option>
+        </select>
       </div>
-
-      <div class="carrossel-container">
-        <div class="carrossel">
-          <img src="assets/images/carrocel/carrocel01.png" alt="Suspensão Palio">
-          <img src="assets/images/carrocel/carrocel02.png" alt="Farol Opala">
-          <img src="assets/images/carrocel/carrocel03.png" alt="Peças Diversas">
-          <img src="assets/images/carrocel/carrocel04.png" alt="Gol 16V">
-          <img src="assets/images/carrocel/carrocel05.png" alt="Opala Peças">
-        </div>
+      <div class="filter-group">
+        <label class="filter-label">Condição</label>
+        <select class="filter-select" id="condicao">
+          <option value="">Qualquer condição</option>
+          <option value="novo">Novo</option>
+          <option value="usado">Usado</option>
+          <option value="remanufaturado">Remanufaturado</option>
+        </select>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="linha-marcacao"></div>
 
-    <div class="mostruario">
 
-      <div class="selecao-produto">
 
-        <h2 class="cabecalho-produto">Fabricante</h2>
-        <div class="selecao">
-          <label for="">
-            <input type="checkbox" name="fabricante" id="chevrolet">
-            Chevrolet </label>
-          <br>
-          <label for="">
-            <input type="checkbox" name="fabricante" id="volkswagem">
-            Volkswagen
-          </label>
-          <br>
-          <label for="">
-            <input type="checkbox" name="fabricante" id="byd">
-            BYD </label>
-          <br>
-
-          <h2 class="cabecalho-produto">MODELO</h2>
-
-          <label for="">
-            <input type="checkbox" name="fabricante" id="Onix">
-            Onix </label>
-          <br>
-          <label for="">
-            <input type="checkbox" name="fabricante" id="Gol">
-            Gol
-          </label>
-          <br>
-          <label for="">
-            <input type="checkbox" name="fabricante" id="Dolphin">
-            Dolphin </label>
-
-          <h2 class="cabecalho-produto">Categoria</h2>
-          <label for="">
-            <input type="checkbox" name="fabricante" id="suspencao">
-            Suspensão</label>
-          <br>
-          <label for="">
-            <input type="checkbox" name="fabricante" id="direcao">
-            Direção
-          </label>
-          <br>
-          <label for="">
-            <input type="checkbox" name="fabricante" id="eletrica">
-            Elétrica</label>
-          <br>
-          <label for="">
-            <input type="checkbox" name="fabricante" id="motor">
-            Motor</label>
+  
+      <div class="linha-marcacao"></div>
+  
+      <div class="mostruario">
+        <div class="galeria-produtos">
+          <div class="produto">
+            <h3>Vela Motor</h3>
+            <img src="assets/images/Produtos/vela.png" alt="Vela Motor">
+            <p>Kit lâmpada do farol - Osram</p>
+            <span class="preco">R$ 29,90</span>
+          </div>
+          <div class="produto">
+            <h3>Radio MP3 e CD</h3>
+            <img src="assets/images/Produtos/radio.png" alt="Radio MP3">
+            <p>Auto rádio MP3 player - Roadstar/Bluetooth</p>
+            <span class="preco">R$ 299,90</span>
+          </div>
+          <div class="produto">
+            <h3>Tapete de Borracha</h3>
+            <img src="assets/images/Produtos/tapete.png" alt="Tapete Borracha">
+            <p>Tapete de borracha - 4 peças - Preto</p>
+            <span class="preco">R$ 99,80</span>
+          </div>
+          <div class="produto">
+            <h3>Palhete Limpador</h3>
+            <img src="assets/images/Produtos/paletalimpador.png" alt="Palheta Limpador">
+            <p>Palheta do limpador do para-brisa-Trico</p>
+            <span class="preco">R$ 159,90</span>
+          </div>
+          <div class="produto">
+            <h3>Oléo Mobil 1 Litro</h3>
+            <img src="assets/images/Produtos/oleomobil.png" alt="Oleo Mobil">
+            <p>Óleo de motor - Mobil 1L -Unidade</p>
+            <span class="preco">R$ 29,90</span>
+          </div>
+          <div class="produto">
+            <h3>Lampada Led</h3>
+            <img src="assets/images/Produtos/lampadafarol.png" alt="Lâmpada Farol">
+            <p>Lâmpada Led Farol - Osram</p>
+            <span class="preco">R$ 19,90</span>
+          </div>
+          <div class="produto">
+            <h3>Shampoo Para Carro</h3>
+            <img src="assets/images/Produtos/lubrificante.png" alt="Lubrificante">
+            <p>Sãbao Veicular - Minerva</p>
+            <span class="preco">R$ 39,40</span>
+          </div>
+          <div class="produto">
+            <h3>Farol Parati</h3>
+            <img src="assets/images/Produtos/farolparati.png" alt="Vela Motor">
+            <p>Farol Parati 96</p>
+            <span class="preco">R$ 315,90</span>
+          </div>
+          <div class="produto">
+            <h3>Palheta de Limpador</h3>
+            <img src="assets/images/Produtos/limpadorparabrisa.png" alt="Vela Motor">
+            <p>Palheta Limpador - Gol 16V</p>
+            <span class="preco">R$ 129,90</span>
+          </div>
+          <div class="produto">
+            <h3>Oléo de Motor</h3>
+            <img src="assets/images/Produtos/oleomotor.png" alt="Vela Motor">
+            <p>Óleo Mobil - Super Dexos 1L - (Unidade)</p>
+            <span class="preco">R$ 29,90</span>
+          </div>
         </div>
       </div>
-
-      <div class="galeria-produtos">
-
-        <div class="produto">
-          <h3>Vela Motor</h3>
-          <img src="assets/images/Produtos/vela.png" alt="Vela Motor">
-          <p>Kit lâmpada do farol - Osram</p>
-          <span class="preco">R$ 29,90</span>
-        </div>
-
-        <div class="produto">
-          <h3>Radio MP3 e CD</h3>
-          <img src="assets/images/Produtos/radio.png" alt="Radio MP3">
-          <p>Auto rádio MP3 player - Roadstar/Bluetooth</p>
-          <span class="preco">R$ 299,90</span>
-        </div>
-
-        <div class="produto">
-          <h3>Tapete de Borracha</h3>
-          <img src="assets/images/Produtos/tapete.png" alt="Tapete Borracha">
-          <p>Tapete de borracha - 4 peças - Preto</p>
-          <span class="preco">R$ 99,80</span>
-        </div>
-
-        <div class="produto">
-          <h3>Palhete Limpador</h3>
-          <img src="assets/images/Produtos/paletalimpador.png" alt="Palheta Limpador">
-          <p>Palheta do limpador do para-brisa-Trico</p>
-          <span class="preco">R$ 159,90</span>
-        </div>
-
-
-        <div class="produto">
-          <h3>Oléo Mobil 1 Litro</h3>
-          <img src="assets/images/Produtos/oleomobil.png" alt="Oleo Mobil">
-          <p>Óleo de motor - Mobil 1L -Unidade</p>
-          <span class="preco">R$ 29,90</span>
-        </div>
-
-        <div class="produto">
-          <h3>Lampada Led</h3>
-          <img src="assets/images/Produtos/lampadafarol.png" alt="Lâmpada Farol">
-          <p>Lâmpada Led Farol - Osram</p>
-          <span class="preco">R$ 19,90</span>
-        </div>
-
-        <div class="produto">
-          <h3>Shampoo Para Carro</h3>
-          <img src="assets/images/Produtos/lubrificante.png" alt="Lubrificante">
-          <p>Sãbao Veicular - Minerva</p>
-          <span class="preco">R$ 39,40</span>
-        </div>
-
-        <div class="produto">
-          <h3>Farol Parati</h3>
-          <img src="assets/images/Produtos/farolparati.png" alt="Vela Motor">
-          <p>Farol Parati 96</p>
-          <span class="preco">R$ 315,90</span>
-        </div>
-
-        <div class="produto">
-          <h3>Palheta de Limpador</h3>
-          <img src="assets/images/Produtos/limpadorparabrisa.png" alt="Vela Motor">
-          <p>Palheta Limpador - Gol 16V</p>
-          <span class="preco">R$ 129,90</span>
-        </div>
-
-        <div class="produto">
-          <h3>Oléo de Motor</h3>
-          <img src="assets/images/Produtos/oleomotor.png" alt="Vela Motor">
-          <p>Óleo Mobil - Super Dexos 1L - (Unidade)</p>
-          <span class="preco">R$ 29,90</span>
-        </div>
-
-      </div>
-      <br><br>
-
-    </div>
-
-
-    <!-- Vídeo Tutorial  -->
-    <section class="video-tutorial">
-      <h2>Tutorial: Cuidados Básicos com Seu Carro</h2>
-      <p>Assista a este vídeo para aprender dicas simples de manutenção e como usar nossas peças para manter seu veículo em dia!</p>
-      <div class="video-container">
-        <iframe width="560" height="915" src="https://www.youtube.com/embed/VIDEO_ID_AQUI" title="Tutorial de Manutenção de Carros" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </section>
-
-
-
-  </main>
-
-  <footer>
+    </main>
+ <footer>
     <div class="footer-superior-completa">
-      <div class="footer-superior-esquerdo">
-        <h4 class="footer-topico">Institucional</h4>
-        <ul class="sub-topicos">
-          <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
-          <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
-          <li><a href="">Termos de Uso</a></li>
-        </ul>
-      </div>
-      <div class="footer-superior-meio">
-        <h4 class="footer-topico">Ajuda</h4>
-        <ul class="sub-topicos">
-          <li><a href="">Fale Conosco/Suporte</a></li>
-          <li><a href="">Trocas e Devoluções</a></li>
-          <li><a href="">Formas de Pagamento</a></li>
-          <li><a href="">Prazo de Entrega</a></li>
-        </ul>
-      </div>
-      <div class="footer-superior-direito">
-        <h4 class="footer-topico">Contato</h4>
-        <ul class="lista-contato">
-          <li>Telefone:(11) 99999-9999</li>
-          <li>Email: contato@autoexpress.com.br</li>
-          <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
-        </ul>
-      </div>
-    </div>
-    <hr class="footer-divisao" />
-    <div class="footer-inferior-completa">
-      <div class="footer-inferior-esquerdo">
-        <h4 class="footer-topico">Meios de pagamento:</h4>
-        <figure class="image-pag">
-          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
-          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
-          <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
-
-        </figure>
-      </div>
-      <div class="footer-inferior-direito">
-        <h4 class="footer-topico">Redes Sociais</h4>
-        <div class="espacamento-icone-sociais">
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
-
+        <div class="footer-superior-esquerdo">
+            <h4 class="footer-topico">Institucional</h4>
+            <ul class="sub-topicos">
+                <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
+                <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
+                <li><a href="">Termos de Uso</a></li>
+            </ul>
         </div>
-      </div>
+
+        <div class="footer-superior-meio">
+            <h4 class="footer-topico">Ajuda</h4>
+            <ul class="sub-topicos">
+                <li><a href="">Fale Conosco/Suporte</a></li>
+                <li><a href="">Trocas e Devoluções</a></li>
+                <li><a href="">Formas de Pagamento</a></li>
+                <li><a href="">Prazo de Entrega</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-superior-direito">
+            <h4 class="footer-topico">Contato</h4>
+            <ul class="lista-contato">
+                <li>Telefone: (11) 99999-9999</li>
+                <li>Email: contato@autoexpress.com.br</li>
+                <li>Horário: Seg a Sex, das 8h às 18h</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="footer-divisao" />
+
+    <div class="footer-inferior-completa">
+        <div class="footer-inferior-esquerdo">
+            <h4 class="footer-topico">Meios de pagamento:</h4>
+            <figure class="image-pag">
+                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+                <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+            </figure>
+        </div>
+
+        <div class="footer-inferior-direito">
+            <h4 class="footer-topico">Redes Sociais</h4>
+            <figure class="image-rede-sociais">
+                <img src="assets/images/logo-facebook.png" alt="facebook-logo">
+                <img src="assets/images/logo-instagram.png" alt="instagram-logo">
+                <img src="assets/images/logo-whatsapp.png" alt="whatsapp-logo">
+            </figure>
+        </div>
     </div>
 
     <div class="footer-creditos">
-      <p>Creditos</p>
+        <p>Creditos</p>
     </div>
-  </footer>
+</footer>
+
+         
+  <script src="assets/js/index.js"></script>
+
+  <script src="assets/js/buscahome.js"></script>
+  <script>
+  const images = [
+  "assets/images/Produtos/fundo.cinza.webp",
+  "assets/images/Produtos/fundo.azul.jpg",
+  "assets/images/Produtos/fundo.vermelho.jpg",
+  "assets/images/Produtos/fundo.jpg"
+];
+
+
+    const heroSlider = document.getElementById('hero-slider');
+    const indicators = document.querySelectorAll('#indicators div');
+    let currentSlide = 0;
+
+    // Função para atualizar o slide
+    function updateSlide(index) {
+      currentSlide = index;
+      heroSlider.style.backgroundImage = `linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%), url("${images[currentSlide]}")`;
+
+      // Atualizar indicadores
+      indicators.forEach((indicator, i) => {
+        if (i === currentSlide) {
+          indicator.classList.remove('w-2.5', 'bg-white/50');
+          indicator.classList.add('w-6', 'bg-primary');
+        } else {
+          indicator.classList.remove('w-6', 'bg-primary');
+          indicator.classList.add('w-2.5', 'bg-white/50');
+        }
+      });
+    }
+
+    // Auto-slide a cada 5 segundos
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % images.length;
+      updateSlide(currentSlide);
+    }, 5000);
+
+    // Clique nos indicadores para mudar manualmente
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        updateSlide(index);
+      });
+    });
+  </script>
+    
 </body>
+</html>

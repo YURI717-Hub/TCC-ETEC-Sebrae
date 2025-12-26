@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 
 <head>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/headerfooter.css">
   <link rel="stylesheet" href="../css/carrinho.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -13,43 +13,50 @@
 
 <body>
   <header>
-    <div class="navbar">
-      <div class="header-linear-content">
-        <a href="../../home.html">
-          <h1 class="logo"> AutoPeças <span> Express </span></h1>
-        </a>
-        <nav>
-          <ul>
-            <li><a href="../pages/perfil.html">Meu Perfil</a></li>
-            <li><a href="produto.html">Produtos</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-          </ul>
-        </nav>
+  <div class="navbar">
 
-        <div class="pesquisa">
-          <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?">
+    <div class="header-linear-content">
 
-        </div>
-        <div>
-          <figure class="nav-icon-container">
-            <a href="./carrinho.html"> <img src="../images/carrinho.png" alt=""></a>
-          </figure>
+      <a href="../../home.html">
+        <h1 class="logo"> AutoPeças <span> Express </span></h1>
+      </a>
 
+      <nav>
+        <ul>
+          <li><a href="perfil.html">Meu Perfil</a></li>
+          <li><a href="produto.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
 
-          <ul class="login">
-            <li><a href="login.html">Entrar</a></li>
-            <li>|</li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            </li>
-          </ul>
-          <figure>
-            <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
-          </figure>
-        </div>
+      
+
+      <!-- NOVO AGRUPAMENTO FLEX PARA CARRINHO + LOGIN + MENU -->
+      <div class="right-items">
+
+        <figure class="nav-icon-container">
+          <a href="carrinho.html">
+            <img src="../images/carrinho.png" alt="">
+          </a>
+        </figure>
+
+        <ul class="login">
+          <li><a href="login.html">Entrar</a></li>
+          <li>|</li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+
+        <figure>
+          <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
+        </figure>
+
       </div>
+
     </div>
-  </header>
-  
+
+  </div>
+</header>
+  <br><br><br>
   <div class="caminho-ativo-P">
     <span  class="ativo-pagamento">Carrinho ></span>
     <span>Identificação ></span>
@@ -57,62 +64,138 @@
     <span>Pagamento</span>
   </div>
 
+<div class="cart-int">
+  
+    <table class="cart-table">
+      <thead>
+        <th class="head-item col-1">produtos</th>
+        <th class="head-item col-2">Preço</th>
+        <th class="head-item col-3">Quantidade</th>
+      </thead>
+      <tbody>
+        <tr class="cart-product">
+          <td class="product-indentification">
+            <img class="product-imagem" src="../images/produtos/produtos/disco-de-freio.jpg" alt="">
+            <strong class="product-title">Disco de freio</strong>
+          </td>
+          <td class="product-price">
+            <span>R$300,00</span>
+          </td>
+          <td class="qtd-rem">
+            <img src="../images/menos.png" alt="" width="20" class="btn-remove">
+            <input class="product-qtd" type="number" value="1" min="1">
+            <img src="../images/mais.png" alt="" width="20" class="plus-btn">
+          
+          </td>
+        </tr>
+        <tr class="cart-product">
+          <td class="product-indentification">
+            <img class="product-imagem" src="../images/produtos/produtos/disco-de-freio.jpg" alt="">
+            <strong class="product-title">Kit Embreagem palio</strong>
+          </td>
+          <td class="product-price">
+            <span>R$575,00</span>
+          </td>
+          <td>
+            <input class="product-qtd" type="text" value="1" min="1">
+            
+          </td>
+        </tr>
+        <tr class="cart-product">
+          <td class="product-indentification">
+            <img class="product-imagem" src="../images/produtos/produtos/disco-de-freio.jpg" alt="">
+            <strong class="product-title">lampadas Fiesta</strong>
+          </td>
+          <td class="product-price">
+            <span>R$55,00</span>
+          </td>
+          <td>
+            <input class="product-qtd" type="number" value="1" min="1">
+           
+          </td>
+  
+        </tr>
+      </tbody>
+      
+  
+  
+    </table>
 
-  <table class="cart-table">
-    <thead>
-      <th class="head-item col-1">produtos</th>
-      <th class="head-item col-2">Preço</th>
-      <th class="head-item col-3">Quantidade</th>
-    </thead>
-    <tbody>
-      <tr class="cart-product">
-        <td class="product-indentification">
-          <img class="product-imagem" src="../images/produtos/produtos/disco-de-freio.jpg" alt="">
-          <strong class="product-title">Disco de freio</strong>
-        </td>
-        <td class="product-price">
-          <span>R$300,00</span>
-        </td>
-        <td>
-          <input class="product-qtd" type="number" value="1" min="1">
-          <button class="remove-button">Remover</button>
-        </td>
-      </tr>
-      <tr class="cart-product">
-        <td class="product-indentification">
-          <img class="product-imagem" src="../images/produtos/produtos/disco-de-freio.jpg" alt="">
-          <strong class="product-title">Kit Embreagem palio</strong>
-        </td>
-        <td class="product-price">
-          <span>R$575,00</span>
-        </td>
-        <td>
-          <input class="product-qtd" type="number" value="1" min="1">
-          <button class="remove-button">Remover</button>
-        </td>
-      </tr>
-      <tr class="cart-product">
-        <td class="product-indentification">
-          <img class="product-imagem" src="../images/produtos/produtos/disco-de-freio.jpg" alt="">
-          <strong class="product-title">lampadas Fiesta</strong>
-        </td>
-        <td class="product-price">
-          <span>R$55,00</span>
-        </td>
-        <td>
-          <input class="product-qtd" type="number" value="1" min="1">
-          <button class="remove-button">Remover</button>
-        </td>
+    <div class="result">
+      <h2>Resultado</h2>
+      <br>
+      <hr>
+      <br>
+      <div class="item">
+        <span class="Sub"><strong>SubTotal:</strong> </span>
+        <span class="price-prod"></span>
+      </div>
+      <br>
+    
+      <div class="item">
+        <span class="desco"><strong>Desconto:</strong></span>
+        <span class="price-des"></span>
+      </div>
+      <br>
+      <hr>
+      <div class="item">
+        <span class="name-total"><strong>Total:</strong></span>
+        <span id="total" class="total"></span>
+      </div>
+    </div>
+    
+ 
+</div>
+<br><br>
+<div class="carrinho-container">
 
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr class="total">
-      </tr>
-    </tfoot>
+  <!-- COLUNA ESQUERDA: PRODUTOS -->
+  <div class="produtos-container">
+      <!-- aqui vão os produtos -->
+  </div>
 
+  <!-- COLUNA DIREITA: RESUMO / CUPOM / FRETE -->
+  <div class="lado-direito">
+      
+  
+      <div class="caixa-cupom">
+          <h3>Cupom de Desconto</h3>
+          <input type="text" placeholder="Código do Cupom" id="cupom">
+          <button onclick="aplicarCupom()"">Aplicar</button>
+          <br><br>
+          <p id="mensagem-cupom"></p>
+      </div>
 
-  </table>
+ <div class="caixa-frete">
+    <h3>Calcular Frete</h3>
+    <input type="text" id="cepDestino" placeholder="Digite seu CEP" size="15">
+    
+    <button class="input" type="button" id="btnCalcular" >Calcular</button>
+    
+</div>
+
+  </div>
+
+</div>
+
+<div class="op-fre">
+  <div class="demo">
+    <label for="demora">Frete de 5 a 7 dias uteis</label>
+    <br> 
+     <input type="radio" name="frete" id="demora">
+     <span class="val-frete1"></span>
+  </div>
+  <div class="rap">
+    <label for="rapido">Frete de 2 a 5 dias uteis</label>
+    <span id="val-frete"></span>
+    <br>
+    <input type="radio" name="frete"  id="rapido">
+
+  </div>
+
+</div>
+
+  
 
 
   <br>
@@ -121,64 +204,232 @@
 
 
   <button type="button" class="final-button">
-    <a href="identificacao.html">Finalizar Compra</a>
+    <a href="entrega.html">Finalizar Compra</a>
   </button>
 
   <footer>
     <div class="footer-superior-completa">
-      <div class="footer-superior-esquerdo">
-        <h4 class="footer-topico">Institucional</h4>
-        <ul class="sub-topicos">
-          <li><a href="sobre.html">Sobre a empresa</a></li>
-          <li><a href="lgpd.html">Política de Privacidade</a></li>
-          <li><a href="">Termos de Uso</a></li>
-        </ul>
-      </div>
-      <div class="footer-superior-meio">
-        <h4 class="footer-topico">Ajuda</h4>
-        <ul class="sub-topicos">
-          <li><a href="">Fale Conosco/Suporte</a></li>
-          <li><a href="">Trocas e Devoluções</a></li>
-          <li><a href="">Formas de Pagamento</a></li>
-          <li><a href="">Prazo de Entrega</a></li>
-        </ul>
-      </div>
-      <div class="footer-superior-direito">
-        <h4 class="footer-topico">Contato</h4>
-        <ul class="lista-contato">
-          <li>Telefone:(11) 99999-9999</li>
-          <li>Email: contato@autoexpress.com.br</li>
-          <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
-        </ul>
-      </div>
-    </div>
-    <hr class="footer-divisao" />
-    <div class="footer-inferior-completa">
-      <div class="footer-inferior-esquerdo">
-        <h4 class="footer-topico">Meios de pagamento:</h4>
-        <figure class="image-pag">
-          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
-          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
-          <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
-
-        </figure>
-      </div>
-      <div class="footer-inferior-direito">
-        <h4 class="footer-topico">Redes Sociais</h4>
-        <div class="espacamento-icone-sociais">
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
-
+        <div class="footer-superior-esquerdo">
+            <h4 class="footer-topico">Institucional</h4>
+            <ul class="sub-topicos">
+                <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
+                <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
+                <li><a href="">Termos de Uso</a></li>
+            </ul>
         </div>
-      </div>
+
+        <div class="footer-superior-meio">
+            <h4 class="footer-topico">Ajuda</h4>
+            <ul class="sub-topicos">
+                <li><a href="">Fale Conosco/Suporte</a></li>
+                <li><a href="">Trocas e Devoluções</a></li>
+                <li><a href="">Formas de Pagamento</a></li>
+                <li><a href="">Prazo de Entrega</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-superior-direito">
+            <h4 class="footer-topico">Contato</h4>
+            <ul class="lista-contato">
+                <li>Telefone: (11) 99999-9999</li>
+                <li>Email: contato@autoexpress.com.br</li>
+                <li>Horário: Seg a Sex, das 8h às 18h</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="footer-divisao" />
+
+    <div class="footer-inferior-completa">
+        <div class="footer-inferior-esquerdo">
+            <h4 class="footer-topico">Meios de pagamento:</h4>
+            <figure class="image-pag">
+                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+                <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+            </figure>
+        </div>
+
+        <div class="footer-inferior-direito">
+            <h4 class="footer-topico">Redes Sociais</h4>
+            <figure class="image-rede-sociais">
+                <img src="../images/logo-facebook.png" alt="facebook-logo">
+                <img src="../images/logo-instagram.png" alt="instagram-logo">
+                <img src="../images/logo-whatsapp.png" alt="whatsapp-logo">
+            </figure>
+        </div>
     </div>
 
     <div class="footer-creditos">
-      <p>Creditos</p>
+        <p>Creditos</p>
     </div>
-  </footer>
+</footer>
+  <script type="module" src="../js/salvarFrete.js"></script>
+  <script type="module">
+  
+function salvarTotalCarrinho() {
+    const total = document.getElementById("total").textContent.trim();
+    if (total) {
+        localStorage.setItem("totalCarrinho", total);
+        console.log("Total salvo:", total);
+        localStorage.setItem("totalCarrinho", formatBRL(total));
+    }
+}
 
+// Chama automaticamente quando carregar a página do carrinho
+window.addEventListener("DOMContentLoaded", salvarTotalCarrinho);
+
+
+
+function salvarCep() {
+    const cep = document.getElementById("cepDestino").value.trim();
+
+    if (!cep || cep.length < 8) {
+        alert("Digite um CEP válido.");
+        return;
+    }
+
+    localStorage.setItem("cepUsuario", cep);
+    console.log("CEP salvo:", cep);
+    // opcional: redirecionar
+    // window.location.href = "entrega.html";
+}
+
+// opcional: remover onclick do HTML e usar listener
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("btnCalcular");
+    if (btn) btn.addEventListener("click", salvarCep);
+});
+
+
+function salvarFreteSelecionado(idRadio) {
+    let valor = "";
+
+    if (idRadio === "normal") {
+        valor = document.querySelector(".val-frete1").textContent.trim();
+    }
+
+    
+    if (idRadio === "rapida") {
+        valor = document.querySelector("#val-frete").textContent.trim();
+    }
+
+    localStorage.setItem("freteSelecionado", idRadio);
+    localStorage.setItem("valorFrete", valor);
+
+    console.log("Frete salvo:", idRadio, valor);
+}
+
+document.getElementById("demora").addEventListener("change", () => {
+    salvarFreteSelecionado("normal");
+});
+
+document.getElementById("rapido").addEventListener("change", () => {
+    salvarFreteSelecionado("rapida");
+});
+
+
+    import { salvarFreteFirebase } from "../js/salvarFrete.js";
+    import { db, ref, set, push, remove, update, auth } from "../js/firebaseConfig.js";
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    async function calcularFrete() {
+      const cepDestino = document.getElementById("cepDestino").value.trim();
+      const spanSedex = document.getElementById("val-frete");
+      const spanJT = document.querySelector(".val-frete1");
+    
+      if (cepDestino === "") {
+        spanSedex.textContent = "Digite um CEP válido.";
+        spanJT.textContent = "";
+        return;
+      }
+    
+      const body = {
+        from: { postal_code: "01216000" },
+        to: { postal_code: cepDestino },
+        package: { height: 6, width: 16, length: 20, weight: 1, format: 1 },
+        options: { receipt: false, own_hand: false, collect: false }
+      };
+    
+      try {
+        spanSedex.textContent = "Calculando...";
+        spanJT.textContent = "Calculando...";
+    
+        const response = await fetch("calcularFrete.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+    
+        const data = await response.json();
+        console.log("Resposta API:", data);
+    
+        if (Array.isArray(data) && data.length > 0) {
+    
+          const sedex = data.find(s => s.name?.toUpperCase().includes("SEDEX"));
+          const jtStandard = data.find(s => s.name?.toUpperCase() === "STANDARD");
+    
+          // 🔥 SALVAR SEDEX
+          if (sedex && sedex.price) {
+            spanSedex.textContent = `R$ ${sedex.price}`;
+            salvarFreteFirebase("sedex", sedex.price);
+            localStorage.setItem("frete_sedex", sedex.price);
+          }
+    
+          // 🔥 SALVAR STANDARD
+          if (jtStandard && jtStandard.price) {
+            spanJT.textContent = `R$ ${jtStandard.price}`;
+            salvarFreteFirebase("standard", jtStandard.price);
+            localStorage.setItem("frete_standard", jtStandard.price);
+          }
+    
+          document.querySelector(".op-fre").style.display = "block";
+    
+        } else {
+          spanSedex.textContent = "Nenhum serviço encontrado.";
+          spanJT.textContent = "";
+        }
+    
+      } catch (error) {
+        console.error("Erro no frete:", error);
+        spanSedex.textContent = "Erro ao calcular.";
+        spanJT.textContent = "";
+      }
+    }
+    
+    document.getElementById("btnCalcular").addEventListener("click", calcularFrete);
+    
+
+    export function adicionarAoCarrinho(produto) {
+      onAuthStateChanged(auth, (user) => {
+        if (!user) return window.location.href = "../pages/login.html";
+    
+        const userId = user.uid;
+        const carrinhoRef = ref(db, "carrinhos/" + userId);
+        const novoItem = push(carrinhoRef);
+    
+        set(novoItem, produto)
+          .then(() => alert("Produto adicionado ao carrinho!"))
+          .catch((error) => console.error("Erro ao salvar no carrinho:", error));
+      });
+    }
+    
+    
+    export function removerDoCarrinho(idFirebase) {
+      onAuthStateChanged(auth, (user) => {
+        if (!user) return;
+    
+        const userId = user.uid;
+        const itemRef = ref(db, "carrinhos/" + userId + "/" + idFirebase);
+    
+        remove(itemRef)
+          .then(() => console.log("Item removido:", idFirebase))
+          .catch((err) => console.error("Erro ao remover:", err));
+      });
+    }
+    
+    </script>
+    
 
 
 

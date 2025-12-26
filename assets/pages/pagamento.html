@@ -6,51 +6,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bem Vindo - Auto Peças Express</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/headerfooter.css">
   <link rel="stylesheet" href="../css/pagamento.css">
-  <script src="../js/menu.js"></script>
+
 
 </head>
 
 <body>
-  <header>
-    <div class="navbar">
-      <div class="header-linear-content">
-        <a href="../../home.html">
-          <h1 class="logo"> AutoPeças <span> Express </span></h1>
-        </a>
-        <nav>
-          <ul>
-            <li><a href="../pages/perfil.html">Meu Perfil</a></li>
-            <li><a href="../pages/produto.html">Produtos</a></li>
-            <li><a href="../pages/sobre.html">Sobre</a></li>
-          </ul>
-        </nav>
+ <header>
+  <div class="navbar">
 
-        <div class="pesquisa">
-          <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?">
+    <div class="header-linear-content">
 
-        </div>
-        <div>
-          <figure class="nav-icon-container">
-            <a href="./carrinho.html"> <img src="../images/carrinho.png" alt=""></a>
-          </figure>
+      <a href="../../home.html">
+        <h1 class="logo"> AutoPeças <span> Express </span></h1>
+      </a>
 
+      <nav>
+        <ul>
+          <li><a href="perfil.html">Meu Perfil</a></li>
+          <li><a href="produto.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
 
-          <ul class="login">
-            <li><a href="../pages/login.html">Entrar</a></li>
-            <li>|</li>
-            <li><a href="../pages/cadastro.html">Cadastro</a></li>
-            </li>
-          </ul>
-          <figure>
-            <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
-          </figure>
-        </div>
+      
+
+      <!-- NOVO AGRUPAMENTO FLEX PARA CARRINHO + LOGIN + MENU -->
+      <div class="right-items">
+
+        <figure class="nav-icon-container">
+          <a href="carrinho.html">
+            <img src="../images/carrinho.png" alt="">
+          </a>
+        </figure>
+
+        <ul class="login">
+          <li><a href="login.html">Entrar</a></li>
+          <li>|</li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+
+        <figure>
+          <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
+        </figure>
+
       </div>
-    </div>
-  </header>
 
+    </div>
+
+  </div>
+</header>
+<br><br><br>
   <main>
 
     <div class="caminho-ativo-P">
@@ -64,16 +71,20 @@
     <div class="checkout-container">
       <section class="conteudo-pagamento-H2">
         <h2 class="section-title">PAGAMENTO</h2>
-        <address class="checkout-address">
-          Rua Andaraí, 839<br />
-          Vila Maria<br />
-          São Paulo - SP<br />
-          CEP: 02117-000
+        <address class="checkout-address" id="enderecoPagamento">
+          Carregando endereço...
         </address>
+        
     
         <div class="checkout-shipping">
           <p class="shipping-title">Transportadora</p>
           <p class="shipping-info">Entrega de 2 a 5 Dias Úteis</p>
+
+          <!-- FRETE ESCOLHIDO (NOVO) -->
+          <p class="shipping-info-frete">
+            Frete selecionado: <span id="tipo-frete">Carregando...</span> —
+            <span id="frete-valor">R$ 0,00</span>
+          </p>
         </div>
     
         <div class="pagamento-opcoes">
@@ -84,9 +95,13 @@
             <button class="btn credito">Cartão de Crédito<br />Parcele em 10x</button>
           </div>
         </div>
+
+<div id="pagamento-container" style="margin-top:20px;"></div>
+
+
       </section>
-    
-           
+      
+   
 <!-- Formulário do cartão -->
 <div id="modal" class="modal">
   <div class="modal-content">
@@ -127,95 +142,278 @@
   <section class="products-section">
     <h3 class="products-title">Produtos</h3>
     <ul class="products-list">
-      <li class="product-item">
-        <div class="product-details">
-          <span class="product-name">Lâmpada 12v 60/55w H4 Máscara Marília (5x)</span>
-          <span class="product-quantity">5x</span>
-        </div>
-        <p class="valor">R$ 45,90</p>
-      </li>
-      <li class="product-item">
-        <div class="product-details">
-          <span class="product-name">Farol de Milha Quadrado Universal (2x)</span>
-          <span class="product-quantity">2x</span>
-        </div>
-        <p class="valor">R$ 49,90</p>
-      </li>
-      <li class="product-item">
-        <div class="product-details">
-          <span class="product-name">Terminal de Direção Duplo Par (2x)</span>
-          <span class="product-quantity">2x</span>
-        </div>
-        <p class="valor">R$ 144,90</p>
-      </li>
+   
     </ul><br>
     <hr class="divider" />
     <div class="product-total">
-      <span class="total-label">SubTotal (9 itens)</span>
-      <span class="total-value">R$ 713,80</span>
+      <span class="total-label">SubTotal (0 itens)</span>
+      <span class="total-value">R$ 0,00</span>
     </div>
-    <a href="pagina do juan"><button class="btn-finalizar">FINALIZAR COMPRA</button></a>
+    <a href="#"><button class="btn-finalizar">FINALIZAR COMPRA</button></a>
   </section>
 </div>
           </div>
           <br><br>
 
 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+           <script src="../js/pagamento.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/carinho.js"></script>
+<script type="module">
+import { auth } from "../js/firebaseConfig.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    
+// Bloquear acesso
+onAuthStateChanged(auth, (user) => {
+    if (!user) window.location.href = "login.html";
+});
 
-    <footer>
-      <div class="footer-superior-completa">
+// ---------- utilitários seguros ----------
+function cleanString(v) {
+    if (v === null || v === undefined) return "";
+    return String(v).replace(/\u00A0/g, " ").trim(); // remove nbsp etc
+}
+function parseBRL(value) {
+    if (!value) return 0;
+    value = cleanString(value);
+    // Se houver mais de um "R$", pode ser concatenação acidental -> pegar última ocorrência
+    const idx = value.lastIndexOf("R$");
+    if (idx !== -1) value = value.slice(idx);
+    // remove tudo que não é dígito, vírgula ou ponto (mantém -, se houver)
+    // mas primeiro remove espaços
+    value = value.replace(/\s+/g, "");
+    // se tiver letras estranhas, remove
+    value = value.replace(/[^0-9.,-]/g, "");
+    // Se houver múltiplos pontos/vírgulas, heurística:
+    // - se existe '.' e ',' -> assume '.' é milhar e ',' é decimal
+    // - se só '.' e tem 3 dígitos no final -> assume '.' é milhar
+    if (value.indexOf(".") !== -1 && value.indexOf(",") !== -1) {
+        value = value.replace(/\./g, "").replace(",", ".");
+    } else if (value.indexOf(",") !== -1 && value.indexOf(".") === -1) {
+        value = value.replace(",", ".");
+    } else if (value.indexOf(".") !== -1 && value.indexOf(",") === -1) {
+        // pode ser "1052.00" (ok) ou "1.052" (milhar). Se o '.' estiver a 3 posições do fim, remover
+        const parts = value.split(".");
+        if (parts.length > 1 && parts[parts.length-1].length === 2) {
+            // assume ponto decimal  (ex: "1052.00")
+            value = value;
+        } else {
+            // remove pontos de milhar
+            value = value.replace(/\./g, "");
+        }
+    }
+    const num = Number(value) || 0;
+    return num;
+}
+function formatBRL(number) {
+    return Number(number).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
+
+// ---------- helpers para recuperar carrinho ----------
+function tryGetLocal(keyVariants=[]) {
+    for (const k of keyVariants) {
+        try {
+            const v = localStorage.getItem(k);
+            if (v !== null && v !== undefined) return v;
+        } catch(e){}
+    }
+    return null;
+}
+function rebuildSubtotalFromCart() {
+    // tenta várias chaves comuns: 'cart', 'carrinho', 'carrinhoTemp'
+    const candidateKeys = ['cart','carrinho','carrinhoTemp','meuCarrinho','carrinhoItems'];
+    let arr = null;
+    for (const k of candidateKeys) {
+        try {
+            const s = localStorage.getItem(k);
+            if (!s) continue;
+            const parsed = JSON.parse(s);
+            if (Array.isArray(parsed)) { arr = parsed; break; }
+        } catch(e){}
+    }
+    if (!arr) return null;
+    // arr expected items with price/image/name/quantity or price/quantity
+    let subtotal = 0;
+    arr.forEach(it => {
+        // common keys: price, preco, value, priceText
+        let priceVal = it.price || it.preco || it.valor || it.priceText || it.price_value || it.priceString;
+        let qty = it.quantity || it.qtd || it.quantidade || it.qty || 1;
+        priceVal = cleanString(priceVal === undefined ? "" : priceVal);
+        if (priceVal === "" && typeof it === 'number') {
+            priceVal = String(it);
+            qty = 1;
+        }
+        const p = parseBRL(priceVal);
+        subtotal += p * (Number(qty) || 1);
+    });
+    return subtotal;
+}
+
+// ---------- rotina principal ----------
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("[DEBUG] iniciando carga pagamento");
+
+    // 1) ler do localStorage os valores esperados
+    let totalCarrinhoRaw = tryGetLocal(['totalCarrinho']) || null;
+    let freteRaw = tryGetLocal(['valorFrete']) || null;
+
+    console.log("[DEBUG] localStorage totalCarrinho raw:", totalCarrinhoRaw);
+    console.log("[DEBUG] localStorage valorFrete raw:", freteRaw);
+
+    // 2) se frete estiver null, tentar pegar do HTML e salvar
+    const freteEl = document.getElementById("frete-valor");
+    if ((!freteRaw || freteRaw === "null") && freteEl && cleanString(freteEl.textContent)) {
+        freteRaw = cleanString(freteEl.textContent);
+        console.log("[DEBUG] frete vindo do HTML:", freteRaw, "→ salvando no localStorage");
+        try { localStorage.setItem("valorFrete", freteRaw); } catch(e){ console.warn(e); }
+    }
+
+    // 3) se totalCarrinho estiver null ou claramente errado, reconstruir a partir do carrinho
+    let subtotalNumero = 0;
+    let subtotalSource = "localStorage";
+    if (!totalCarrinhoRaw || totalCarrinhoRaw === "null") {
+        const rebuilt = rebuildSubtotalFromCart();
+        if (rebuilt !== null) {
+            subtotalNumero = rebuilt;
+            subtotalSource = "rebuild_cart";
+            // salvar no localStorage em formato BRL
+            try { localStorage.setItem("totalCarrinho", formatBRL(subtotalNumero)); totalCarrinhoRaw = formatBRL(subtotalNumero); }
+            catch(e){ console.warn(e); }
+            console.log("[DEBUG] subtotal reconstruido:", subtotalNumero);
+        } else {
+            subtotalNumero = 0;
+            subtotalSource = "none";
+        }
+    } else {
+        subtotalNumero = parseBRL(totalCarrinhoRaw);
+        // se parse resultar 0 mas cart tem items, pode indicar formato errado; tenta rebuild para comparar
+        if (subtotalNumero === 0) {
+            const rebuilt = rebuildSubtotalFromCart();
+            if (rebuilt !== null && rebuilt > 0) {
+                console.log("[DEBUG] subtotal localStorage parse result 0 — rebuild gives:", rebuilt);
+                subtotalNumero = rebuilt;
+                subtotalSource = "rebuild_after_zero";
+                try { localStorage.setItem("totalCarrinho", formatBRL(subtotalNumero)); totalCarrinhoRaw = formatBRL(subtotalNumero); }
+                catch(e){ console.warn(e); }
+            }
+        }
+    }
+
+    // 4) parse do frete (se ainda null, força 0)
+    let freteNumero = 0;
+    if (freteRaw) freteNumero = parseBRL(freteRaw);
+    else {
+        // tenta pegar texto do elemento
+        const fromEl = freteEl ? cleanString(freteEl.textContent) : null;
+        if (fromEl) {
+            freteNumero = parseBRL(fromEl);
+            try { localStorage.setItem("valorFrete", fromEl); } catch(e){}
+            console.log("[DEBUG] frete salvo a partir do elemento:", fromEl);
+        }
+    }
+
+    // 5) logs finais antes da soma
+    console.log("[DEBUG] subtotalSource:", subtotalSource);
+    console.log("[DEBUG] totalCarrinhoRaw(final):", totalCarrinhoRaw, "→ parsed:", subtotalNumero);
+    console.log("[DEBUG] freteRaw(final):", freteRaw, "→ parsed:", freteNumero);
+
+    // 6) calcular total final
+    const totalFinal = Number(subtotalNumero || 0) + Number(freteNumero || 0);
+
+    // 7) exibir no HTML
+    // - exibir subtotal no .total-value (você pediu que o .total-value mostre o total final)
+    const totalPagamentoEl = document.querySelector(".total-value");
+    if (totalPagamentoEl) {
+        totalPagamentoEl.textContent = formatBRL(totalFinal);
+        console.log("[DEBUG] .total-value set to", formatBRL(totalFinal));
+    } else {
+        console.warn("[DEBUG] elemento .total-value não encontrado");
+    }
+
+    // exibir frete no elemento (se existir)
+    if (freteEl) {
+        freteEl.textContent = freteRaw ? freteRaw : formatBRL(freteNumero);
+    }
+
+    // exibir endereço (se existir)
+    const enderecoEl = document.getElementById("enderecoPagamento");
+    if (enderecoEl) {
+        enderecoEl.innerHTML = `
+            ${(localStorage.getItem("endereco_rua") || "")}<br>
+            ${(localStorage.getItem("endereco_bairro") || "")}<br>
+            ${(localStorage.getItem("endereco_cidade") || "")} -
+            ${(localStorage.getItem("endereco_estado") || "")}<br>
+            CEP: ${(localStorage.getItem("endereco_cep") || "")}
+        `;
+    }
+
+    // 8) debug final no console com resumo
+    console.log("[SUMMARY] subtotal:", subtotalNumero, "frete:", freteNumero, "totalFinal:", totalFinal);
+});
+</script>
+
+
+
+
+        
+
+    < <footer>
+    <div class="footer-superior-completa">
         <div class="footer-superior-esquerdo">
-          <h4 class="footer-topico">Institucional</h4>
-          <ul class="sub-topicos">
-            <li><a href="sobre.html">Sobre a empresa</a></li>
-            <li><a href="lgpd.html">Política de Privacidade</a></li>
-            <li><a href="">Termos de Uso</a></li>
-          </ul>
+            <h4 class="footer-topico">Institucional</h4>
+            <ul class="sub-topicos">
+                <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
+                <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
+                <li><a href="">Termos de Uso</a></li>
+            </ul>
         </div>
+
         <div class="footer-superior-meio">
-          <h4 class="footer-topico">Ajuda</h4>
-          <ul class="sub-topicos">
-            <li><a href="">Fale Conosco/Suporte</a></li>
-            <li><a href="">Trocas e Devoluções</a></li>
-            <li><a href="">Formas de Pagamento</a></li>
-            <li><a href="">Prazo de Entrega</a></li>
-          </ul>
+            <h4 class="footer-topico">Ajuda</h4>
+            <ul class="sub-topicos">
+                <li><a href="">Fale Conosco/Suporte</a></li>
+                <li><a href="">Trocas e Devoluções</a></li>
+                <li><a href="">Formas de Pagamento</a></li>
+                <li><a href="">Prazo de Entrega</a></li>
+            </ul>
         </div>
+
         <div class="footer-superior-direito">
-          <h4 class="footer-topico">Contato</h4>
-          <ul class="lista-contato">
-            <li>Telefone:(11) 99999-9999</li>
-            <li>Email: contato@autoexpress.com.br</li>
-            <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
-          </ul>
+            <h4 class="footer-topico">Contato</h4>
+            <ul class="lista-contato">
+                <li>Telefone: (11) 99999-9999</li>
+                <li>Email: contato@autoexpress.com.br</li>
+                <li>Horário: Seg a Sex, das 8h às 18h</li>
+            </ul>
         </div>
-      </div>
-      <hr class="footer-divisao" />
-      <div class="footer-inferior-completa">
+    </div>
+
+    <hr class="footer-divisao" />
+
+    <div class="footer-inferior-completa">
         <div class="footer-inferior-esquerdo">
-          <h4 class="footer-topico">Meios de pagamento:</h4>
-          <figure class="image-pag">
-            <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
-            <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
-            <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
-
-          </figure>
+            <h4 class="footer-topico">Meios de pagamento:</h4>
+            <figure class="image-pag">
+                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+                <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+            </figure>
         </div>
+
         <div class="footer-inferior-direito">
-          <h4 class="footer-topico">Redes Sociais</h4>
-          <div class="espacamento-icone-sociais">
-            <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
-
-          </div>
+            <h4 class="footer-topico">Redes Sociais</h4>
+            <figure class="image-rede-sociais">
+                <img src="../images/logo-facebook.png" alt="facebook-logo">
+                <img src="../images/logo-instagram.png" alt="instagram-logo">
+                <img src="../images/logo-whatsapp.png" alt="whatsapp-logo">
+            </figure>
         </div>
-      </div>
+    </div>
 
-      <div class="footer-creditos">
+    <div class="footer-creditos">
         <p>Creditos</p>
-      </div>
-    </footer>
+    </div>
+</footer>
 </body>
+</html>

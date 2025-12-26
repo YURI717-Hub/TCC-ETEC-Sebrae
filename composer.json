@@ -1,0 +1,6 @@
+{
+    "require": {
+        "mpdf/qrcode": "^1.2",
+        "setasign/fpdf": "^1.8"
+    }
+}

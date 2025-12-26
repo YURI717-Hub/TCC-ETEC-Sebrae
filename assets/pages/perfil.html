@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AutopeçasExpress - Minha Conta</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/headerfooter.css">
   <script src="../js/menu.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -12,45 +12,51 @@
   <link rel="stylesheet" href="../css/perfil.css"/>
 </head>
 
-<header class="navbar">
+ <header>
+  <div class="navbar">
+
     <div class="header-linear-content">
-      <a href="/autopecas_express/home.html">
-        <h1 class="logo">AutoPeças <span>Express</span></h1>
+
+      <a href="../../home.html">
+        <h1 class="logo"> AutoPeças <span> Express </span></h1>
       </a>
-  
+
       <nav>
         <ul>
           <li><a href="perfil.html">Meu Perfil</a></li>
-          <li><a href="./produto.html">Produtos</a></li>
-          <li><a href="./sobre.html">Sobre</a></li>
+          <li><a href="produto.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
         </ul>
       </nav>
-  
-      <div class="pesquisa">
-        <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?">
 
-      </div>
-  
-      <div class="icons-login">
+      
+
+      <!-- NOVO AGRUPAMENTO FLEX PARA CARRINHO + LOGIN + MENU -->
+      <div class="right-items">
+
         <figure class="nav-icon-container">
-          <a href="./carrinho.html">
-            <img src="../images/carrinho.png" alt="Carrinho">
+          <a href="carrinho.html">
+            <img src="../images/carrinho.png" alt="">
           </a>
         </figure>
-  
-        <ul class="login">
-          <li><a href="./login.html">Entrar</a></li>
-          <li><a href="./cadastro.html">Cadastro</a></li>
-        </ul>
-  
-        <figure>
-          <img src="assets/images/menu.png" alt="Menu" class="menu-button">
-        </figure>
-      </div>
-    </div>
-  </header>
-  
 
+        <ul class="login">
+          <li><a href="login.html">Entrar</a></li>
+          <li>|</li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+
+        <figure>
+          <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
+        </figure>
+
+      </div>
+
+    </div>
+
+  </div>
+</header>
+<br><br><br>
 <body>
     <div class="container flex min-h-screen"> 
   
@@ -83,7 +89,7 @@
         </div>
   
         <button class="botao-sair">
-          <a href="/autopecas_express/home.html"><span class="material-symbols-outlined">logout</span> Sair</a>
+          <a href="../../home.html"><span class="material-symbols-outlined">logout</span> Sair</a>
         </button>
       </aside>
   
@@ -166,63 +172,158 @@
 
 
       </main>
+     
+     <script type="module">
+    import { auth, db } from "../js/firebaseConfig.js";
+    import { 
+        onAuthStateChanged,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    import { 
+        ref, get, set, update
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    const nomeInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const enderecoInput = document.getElementById("tetx");
+    const btnSalvar = document.querySelector(".btnsalvar");
+
+    const btnSair = document.querySelector(".botao-sair"); // ⬅ botão de sair
+
+    let userUID = null;
+
+    // ================================
+    // 🔥 QUANDO O USUÁRIO ESTÁ LOGADO
+    // ================================
+    onAuthStateChanged(auth, async (user) => {
+        if (!user) {
+            window.location.href = "login.html";
+            return;
+        }
+
+        userUID = user.uid;
+        emailInput.value = user.email;
+
+        // 📌 BUSCAR DADOS EM usuarios/UID/dados
+        const userRef = ref(db, "usuarios/" + userUID + "/dados");
+        const snap = await get(userRef);
+
+        if (snap.exists()) {
+            const dados = snap.val();
+
+            nomeInput.value = dados.nome || "";
+            phoneInput.value = dados.telefone || "";
+            enderecoInput.value = dados.endereco || "";
+        } else {
+            nomeInput.value = "";
+        }
+    });
+
+    // ================================
+    // 🔥 SALVAR ALTERAÇÕES
+    // ================================
+    btnSalvar.addEventListener("click", async () => {
+        if (!userUID) {
+            alert("Erro: usuário não identificado.");
+            return;
+        }
+
+        const userRef = ref(db, "usuarios/" + userUID + "/dados");
+
+        const dadosAtualizados = {
+            nome: nomeInput.value,
+            telefone: phoneInput.value,
+            endereco: enderecoInput.value,
+            email: emailInput.value
+        };
+
+        try {
+            await update(userRef, dadosAtualizados);
+            alert("Dados salvos com sucesso!");
+        } catch (error) {
+            console.log(error);
+            alert("Erro ao salvar dados: " + error.message);
+        }
+    });
+
+    // ================================
+    // 🔥 SAIR DA CONTA
+    // ================================
+    btnSair.addEventListener("click", async () => {
+        try {
+            await signOut(auth);
+            alert("Você saiu da conta.");
+            window.location.href = "../../home.html"; 
+        } catch (error) {
+            console.error("Erro ao sair:", error);
+            alert("Erro ao sair da conta.");
+        }
+    });
+
+</script>
+
   
     </div>
   </body>
   
   
-  <footer>
+   <footer>
     <div class="footer-superior-completa">
-      <div class="footer-superior-esquerdo">
-        <h4 class="footer-topico">Institucional</h4>
-        <ul class="sub-topicos">
-          <li><a href="sobre.html">Sobre a empresa</a></li>
-          <li><a href="lgpd.html">Política de Privacidade</a></li>
-          <li><a href="">Termos de Uso</a></li>
-        </ul>
-      </div>
-      <div class="footer-superior-meio">
-        <h4 class="footer-topico">Ajuda</h4>
-        <ul class="sub-topicos">
-          <li><a href="">Fale Conosco/Suporte</a></li>
-          <li><a href="">Trocas e Devoluções</a></li>
-          <li><a href="">Formas de Pagamento</a></li>
-          <li><a href="">Prazo de Entrega</a></li>
-        </ul>
-      </div>
-      <div class="footer-superior-direito">
-        <h4 class="footer-topico">Contato</h4>
-        <ul class="lista-contato">
-          <li>Telefone:(11) 99999-9999</li>
-          <li>Email: contato@autoexpress.com.br</li>
-          <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
-        </ul>
-      </div>
-    </div>
-    <hr class="footer-divisao" />
-    <div class="footer-inferior-completa">
-      <div class="footer-inferior-esquerdo">
-        <h4 class="footer-topico">Meios de pagamento:</h4>
-        <figure class="image-pag">
-          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
-          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
-          <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
-
-        </figure>
-      </div>
-      <div class="footer-inferior-direito">
-        <h4 class="footer-topico">Redes Sociais</h4>
-        <div class="espacamento-icone-sociais">
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" /></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube" /></a>
-
+        <div class="footer-superior-esquerdo">
+            <h4 class="footer-topico">Institucional</h4>
+            <ul class="sub-topicos">
+                <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
+                <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
+                <li><a href="">Termos de Uso</a></li>
+            </ul>
         </div>
-      </div>
+
+        <div class="footer-superior-meio">
+            <h4 class="footer-topico">Ajuda</h4>
+            <ul class="sub-topicos">
+                <li><a href="">Fale Conosco/Suporte</a></li>
+                <li><a href="">Trocas e Devoluções</a></li>
+                <li><a href="">Formas de Pagamento</a></li>
+                <li><a href="">Prazo de Entrega</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-superior-direito">
+            <h4 class="footer-topico">Contato</h4>
+            <ul class="lista-contato">
+                <li>Telefone: (11) 99999-9999</li>
+                <li>Email: contato@autoexpress.com.br</li>
+                <li>Horário: Seg a Sex, das 8h às 18h</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="footer-divisao" />
+
+    <div class="footer-inferior-completa">
+        <div class="footer-inferior-esquerdo">
+            <h4 class="footer-topico">Meios de pagamento:</h4>
+            <figure class="image-pag">
+                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+                <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+            </figure>
+        </div>
+
+        <div class="footer-inferior-direito">
+            <h4 class="footer-topico">Redes Sociais</h4>
+            <figure class="image-rede-sociais">
+                <img src="../images/logo-facebook.png" alt="facebook-logo">
+                <img src="../images/logo-instagram.png" alt="instagram-logo">
+                <img src="../images/logo-whatsapp.png" alt="whatsapp-logo">
+            </figure>
+        </div>
     </div>
 
     <div class="footer-creditos">
-      <p>Creditos</p>
+        <p>Creditos</p>
     </div>
-  </footer>
+</footer>
 </html>

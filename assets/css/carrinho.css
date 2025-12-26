@@ -1,30 +1,93 @@
-
 /*INICIO CÓDIGO - CARRINHO*/
 
-body{
-  background-color: #f0ebeb;
+body {
+  background-color: #fff;
 }
 .cart-table {
-  width: 100%;
-  border-collapse: collapse;
+  width: 70%;
+  margin-right: 5%;
+  margin-left: 1%;
+  border: solid 1px #000;
+  border-radius: 9px;
+}
+.Sub {
+  text-align: left;
+}
+.cupom-Des {
+  border: #000 solid 1px;
+  border-radius: 9px;
+  padding: 3%;
+  margin-right: 30%;
+  margin-left: 4%;
+}
+.cupom {
+  border-radius: 999px;
+  padding: 3%;
+}
+.hed-fre {
+  display: flex;
+}
+.hed-fre img {
+  margin-right: 10px;
+}
+.des-fre {
+  margin-left: 75%;
+}
+.Frete {
+  border: #000 solid 1px;
+  margin-right: 30%;
+  padding: 3%;
+  margin-left: 4%;
+  margin-top: 4%;
+  border-radius: 9px;
+}
+.input {
+  background-color: #ff2134;
+  padding: 3%;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+}
+.input:hover {
+  background-color: #000;
+  border: #ff2134 solid 1px;
+  color: #Fff;
+}
+.result {
+  border: #000 solid 1px;
+  border-radius: 9px;
+  padding: 1%;
+  height: 10%;
+  display: block;
 }
 
 .head-item {
-  text-align: start;
-  border-bottom: 0.1rem solid #2c2c2c;
   padding-bottom: 6px;
   text-transform: uppercase;
 }
 
+.cart-int {
+  display: flex;
+}
+.caminho-ativo-P {
+  padding: 15px 20px;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.qtd-rem {
+  text-align: center;
+}
+
+.col-1,
 .col-2,
 .col-3 {
   width: 26%;
+  text-align: center;
 }
-
 
 .cart-product td {
   padding: 8px 0;
-
 }
 
 .product-indentification {
@@ -35,18 +98,17 @@ body{
 .product-imagem {
   width: 120px;
   height: 70px;
-
 }
 
 .product-title {
   margin-left: 16px;
-  font-size: 1.2rem;
-  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .product-price {
-  font-family: 'Roboto', sans-serif;
-
+  font-family: "Roboto", sans-serif;
+  text-align: center;
 }
 
 .product-qtd {
@@ -55,24 +117,8 @@ body{
   border-radius: 6px;
   border: 2px solid #000000;
   text-align: center;
-  background-color: #f0ebeb;
-}
-
-.remove-button {
-  color: #fff;
-  background-color:  #8F0700;
-  border-radius: 6px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: 0.2s;
-
-
-
-}
-
-.remove-button:hover {
-  background-color: #ffff;
-  color: #8F0700;
+  background-color: #fff;
+  border: none;
 }
 
 .total {
@@ -85,7 +131,6 @@ body{
 
 .total strong {
   margin-right: 12px;
-
 }
 
 .final-button button a {
@@ -93,33 +138,206 @@ body{
 }
 
 .final-button {
-  background-color:#8F0700;
+  background-color: #8f0700;
   border: none;
   cursor: pointer;
-  padding: 0.8rem 3.8rem;
+  padding: 1rem 3.8rem;
   color: #fff;
   font-size: 1.2rem;
   border-radius: 6px;
   margin: 0 auto;
   display: flex;
   margin-bottom: 12rem;
-
+}
+.final-button button a:hover{
+  color: #8f0700;
+}
+.final-button:hover {
+  background-color: #fff;
+  color: #8f0700;
+  border: 1px solid ;
+  transition: 0.2s;
+}
+.final-button {
+  position: relative;
+  padding: 1%;
+  padding-left: 8%;
+  padding-right: 8%;
+  background-color: #8f0700;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
+/* Brilho animado */
+.final-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  transform: rotate(45deg);
+  animation: brilho 2s infinite;
+}
 
-.final-button:hover {
-  background-color: #000000;
-  border: 1px solid #8F0700;
-  transition: 0.2s;
+@keyframes brilho {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
 }
 
 .final-button a:hover {
-  color: #8F0700;
+  color: #8f0700;
 }
 
-a{
+a {
   text-decoration: none;
   color: #ffffff;
 }
+.carrinho-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Produtos ocupam 70% */
+.produtos-container {
+  width: 70%;
+}
+
+/* Lado direito fixo */
+.lado-direito {
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: sticky;
+  top: 20px; /* fixa na tela ao rolar */
+}
+
+/* Caixa padrão */
+.lado-direito > div {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Input + botão */
+.lado-direito input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.lado-direito button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #8f0700;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.lado-direito button:hover {
+  background-color: #c11313;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .carrinho-container {
+    flex-direction: column;
+  }
+  .produtos-container,
+  .lado-direito {
+    width: 100%;
+  }
+}
+
+.op-fre {
+  width: 25%;
+  padding: 15px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 70%;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Cada opção de frete */
+.op-fre .demo,
+.op-fre .rap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  transition: 0.2s ease;
+}
+.flex{
+  display: flex;
+  width: 100%;
+  height: 50%;
+}
+.rap{
+ margin-top: 2%;
+}
+.op-fre{
+  display: none;
+}
+
+.op-fre .demo:hover,
+.op-fre .rap:hover {
+  background: #f0f8ff;
+  border-color: #2c2c2c;
+}
+
+
+/* Texto */
+.op-fre label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input radio */
+.op-fre input[type="radio"] {
+  accent-color: #ff2134;
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+/* Valor do frete */
+#val-frete {
+  font-size: 16px;
+  font-weight: bold;
+  color: #009900;
+}
+.val-frete1{
+  font-size: 16px;
+  font-weight: bold;
+  color: #009900;
+}
+
 
 /*FIM CÓDIGO - CARRINHO*/

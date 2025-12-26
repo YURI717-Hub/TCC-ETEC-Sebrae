@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="../css/publicar.css">
+    <link rel="stylesheet" href="../css/headerfooter.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar | Ecommercer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="../js/menu.js"></script>
+    <script src="../js/publicar.js"></script>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+/* Container ocupa toda a largura da tela */
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    margin-top: 5%;
+}
+
+/* Sidebar normal, que rola junto com a página */
+.sidebar {
+    width: 260px;
+    background: #2c2c2c;
+    color: #ffffff;
+    padding: 20px 0;
+    position: relative;
+    height: auto;
+}
+
+/* Conteúdo ocupa todo o resto da tela */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.menu li a {
+    display: block;
+    padding: 14px 25px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: 0.3s;
+   
+}
+.menu li{
+   list-style: none;
+}
+
+.menu a:hover,
+.menu a.active {
+    background: #8F0700;
+}
+
+.logout {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.logout a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: inline-block;
+    background: #8F0700;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.logout a:hover {
+    background: #6a0500;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+  <div class="navbar">
+
+    <div class="header-linear-content">
+
+      <a href="../../home.html">
+        <h1 class="logo"> AutoPeças <span> Express </span></h1>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="perfil.html">Meu Perfil</a></li>
+          <li><a href="produto.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+
+      
+
+      <!-- NOVO AGRUPAMENTO FLEX PARA CARRINHO + LOGIN + MENU -->
+      <div class="right-items">
+
+        <figure class="nav-icon-container">
+          <a href="carrinho.html">
+            <img src="../images/carrinho.png" alt="">
+          </a>
+        </figure>
+
+        <ul class="login">
+          <li><a href="login.html">Entrar</a></li>
+          <li>|</li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+
+        <figure>
+          <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
+        </figure>
+
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+   <div class="container">
+
+     <aside class="sidebar">
+        <h2>Fornecedor</h2>
+
+        <ul class="menu">
+            <li><a href="perfilFornecedor.html">Perfil</a></li>
+            <li><a href="publicar.html" class="active">Cadastar Peças</a></li>
+            <li><a href="estoque.html">Estoque</a></li>
+            <li><a href="#">Vendas</a></li>
+            <li><a href="#">Configurações</a></li>
+        </ul>
+
+        <div class="logout">
+            <a href="#">Sair</a>
+        </div>
+    </aside>
+       <main class="cadastro-produto">
+        <h2 class="titulo">Cadastro de Produto</h2>
+        <div class="info-bas">
+            <h3>Informações do Produto</h3>
+            <p class="aviso">Imagens do Produto (até 9)</p>
+            <div class="upload-area" onclick="document.getElementById('imageInput').click()">
+                <img src="../images/updload.png" alt="Upload" width="40">
+                <p>Adicionar Imagem (<span id="count">0</span>/9)</p>
+            </div>
+            <input type="file" id="imageInput" accept="image/*" multiple style="display:none">
+            <div class="preview" id="preview"></div>
+            <div class="alerta-fundo">
+                Envie fotos com <b>fundo branco</b> ou <b>transparente</b> para melhor apresentação dos produtos.
+            </div>
+            <div class="form-group">
+                <label for="produto-nome">Nome do Produto</label>
+                <input type="text" id="produto-nome" placeholder="Ex: Palheta Limpador Dianteiro Trico 16”">
+                <label for="categoria">Categoria</label>
+                <input type="text" id="categoria" placeholder="Ex: Acessórios, Suspensão...">
+                <label for="marca">Fabricante</label>
+                <input type="text" id="marca" placeholder="Ex: Bosch, Nakata, Osram">
+                <label for="preco">Preço (R$)</label>
+                <input type="number" id="preco" step="0.01" placeholder="Ex: 99.90">
+                <label for="GTIN">GTIN (EAN)</label>
+                <input type="text" id="GTIN" placeholder="Ex: 7891234567890">
+                <label for="estoque">Estoque</label>
+                <input type="number" id="estoque" placeholder="Ex: 10">
+                <label for="descricao-prod">Descrição do Produto</label>
+                <textarea id="descricao-prod" placeholder="Descreva o produto com detalhes..."></textarea>
+            </div>
+        </div>
+        <div class="footer-main">
+            <button class="button cancelar">Cancelar</button>
+            <button class="button publicar">Salvar e Publicar</button>
+        </div>
+       
+       </main>
+   </div>
+
+
+
+
+    <footer>
+        <div class="footer-superior-completa">
+            <div class="footer-superior-esquerdo">
+                <h4 class="footer-topico">Institucional</h4>
+                <ul class="sub-topicos">
+                    <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
+                    <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
+                    <li><a href="">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="footer-superior-meio">
+                <h4 class="footer-topico">Ajuda</h4>
+                <ul class="sub-topicos">
+                    <li><a href="">Fale Conosco/Suporte</a></li>
+                    <li><a href="">Trocas e Devoluções</a></li>
+                    <li><a href="">Formas de Pagamento</a></li>
+                    <li><a href="">Prazo de Entrega</a></li>
+                </ul>
+            </div>
+            <div class="footer-superior-direito">
+                <h4 class="footer-topico">Contato</h4>
+                <ul class="lista-contato">
+                    <li>Telefone:(11) 99999-9999</li>
+                    <li>Email: contato@autoexpress.com.br</li>
+                    <li>Horario de atendimento: Seg a Sex, das 8h às 18h</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="footer-divisao" />
+        <div class="footer-inferior-completa">
+            <div class="footer-inferior-esquerdo">
+                <h4 class="footer-topico">Meios de pagamento:</h4>
+                <figure class="image-pag">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+                    <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+
+                </figure>
+            </div>
+            <div class="footer-inferior-direito">
+                <h4 class="footer-topico">Redes Sociais</h4>
+                <div class="espacamento-icone-sociais">
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png"
+                            alt="Facebook" /></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png"
+                            alt="Instagram" /></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png"
+                            alt="YouTube" /></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-creditos">
+            <p>Créditos</p>
+        </div>
+    </footer>
+<script>
+const imageInput = document.getElementById('imageInput');
+const preview = document.getElementById('preview');
+const countDisplay = document.getElementById('count');
+let imageCount = 0;
+
+// Função que redimensiona a imagem para 225x225
+function redimensionar(file, callback) {
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        img.src = e.target.result;
+    };
+
+    img.onload = function () {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = 225;
+        canvas.height = 225;
+
+        // Mantém proporção sem distorcer (centraliza)
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, 225, 225);
+
+        const ratio = Math.min(225 / img.width, 225 / img.height);
+        const newWidth = img.width * ratio;
+        const newHeight = img.height * ratio;
+
+        const x = (225 - newWidth) / 2;
+        const y = (225 - newHeight) / 2;
+
+        ctx.drawImage(img, x, y, newWidth, newHeight);
+
+        canvas.toBlob(function (blob) {
+            callback(blob);
+        }, "image/jpeg", 0.9);
+    };
+
+    reader.readAsDataURL(file);
+}
+
+imageInput.addEventListener('change', function () {
+    const files = Array.from(imageInput.files);
+    const remainingSlots = 9 - imageCount;
+
+    const filesToAdd = files.slice(0, remainingSlots);
+
+    filesToAdd.forEach(file => {
+        redimensionar(file, function (blob) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.width = "225px";
+                img.style.height = "225px";
+                img.style.objectFit = "cover";
+                preview.appendChild(img);
+            };
+            reader.readAsDataURL(blob);
+        });
+
+        imageCount++;
+    });
+
+    countDisplay.textContent = imageCount;
+    imageInput.value = "";
+});
+</script>
+
+</body>
+
+</html>

@@ -271,6 +271,73 @@
   color: #888;
   font-style: italic;
 }
+/* Container da lista de produtos */
+.products-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada item da lista com estilo parecido com .product-total */
+.products-list li.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0; /* mesmo fundo do subtotal */
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem; /* espaçamento entre produtos */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Imagem do produto */
+.products-list li.product-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Nome do produto */
+.products-list li.product-item strong {
+    flex: 1;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Preço unitário */
+.products-list li.product-item span {
+    font-weight: bold;
+    color: #4AC741; /* mesmo verde do total-value */
+}
+
+/* Subtotal container */
+.product-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    padding: 0.75rem;
+    background-color: #f0f0f0; 
+    border-radius: 8px;
+}
+
+/* Label do subtotal */
+.total-label {
+    color: #666;
+}
+
+/* Valor do subtotal */
+.total-value {
+    color: #4AC741;
+}
+
 
 .valor {
   color: #4AC741; 

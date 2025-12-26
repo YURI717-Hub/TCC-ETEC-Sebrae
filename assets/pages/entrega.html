@@ -5,50 +5,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bem Vindo - Auto Peças Express</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/headerfooter.css">
   <link rel="stylesheet" href="../css/entrega.css">
-  <script src="../js/menu.js"></script>
+
 </head>
 
 <body>
   <header>
-    <div class="navbar">
-      <div class="header-linear-content">
-        <a href="../../home.html">
-          <h1 class="logo">AutoPeças <span>Express</span></h1>
-        </a>
-        <nav>
-          <ul>
-            <li><a href="../pages/perfil.html">Meu Perfil</a></li>
-            <li><a href="../pages/produto.html">Produtos</a></li>
-            <li><a href="../pages/sobre.html">Sobre</a></li>
-          </ul>
-        </nav>
+  <div class="navbar">
 
-        <div class="pesquisa">
-          <input type="text" class="busca-input" placeholder="Qual Peça esta Procurando?">
-          
-        </div>
-        <div>
-          <figure class="nav-icon-container">
-            <a href="./carrinho.html"><img src="../images/carrinho.png" alt="Carrinho de compras"></a>
-          </figure>
+    <div class="header-linear-content">
 
+      <a href="../../home.html">
+        <h1 class="logo"> AutoPeças <span> Express </span></h1>
+      </a>
 
-          <ul class="login">
-            <li><a href="../pages/login.html">Entrar</a></li>
-            <li>|</li>
-            <li><a href="../pages/cadastro.html">Cadastro</a></li>
+      <nav>
+        <ul>
+          <li><a href="perfil.html">Meu Perfil</a></li>
+          <li><a href="produto.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
 
-          </ul>
-          <figure>
-            <img onload="menu();" src="../images/menu.png" alt="Menu de navegação" class="menu-button">
-          </figure>
-        </div>
+      
+
+      <!-- NOVO AGRUPAMENTO FLEX PARA CARRINHO + LOGIN + MENU -->
+      <div class="right-items">
+
+        <figure class="nav-icon-container">
+          <a href="carrinho.html">
+            <img src="../images/carrinho.png" alt="">
+          </a>
+        </figure>
+
+        <ul class="login">
+          <li><a href="login.html">Entrar</a></li>
+          <li>|</li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+
+        <figure>
+          <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
+        </figure>
+
       </div>
-    </div>
-  </header>
 
+    </div>
+
+  </div>
+</header>
+<br><br><br>
   <div class="caminho-ativo-E">
     <span>Carrinho ></span>
     <span>Identificação ></span>
@@ -63,20 +70,18 @@
     <div class="entrega-box-entrega">
       <div class="coluna-esquerda-entrega">
 
-        <div class="radio-group-E">
-          <input type="radio" id="receber" name="tipo-entrega" checked>
-          <label for="receber">Receber Entrega</label>
-        </div>
-
+       
         <div class="endereco">
           <p><strong>Endereço Selecionado</strong>
             <span class="link" onclick="toggleNovoEndereco()">inserir novo endereço</span>
           </p>
-          <p>Fulano de TAL</p>
-          <p>Rua Andaraí, 839</p>
-          <p>Vila Maria</p>
-          <p>São Paulo - SP</p>
-          <p>CEP: 02117-000</p>
+  
+             <p class="ende" id="rua"></p>
+             <p class="ende" id="bairro"></p>
+             <p class="ende" id="cidade"></p>
+             <p class="ende" id="estado"></p>
+            
+
 
           <!-- Formulário Novo Endereço  -->
           <div id="novo-endereco" style="display: none;">
@@ -96,29 +101,25 @@
         <div class="opcao-entrega">
           <div>
             <p><i class="fas fa-truck"></i> <strong>Entrega Normal</strong></p>
-            <p>R$ 26,00</p>
-            <p>5 A 7 DIAS ÚTEIS</p>
+            <p id="frete-standard"></p>
+            <p>5 A 7 DIAS ÚTEIs</p>
           </div>
-          <input type="radio" name="frete" checked>
+          <input type="radio" name="frete"  id="normal">
         </div>
 
         <div class="opcao-entrega">
           <div>
             <p><i class="fas fa-shipping-fast"></i> <strong>Entrega Rápida</strong></p>
-            <p>R$ 43,00</p>
+            
+            <p id="frete-sedex"></p>
             <p>2 DIAS ÚTEIS</p>
           </div>
-          <input type="radio" name="frete">
+          <input type="radio" name="frete" id="rapida">
         </div>
+          
+ 
 
-        <!-- Campo para Cupom de Desconto  -->
-        <div class="cupom-desconto">
-          <input type="text" placeholder="Código do Cupom" id="cupom">
-          <button onclick="aplicarCupom()">Aplicar</button>
-          <p id="mensagem-cupom"></p>
-        </div>
-
-        <button class="botao-avancar"><a href="pagamento.html">AVANÇAR</a></button>
+        <button class="botao-avancar" onclick="return validarFrete()"><a href="pagamento.html">AVANÇAR</a></button>
       </div>
     </div>
 
@@ -130,59 +131,164 @@
     </div>
   </main>
 
-  
   <footer>
     <div class="footer-superior-completa">
-      <div class="footer-superior-esquerdo">
-        <h4 class="footer-topico">Institucional</h4>
-        <ul class="sub-topicos">
-          <li><a href="sobre.html">Sobre a empresa</a></li>
-          <li><a href="lgpd.html">Política de Privacidade</a></li>
-          <li><a href="">Termos de Uso</a></li>
-        </ul>
-      </div>
-      <div class="footer-superior-meio">
-        <h4 class="footer-topico">Ajuda</h4>
-        <ul class="sub-topicos">
-          <li><a href="">Fale Conosco/Suporte</a></li>
-          <li><a href="">Trocas e Devoluções</a></li>
-          <li><a href="">Formas de Pagamento</a></li>
-          <li><a href="">Prazo de Entrega</a></li>
-        </ul>
-      </div>
-      <div class="footer-superior-direito">
-        <h4 class="footer-topico">Contato</h4>
-        <ul class="lista-contato">
-          <li>Telefone: (11) 99999-9999</li>
-          <li>Email: contato@autoexpress.com.br</li>
-          <li>Horário de atendimento: Seg a Sex, das 8h às 18h</li>
-        </ul>
-      </div>
-    </div>
-    <hr class="footer-divisao">
-    <div class="footer-inferior-completa">
-      <div class="footer-inferior-esquerdo">
-        <h4 class="footer-topico">Meios de pagamento:</h4>
-        <figure class="image-pag">
-          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
-          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard">
-          <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix">
-        </figure>
-      </div>
-      <div class="footer-inferior-direito">
-        <h4 class="footer-topico">Redes Sociais</h4>
-        <div class="espacamento-icone-sociais">
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook.png" alt="Facebook"></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram"></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/youtube-play.png" alt="YouTube"></a>
+        <div class="footer-superior-esquerdo">
+            <h4 class="footer-topico">Institucional</h4>
+            <ul class="sub-topicos">
+                <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
+                <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
+                <li><a href="">Termos de Uso</a></li>
+            </ul>
         </div>
-      </div>
+
+        <div class="footer-superior-meio">
+            <h4 class="footer-topico">Ajuda</h4>
+            <ul class="sub-topicos">
+                <li><a href="">Fale Conosco/Suporte</a></li>
+                <li><a href="">Trocas e Devoluções</a></li>
+                <li><a href="">Formas de Pagamento</a></li>
+                <li><a href="">Prazo de Entrega</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-superior-direito">
+            <h4 class="footer-topico">Contato</h4>
+            <ul class="lista-contato">
+                <li>Telefone: (11) 99999-9999</li>
+                <li>Email: contato@autoexpress.com.br</li>
+                <li>Horário: Seg a Sex, das 8h às 18h</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="footer-divisao" />
+
+    <div class="footer-inferior-completa">
+        <div class="footer-inferior-esquerdo">
+            <h4 class="footer-topico">Meios de pagamento:</h4>
+            <figure class="image-pag">
+                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+                <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+            </figure>
+        </div>
+
+        <div class="footer-inferior-direito">
+            <h4 class="footer-topico">Redes Sociais</h4>
+            <figure class="image-rede-sociais">
+                <img src="../images/logo-facebook.png" alt="facebook-logo">
+                <img src="../images/logo-instagram.png" alt="instagram-logo">
+                <img src="../images/logo-whatsapp.png" alt="whatsapp-logo">
+            </figure>
+        </div>
     </div>
 
     <div class="footer-creditos">
-      <p>Créditos</p>
+        <p>Creditos</p>
     </div>
-  </footer>
+</footer>
 
+    
+
+  <script type="module">
+
+
+window.onload = function () {
+    const cep = localStorage.getItem("cepUsuario");
+
+    if (cep) {
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.erro) {
+                    document.getElementById("rua").textContent = data.logradouro;
+                    document.getElementById("bairro").textContent = data.bairro;
+                    document.getElementById("cidade").textContent = data.localidade;
+                    document.getElementById("estado").textContent = data.uf;
+
+                    // ================================
+                    // SALVAR ENDEREÇO NO LOCALSTORAGE
+                    // ================================
+                    localStorage.setItem("endereco_rua", data.logradouro);
+                    localStorage.setItem("endereco_bairro", data.bairro);
+                    localStorage.setItem("endereco_cidade", data.localidade);
+                    localStorage.setItem("endereco_estado", data.uf);
+                    localStorage.setItem("endereco_cep", cep);
+                }
+            });
+    }
+
+};
+
+
+// =====================
+// PEGAR FRETE NO FIREBASE
+// =====================
+import { db, ref, get } from "../js/firebaseConfig.js";
+
+const fretesRef = ref(db, "fretes");
+
+get(fretesRef).then(snapshot => {
+
+    if (!snapshot.exists()) {
+        console.log("nenhum frete encontrado");
+        return;
+    }
+
+    const fretes = snapshot.val();
+
+    const sedexPreco = fretes.sedex.preco;
+    const standardPreco = fretes.standard.preco;
+
+    document.getElementById("frete-standard").textContent = `R$ ${standardPreco}`;
+    document.getElementById("frete-sedex").textContent = `R$ ${sedexPreco}`;
+
+    marcarFreteSalvo();
+});
+
+
+// =====================
+// SALVAR FRETE
+// =====================
+function salvarFrete(idRadio) {
+
+    const valor = 
+        idRadio === "normal"
+            ? document.getElementById("frete-standard").textContent.trim()
+            : document.getElementById("frete-sedex").textContent.trim();
+
+    localStorage.setItem("freteSelecionado", idRadio);
+    localStorage.setItem("valorFrete", valor);
+
+    console.log("Frete salvo:", idRadio, valor);
+}
+
+
+// =====================
+// MARCAR RADIO SALVO
+// =====================
+function marcarFreteSalvo() {
+    const salvo = localStorage.getItem("freteSelecionado");
+
+    if (!salvo) return;
+
+    const radio = document.getElementById(salvo);
+
+    if (radio) {
+        radio.checked = true;
+        console.log("Marcado automaticamente:", salvo);
+    }
+}
+
+
+// Detectar alterações e salvar
+document.getElementById("normal").addEventListener("change", () => salvarFrete("normal"));
+document.getElementById("rapida").addEventListener("change", () => salvarFrete("rapida"));
+
+
+
+</script>
+<script src="../js/menu.js"></script>
 </body>
 </html>

@@ -9,8 +9,7 @@ function menu(){
 
 
 // pagina de pagamento ( formulario )
-
-  document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
    var modal = document.getElementById('modal');
    var btnCredito = document.querySelector('.btn.credito');
    var span = document.getElementsByClassName('close')[0];
@@ -32,7 +31,7 @@ function menu(){
           modal.style.display = 'none';
       }
   }
-  // Enviar formulário cartao de credito
+  // Enviar formulário
   form.onsubmit = function(e) {
       e.preventDefault();
 
@@ -104,91 +103,51 @@ function filtrarProdutos() {
         });
       });
 
-      // pagina meu perfil
-      
 
 
-      document.addEventListener('DOMContentLoaded', function() {
-        const buttons = document.querySelectorAll('.add-to-cart');
-        
-        buttons.forEach(button => {
-            button.addEventListener('click', function() {
 
-              const messageDiv = document.createElement('div');
-                messageDiv.textContent = 'FOI ADICIONADO AO CARRINHO!';
-                messageDiv.style.position = 'fixed';
-                messageDiv.style.top = '20px';
-                messageDiv.style.right = '20px';
-                messageDiv.style.backgroundColor = 'green';
-                messageDiv.style.color = 'white';
-                messageDiv.style.padding = '10px';
-                messageDiv.style.borderRadius = '5px';
-                messageDiv.style.zIndex = '1000';
-                
-                document.body.appendChild(messageDiv);
-                
-                // Remove a mensagem após 3 segundos
-                setTimeout(() => {
-                    messageDiv.remove();
-                }, 6000);
-            });
-        });
+
+
+
+
+
+
+
+
+
+
+      // Array com as URLs das imagens de fundo (adicione quantas quiser)
+  
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleAdvanced = document.getElementById('toggle-advanced');
+    const advancedFilters = document.getElementById('advanced-filters');
+    const searchBtn = document.getElementById('search-btn');
+
+    // Toggle para filtros avançados
+    toggleAdvanced.addEventListener('click', function() {
+      if (advancedFilters.style.display === 'none' || advancedFilters.style.display === '') {
+        advancedFilters.style.display = 'block';
+        toggleAdvanced.innerHTML = 'Menos filtros <i class="fas fa-chevron-up"></i>';
+      } else {
+        advancedFilters.style.display = 'none';
+        toggleAdvanced.innerHTML = 'Mais filtros <i class="fas fa-chevron-down"></i>';
+      }
     });
 
+    // Simulação de busca (substitua por sua lógica real)
+    searchBtn.addEventListener('click', function() {
+      const query = document.getElementById('search-input').value;
+      const categoria = document.getElementById('categoria').value;
+      const marca = document.getElementById('marca').value;
+      const modelo = document.getElementById('modelo').value;
+      const localizacao = document.getElementById('localizacao').value;
+      const preco = document.getElementById('preco').value;
+      const condicao = document.getElementById('condicao').value;
 
-    // pagina entrega
-  
-  
-    function toggleNovoEndereco() {
-      const div = document.getElementById('novo-endereco');
-      div.style.display = div.style.display === 'none' ? 'block' : 'none';
-    }
-
-    function aplicarCupom() {
-      const cupom = document.getElementById('cupom').value;
-      const msg = document.getElementById('mensagem-cupom');
-      if (cupom === 'DESCONTO10') {
-        msg.textContent = 'Cupom aplicado! Desconto de R$ 10.';
-        msg.style.color = 'green';
-      } else {
-        msg.textContent = 'Cupom inválido.';
-        msg.style.color = 'red';
-      }
-    }
+      alert(`Buscando: ${query}\nCategoria: ${categoria}\nMarca: ${marca}\nModelo: ${modelo}\nLocalização: ${localizacao}\nPreço: ${preco}\nCondição: ${condicao}`);
+    });
+  });
 
 
-// pagina identificacao//
-
- // Função para o menu (igual ao anterior)
- document.getElementById('menuButton').addEventListener('load', menu);
-
- // Novo: Redirecionamento ao submeter o formulário de login
- document.getElementById('loginForm').addEventListener('submit', function(event) {
-     event.preventDefault(); // Impede o reload da página
-
-     // Validação simples (opcional): Verifica se os campos estão preenchidos
-     const email = document.getElementById('email').value.trim();
-     const senha = document.getElementById('senha').value.trim();
-     
-     if (!email || !senha) {
-         alert('Por favor, preencha todos os campos obrigatórios.');
-         return;
-     }
-
-     // Redireciona para a página de entrega
-     window.location.href = '../pages/entrega.html'; // Ajuste o caminho se necessário
- });
-
-
-
-// pagina cadastro 
-
-function showForm(type) {
-  // Hide all forms
-  document.querySelectorAll('.form').forEach(form => form.classList.remove('active'));
-  // Show the selected form
-  document.getElementById(type + '-form').classList.add('active');
-}
-  
-
-
+      
