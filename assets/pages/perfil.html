@@ -1,329 +1,999 @@
+```html
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AutopeçasExpress - Minha Conta</title>
-  <link rel="stylesheet" href="../css/headerfooter.css">
-  <script src="../js/menu.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<html lang="pt-BR">
 
-  <link rel="stylesheet" href="../css/perfil.css"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoPeçasExpress - Minha Conta</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/headerfooter.css">
+    <link rel="stylesheet" href="../css/perfil.css">
+
+    <!-- Google Fonts / Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- JavaScript do menu -->
+    <script src="../js/menu.js" defer></script>
 </head>
 
- <header>
-  <div class="navbar">
-
-    <div class="header-linear-content">
-
-      <a href="../../home.html">
-        <h1 class="logo"> AutoPeças <span> Express </span></h1>
-      </a>
-
-      <nav>
-        <ul>
-          <li><a href="perfil.html">Meu Perfil</a></li>
-          <li><a href="produto.html">Produtos</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-        </ul>
-      </nav>
-
-      
-
-      <!-- NOVO AGRUPAMENTO FLEX PARA CARRINHO + LOGIN + MENU -->
-      <div class="right-items">
-
-        <figure class="nav-icon-container">
-          <a href="carrinho.html">
-            <img src="../images/carrinho.png" alt="">
-          </a>
-        </figure>
-
-        <ul class="login">
-          <li><a href="login.html">Entrar</a></li>
-          <li>|</li>
-          <li><a href="cadastro.html">Cadastro</a></li>
-        </ul>
-
-        <figure>
-          <img onload="menu();" src="../images/menu.png" alt="" class="menu-button">
-        </figure>
-
-      </div>
-
-    </div>
-
-  </div>
-</header>
-<br><br><br>
 <body>
-    <div class="container flex min-h-screen"> 
-  
-      <aside class="menu-lateral flex flex-col justify-between w-80 p-6 border-r border-gray-200 shadow-lg">
-        <div>
-          <div class="perfil-usuario mb-10 flex items-center gap-4">
-            <div class="foto-usuario w-16 h-16 rounded-full border-2 border-secondary bg-cover bg-center" 
-                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9jJDDM9w8ZqxWkE4lmVdoTnVfoAA3Nyz5qRkRmXkl1f0fLxGRSezLiLsxLM8eWQh9Ego4fMcLyQyQrjQbbfTV0HplWsO__pT6z8cuLy-zGjmHY5jN-daojgbiCoxItnScuwsccf-iTqB-PGONOWL8LGCJaVRE7jM1d3laZxsyAr6s_WA2ItCht18h1_UTYJvk0ih1oskhtAmnzZZlLjAL040rZrjL3fQ6nu7EvnNJNvAWmQmpXFxgugdcJHoSw5Zs-tbYufkZBnvE');"></div>
-            <div class="info-usuario">
-              <h1 class="text-xl font-bold">Sophia Clark</h1>
-              <p class="text-sm text-gray-500">Membro desde 2021</p>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="navbar">
+
+            <div class="header-linear-content">
+
+                <!-- LOGO -->
+                <a href="../../home.html" class="logo-link">
+                    <h1 class="logo">
+                        AutoPeças <span>Express</span>
+                    </h1>
+                </a>
+
+                <!-- NAVEGAÇÃO -->
+                <nav class="main-navigation" aria-label="Navegação principal">
+
+                    <ul>
+                        <li>
+                            <a href="perfil.html">Meu Perfil</a>
+                        </li>
+
+                        <li>
+                            <a href="produto.html">Produtos</a>
+                        </li>
+
+                        <li>
+                            <a href="sobre.html">Sobre</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <!-- ITENS DO LADO DIREITO -->
+                <div class="right-items">
+
+                    <!-- CARRINHO -->
+                    <figure class="nav-icon-container">
+                        <a href="carrinho.html" aria-label="Carrinho">
+                            <img
+                                src="../images/carrinho.png"
+                                alt="Carrinho de compras"
+                            >
+                        </a>
+                    </figure>
+
+                    <!-- LOGIN -->
+                    <ul class="login">
+
+                        <li>
+                            <a href="login.html">Entrar</a>
+                        </li>
+
+                        <li aria-hidden="true">|</li>
+
+                        <li>
+                            <a href="cadastro.html">Cadastro</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- MENU MOBILE -->
+                    <figure class="menu-container">
+
+                        <img
+                            src="../images/menu.png"
+                            alt="Abrir menu"
+                            class="menu-button"
+                            onclick="menu()"
+                        >
+
+                    </figure>
+
+                </div>
+
             </div>
-          </div>
-  
-          <nav class="menu-links flex flex-col gap-3">
-            <a href="#" class="nav-link active flex items-center gap-2 font-bold"> 
-              <span class="material-symbols-outlined">person</span> Visão Geral
-            </a>
-            <a href="./carrinho.html" class="flex items-center gap-2"> 
-              <span class="material-symbols-outlined">local_shipping</span> Carrinho
-            </a>
-            <a href="#" class="flex items-center gap-2">
-              <span class="material-symbols-outlined">favorite</span> Lista de Desejos
-            </a>
-            
-            <a href="#" class="flex items-center gap-2">
-              <span class="material-symbols-outlined">settings</span> Configurações
-            </a>
-          </nav>
+
         </div>
-  
-        <button class="botao-sair">
-          <a href="../../home.html"><span class="material-symbols-outlined">logout</span> Sair</a>
-        </button>
-      </aside>
-  
-      <main class="conteudo-principal flex-1 p-6 overflow-y-auto">
-        <header class="mb-6">
-          <h1 class="text-3xl font-bold">Minha Conta</h1>
-        </header>
-  
-        <section class="informacoes-pessoais mb-6">
-          <h2 class="text-xl font-bold mb-2">Informações Pessoais</h2>
-          <div class="form-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    </header>
+
+
+    <!-- ================= CONTEÚDO PRINCIPAL ================= -->
+
+    <div class="layout-principal">
+
+        <!-- ================= MENU LATERAL ================= -->
+
+        <aside class="menu-lateral">
+
             <div>
-              <label for="name">Nome</label>
-              <input type="text" id="name" value="Sophia Clark" class="border p-2 w-full rounded"/>
+
+                <!-- PERFIL -->
+                <div class="perfil-usuario">
+
+                    <div
+                        class="foto-usuario"
+                        aria-label="Foto do usuário"
+                    ></div>
+
+                    <div class="info-usuario">
+
+                        <h2 id="nome-usuario">
+                            Usuário
+                        </h2>
+
+                        <p>
+                            Minha conta
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MENU DA CONTA -->
+                <nav class="menu-links" aria-label="Menu da conta">
+
+                    <a
+                        href="#"
+                        class="nav-link active"
+                    >
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+
+                        Visão Geral
+                    </a>
+
+
+                    <a
+                        href="carrinho.html"
+                        class="nav-link"
+                    >
+                        <span class="material-symbols-outlined">
+                            shopping_cart
+                        </span>
+
+                        Carrinho
+                    </a>
+
+
+                    <a
+                        href="#lista-desejos"
+                        class="nav-link"
+                    >
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
+
+                        Lista de Desejos
+                    </a>
+
+
+                    <a
+                        href="#configuracoes"
+                        class="nav-link"
+                    >
+                        <span class="material-symbols-outlined">
+                            settings
+                        </span>
+
+                        Configurações
+                    </a>
+
+                </nav>
+
             </div>
-            <div>
-              <label for="email">Email</label>
-              <input type="email" id="email" value="sophia.clark@gmail.com" class="border p-2 w-full rounded"/>
+
+
+            <!-- BOTÃO SAIR -->
+
+            <button
+                type="button"
+                class="botao-sair"
+                id="btnSair"
+            >
+
+                <span class="material-symbols-outlined">
+                    logout
+                </span>
+
+                Sair
+
+            </button>
+
+        </aside>
+
+
+        <!-- ================= ÁREA PRINCIPAL ================= -->
+
+        <main class="conteudo-principal">
+
+            <!-- TÍTULO -->
+
+            <header class="titulo-pagina">
+
+                <h1>
+                    Minha Conta
+                </h1>
+
+                <p>
+                    Gerencie suas informações pessoais e acompanhe seus pedidos.
+                </p>
+
+            </header>
+
+
+            <!-- ================= INFORMAÇÕES PESSOAIS ================= -->
+
+            <section
+                class="informacoes-pessoais"
+                aria-labelledby="titulo-informacoes"
+            >
+
+                <div class="section-header">
+
+                    <h2 id="titulo-informacoes">
+                        Informações Pessoais
+                    </h2>
+
+                    <p>
+                        Atualize seus dados abaixo.
+                    </p>
+
+                </div>
+
+
+                <form
+                    id="form-perfil"
+                    class="form-grid"
+                >
+
+                    <!-- NOME -->
+
+                    <div class="campo">
+
+                        <label for="name">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Digite seu nome"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- E-MAIL -->
+
+                    <div class="campo">
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- TELEFONE -->
+
+                    <div class="campo">
+
+                        <label for="phone">
+                            Telefone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="(11) 99999-9999"
+                            autocomplete="tel"
+                        >
+
+                    </div>
+
+
+                    <!-- ENDEREÇO -->
+
+                    <div class="campo">
+
+                        <label for="endereco">
+                            Endereço
+                        </label>
+
+                        <input
+                            type="text"
+                            id="endereco"
+                            name="endereco"
+                            placeholder="Digite seu endereço"
+                            autocomplete="street-address"
+                        >
+
+                    </div>
+
+
+                    <!-- BOTÃO -->
+
+                    <div class="acoes-formulario">
+
+                        <button
+                            type="submit"
+                            class="btnsalvar"
+                        >
+                            Salvar Alterações
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- ================= HISTÓRICO DE PEDIDOS ================= -->
+
+            <section
+                class="historico-pedidos"
+                aria-labelledby="titulo-pedidos"
+            >
+
+                <div class="section-header">
+
+                    <h2 id="titulo-pedidos">
+                        Histórico de Pedidos
+                    </h2>
+
+                    <p>
+                        Consulte seus pedidos realizados.
+                    </p>
+
+                </div>
+
+
+                <div class="tabela-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ID do Pedido
+                                </th>
+
+                                <th>
+                                    Data
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    #12345
+                                </td>
+
+                                <td>
+                                    15/08/2023
+                                </td>
+
+                                <td>
+                                    <span class="status enviado">
+                                        Enviado
+                                    </span>
+                                </td>
+
+                                <td>
+                                    R$ 150,00
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    #67890
+                                </td>
+
+                                <td>
+                                    20/07/2023
+                                </td>
+
+                                <td>
+                                    <span class="status entregue">
+                                        Entregue
+                                    </span>
+                                </td>
+
+                                <td>
+                                    R$ 200,00
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    #11223
+                                </td>
+
+                                <td>
+                                    05/06/2023
+                                </td>
+
+                                <td>
+                                    <span class="status cancelado">
+                                        Cancelado
+                                    </span>
+                                </td>
+
+                                <td>
+                                    R$ 50,00
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= LISTA DE DESEJOS ================= -->
+
+            <section
+                class="lista-desejos"
+                id="lista-desejos"
+                aria-labelledby="titulo-desejos"
+            >
+
+                <div class="section-header">
+
+                    <h2 id="titulo-desejos">
+                        Lista de Desejos
+                    </h2>
+
+                    <p>
+                        Produtos que você deseja comprar.
+                    </p>
+
+                </div>
+
+
+                <div class="grid-produtos">
+
+                    <!-- PRODUTO -->
+
+                    <article
+                        class="produto"
+                        style="background-image: url('../images/pastilhas-freio.jpg');"
+                    >
+
+                        <div class="overlay">
+
+                            <button
+                                type="button"
+                                class="add-to-cart"
+                                aria-label="Adicionar Pastilhas de Freio ao carrinho"
+                            >
+
+                                <span class="material-symbols-outlined">
+                                    add_shopping_cart
+                                </span>
+
+                            </button>
+
+                        </div>
+
+
+                        <p>
+                            Pastilhas de Freio
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= CONFIGURAÇÕES ================= -->
+
+            <section
+                class="preferencias"
+                id="configuracoes"
+                aria-labelledby="titulo-configuracoes"
+            >
+
+                <div class="section-header">
+
+                    <h2 id="titulo-configuracoes">
+                        Configurações
+                    </h2>
+
+                    <p>
+                        Preferências da sua conta.
+                    </p>
+
+                </div>
+
+
+                <div class="tema">
+
+                    <div>
+
+                        <strong>
+                            Modo escuro
+                        </strong>
+
+                        <p>
+                            Ative ou desative o tema escuro.
+                        </p>
+
+                    </div>
+
+
+                    <label class="controle-toggle">
+
+                        <input
+                            type="checkbox"
+                            id="modo-escuro"
+                        >
+
+                        <span class="toggle"></span>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-superior-completa">
+
+            <!-- INSTITUCIONAL -->
+
+            <div class="footer-superior-esquerdo">
+
+                <h4 class="footer-topico">
+                    Institucional
+                </h4>
+
+                <ul class="sub-topicos">
+
+                    <li>
+                        <a href="sobre.html">
+                            Sobre a empresa
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="lgpd.html">
+                            Política de Privacidade
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Termos de Uso
+                        </a>
+                    </li>
+
+                </ul>
+
             </div>
-            <div>
-              <label for="phone">Telefone</label>
-              <input type="tel" id="phone" value="+55 (11) 98123-4567" class="border p-2 w-full rounded"/>
+
+
+            <!-- AJUDA -->
+
+            <div class="footer-superior-meio">
+
+                <h4 class="footer-topico">
+                    Ajuda
+                </h4>
+
+                <ul class="sub-topicos">
+
+                    <li>
+                        <a href="#">
+                            Fale Conosco / Suporte
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Trocas e Devoluções
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Formas de Pagamento
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Prazo de Entrega
+                        </a>
+                    </li>
+
+                </ul>
+
             </div>
-            <div>
-                <label for="tetx">Endereço</label>
-                <input type="tel" id="tetx" value="rua azurita 38" class="border p-2 w-full rounded"/>
-              </div>
-            <div class="flex justify-end">
-              <button class="btnsalvar">Salvar Alterações</button>
+
+
+            <!-- CONTATO -->
+
+            <div class="footer-superior-direito">
+
+                <h4 class="footer-topico">
+                    Contato
+                </h4>
+
+                <ul class="lista-contato">
+
+                    <li>
+                        Telefone: (11) 99999-9999
+                    </li>
+
+                    <li>
+                        Email: contato@autoexpress.com.br
+                    </li>
+
+                    <li>
+                        Horário: Seg a Sex, das 8h às 18h
+                    </li>
+
+                </ul>
+
             </div>
-          </div>
-        </section>
-  
-        <section class="historico-pedidos mb-6">
-          <h2 class="text-xl font-bold mb-2">Histórico de Pedidos</h2>
-          <table class="w-full border-collapse border">
-            <thead>
-              <tr>
-                <th class="border p-2">ID do Pedido</th>
-                <th class="border p-2">Data</th>
-                <th class="border p-2">Status</th>
-                <th class="border p-2 text-right">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="border p-2">#12345</td>
-                <td class="border p-2">15/08/2023</td>
-                <td class="border p-2 text-blue-600 font-bold">Enviado</td>
-                <td class="border p-2 text-right">R$150,00</td>
-              </tr>
-              <tr>
-                <td class="border p-2">#67890</td>
-                <td class="border p-2">20/07/2023</td>
-                <td class="border p-2 text-green-600 font-bold">Entregue</td>
-                <td class="border p-2 text-right">R$200,00</td>
-              </tr>
-              <tr>
-                <td class="border p-2">#11223</td>
-                <td class="border p-2">05/06/2023</td>
-                <td class="border p-2 text-red-600 font-bold">Cancelado</td>
-                <td class="border p-2 text-right">R$50,00</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-<section class="lista-desejos mb-6">
-    <h2 class="text-xl font-bold mb-2">Lista de Desejos</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <div class="produto relative rounded border overflow-hidden" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaY9WWtPq_8JZ0-wfqKgw5fIqcK_qhTRhuDpHfH-MXj8Vkn0M5Y8H7r_1cBUz5RDzs-QPw7tzDgEo6qUDrOoN2SbLRaAEYDlDZjm8rgWnBhpeJeaA_bhCgU8g9UU8Vo9ErYlSg39-NkDI61jlplMmIK5CtFy8eeQlx5kXvRdDIVHE2JdAxbdb4-d3elQhueMcTsZsEjMecF9M1qFhHkZKfHfLGDQYz0m-d-aKOsDnHny-bJX1d6XFl7eZU9GZaZtfrW9ZcVv59boFE'); background-size:cover; background-position:center;">
-            <div class="overlay absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                <button class="bg-yellow-500 p-2 rounded text-white add-to-cart">
-                    <span class="material-symbols-outlined">add_shopping_cart</span>
-                </button>
+
+        </div>
+
+
+        <hr class="footer-divisao">
+
+
+        <!-- PARTE INFERIOR -->
+
+        <div class="footer-inferior-completa">
+
+            <!-- PAGAMENTOS -->
+
+            <div class="footer-inferior-esquerdo">
+
+                <h4 class="footer-topico">
+                    Meios de pagamento:
+                </h4>
+
+                <figure class="image-pag">
+
+                    <img
+                        src="https://img.icons8.com/color/48/000000/visa.png"
+                        alt="Visa"
+                    >
+
+                    <img
+                        src="https://img.icons8.com/color/48/000000/mastercard.png"
+                        alt="Mastercard"
+                    >
+
+                    <img
+                        src="https://img.icons8.com/fluency/48/pix.png"
+                        alt="Pix"
+                    >
+
+                </figure>
+
             </div>
-            <p class="absolute bottom-2 left-2 text-white font-bold">Pastilhas de Freio</p>
-        </div>
-    </div>
-</section>
 
 
-      </main>
-     
-     <script type="module">
-    import { auth, db } from "../js/firebaseConfig.js";
-    import { 
-        onAuthStateChanged,
-        signOut
-    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+            <!-- REDES SOCIAIS -->
 
-    import { 
-        ref, get, set, update
-    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+            <div class="footer-inferior-direito">
 
-    const nomeInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-    const phoneInput = document.getElementById("phone");
-    const enderecoInput = document.getElementById("tetx");
-    const btnSalvar = document.querySelector(".btnsalvar");
+                <h4 class="footer-topico">
+                    Redes Sociais
+                </h4>
 
-    const btnSair = document.querySelector(".botao-sair"); // ⬅ botão de sair
+                <figure class="image-rede-sociais">
 
-    let userUID = null;
+                    <img
+                        src="../images/logo-facebook.png"
+                        alt="Facebook"
+                    >
 
-    // ================================
-    // 🔥 QUANDO O USUÁRIO ESTÁ LOGADO
-    // ================================
-    onAuthStateChanged(auth, async (user) => {
-        if (!user) {
-            window.location.href = "login.html";
-            return;
-        }
+                    <img
+                        src="../images/logo-instagram.png"
+                        alt="Instagram"
+                    >
 
-        userUID = user.uid;
-        emailInput.value = user.email;
+                    <img
+                        src="../images/logo-whatsapp.png"
+                        alt="WhatsApp"
+                    >
 
-        // 📌 BUSCAR DADOS EM usuarios/UID/dados
-        const userRef = ref(db, "usuarios/" + userUID + "/dados");
-        const snap = await get(userRef);
+                </figure>
 
-        if (snap.exists()) {
-            const dados = snap.val();
+            </div>
 
-            nomeInput.value = dados.nome || "";
-            phoneInput.value = dados.telefone || "";
-            enderecoInput.value = dados.endereco || "";
-        } else {
-            nomeInput.value = "";
-        }
-    });
-
-    // ================================
-    // 🔥 SALVAR ALTERAÇÕES
-    // ================================
-    btnSalvar.addEventListener("click", async () => {
-        if (!userUID) {
-            alert("Erro: usuário não identificado.");
-            return;
-        }
-
-        const userRef = ref(db, "usuarios/" + userUID + "/dados");
-
-        const dadosAtualizados = {
-            nome: nomeInput.value,
-            telefone: phoneInput.value,
-            endereco: enderecoInput.value,
-            email: emailInput.value
-        };
-
-        try {
-            await update(userRef, dadosAtualizados);
-            alert("Dados salvos com sucesso!");
-        } catch (error) {
-            console.log(error);
-            alert("Erro ao salvar dados: " + error.message);
-        }
-    });
-
-    // ================================
-    // 🔥 SAIR DA CONTA
-    // ================================
-    btnSair.addEventListener("click", async () => {
-        try {
-            await signOut(auth);
-            alert("Você saiu da conta.");
-            window.location.href = "../../home.html"; 
-        } catch (error) {
-            console.error("Erro ao sair:", error);
-            alert("Erro ao sair da conta.");
-        }
-    });
-
-</script>
-
-  
-    </div>
-  </body>
-  
-  
-   <footer>
-    <div class="footer-superior-completa">
-        <div class="footer-superior-esquerdo">
-            <h4 class="footer-topico">Institucional</h4>
-            <ul class="sub-topicos">
-                <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
-                <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
-                <li><a href="">Termos de Uso</a></li>
-            </ul>
         </div>
 
-        <div class="footer-superior-meio">
-            <h4 class="footer-topico">Ajuda</h4>
-            <ul class="sub-topicos">
-                <li><a href="">Fale Conosco/Suporte</a></li>
-                <li><a href="">Trocas e Devoluções</a></li>
-                <li><a href="">Formas de Pagamento</a></li>
-                <li><a href="">Prazo de Entrega</a></li>
-            </ul>
+
+        <!-- CRÉDITOS -->
+
+        <div class="footer-creditos">
+
+            <p>
+                © 2026 AutoPeçasExpress. Todos os direitos reservados.
+            </p>
+
         </div>
 
-        <div class="footer-superior-direito">
-            <h4 class="footer-topico">Contato</h4>
-            <ul class="lista-contato">
-                <li>Telefone: (11) 99999-9999</li>
-                <li>Email: contato@autoexpress.com.br</li>
-                <li>Horário: Seg a Sex, das 8h às 18h</li>
-            </ul>
-        </div>
-    </div>
+    </footer>
 
-    <hr class="footer-divisao" />
 
-    <div class="footer-inferior-completa">
-        <div class="footer-inferior-esquerdo">
-            <h4 class="footer-topico">Meios de pagamento:</h4>
-            <figure class="image-pag">
-                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
-                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
-                <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
-            </figure>
-        </div>
+    <!-- ================= FIREBASE ================= -->
 
-        <div class="footer-inferior-direito">
-            <h4 class="footer-topico">Redes Sociais</h4>
-            <figure class="image-rede-sociais">
-                <img src="../images/logo-facebook.png" alt="facebook-logo">
-                <img src="../images/logo-instagram.png" alt="instagram-logo">
-                <img src="../images/logo-whatsapp.png" alt="whatsapp-logo">
-            </figure>
-        </div>
-    </div>
+    <script type="module">
 
-    <div class="footer-creditos">
-        <p>Creditos</p>
-    </div>
-</footer>
+        import { auth, db } from "../js/firebaseConfig.js";
+
+        import {
+            onAuthStateChanged,
+            signOut
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        import {
+            ref,
+            get,
+            update
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+        /* ================= ELEMENTOS ================= */
+
+        const nomeInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+        const enderecoInput = document.getElementById("endereco");
+
+        const nomeUsuario = document.getElementById("nome-usuario");
+
+        const formPerfil = document.getElementById("form-perfil");
+        const btnSair = document.getElementById("btnSair");
+
+
+        let userUID = null;
+
+
+        /* ================= USUÁRIO LOGADO ================= */
+
+        onAuthStateChanged(auth, async (user) => {
+
+            if (!user) {
+
+                window.location.href = "login.html";
+
+                return;
+            }
+
+
+            userUID = user.uid;
+
+
+            /* E-MAIL DO FIREBASE */
+
+            emailInput.value = user.email || "";
+
+
+            /* BUSCAR DADOS */
+
+            const userRef = ref(
+                db,
+                "usuarios/" + userUID + "/dados"
+            );
+
+
+            try {
+
+                const snap = await get(userRef);
+
+
+                if (snap.exists()) {
+
+                    const dados = snap.val();
+
+
+                    nomeInput.value =
+                        dados.nome || "";
+
+
+                    phoneInput.value =
+                        dados.telefone || "";
+
+
+                    enderecoInput.value =
+                        dados.endereco || "";
+
+
+                    if (dados.nome) {
+
+                        nomeUsuario.textContent =
+                            dados.nome;
+
+                    }
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Erro ao carregar dados:",
+                    error
+                );
+
+            }
+
+        });
+
+
+        /* ================= SALVAR DADOS ================= */
+
+        formPerfil.addEventListener(
+            "submit",
+            async (event) => {
+
+                event.preventDefault();
+
+
+                if (!userUID) {
+
+                    alert(
+                        "Erro: usuário não identificado."
+                    );
+
+                    return;
+                }
+
+
+                const userRef = ref(
+                    db,
+                    "usuarios/" + userUID + "/dados"
+                );
+
+
+                const dadosAtualizados = {
+
+                    nome: nomeInput.value.trim(),
+
+                    telefone: phoneInput.value.trim(),
+
+                    endereco: enderecoInput.value.trim(),
+
+                    email: emailInput.value.trim()
+
+                };
+
+
+                try {
+
+                    await update(
+                        userRef,
+                        dadosAtualizados
+                    );
+
+
+                    nomeUsuario.textContent =
+                        dadosAtualizados.nome ||
+                        "Usuário";
+
+
+                    alert(
+                        "Dados salvos com sucesso!"
+                    );
+
+                } catch (error) {
+
+                    console.error(
+                        "Erro ao salvar:",
+                        error
+                    );
+
+
+                    alert(
+                        "Erro ao salvar dados: " +
+                        error.message
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* ================= SAIR ================= */
+
+        btnSair.addEventListener(
+            "click",
+            async () => {
+
+                try {
+
+                    await signOut(auth);
+
+                    window.location.href =
+                        "../../home.html";
+
+                } catch (error) {
+
+                    console.error(
+                        "Erro ao sair:",
+                        error
+                    );
+
+
+                    alert(
+                        "Erro ao sair da conta."
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
 </html>
+```
