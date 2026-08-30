@@ -355,7 +355,7 @@ document.getElementById("rapido").addEventListener("change", () => {
         spanSedex.textContent = "Calculando...";
         spanJT.textContent = "Calculando...";
     
-        const response = await fetch("calcularFrete.php", {
+        const response = await fetch("/api/calcularFrete", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body)
