@@ -79,13 +79,13 @@ function ready() {
                 const input = e.target.closest(".product-qtd");
                 if (!input) return;
 
-                const newQ = parseInt(input.value) || 1;
+                const newQ = Math.max(1, parseInt(input.value) || 1);
                 input.value = newQ;
 
                 const row = input.closest("tr");
                 const name = row.querySelector(".product-title")?.textContent.trim();
 
-                updateQuantity(name, parseInt(input.value));
+                updateQuantity(name, newQ);
                 updateTotal();
             });
         }
@@ -189,19 +189,19 @@ function loadCartItems() {
 
         row.innerHTML = `
             <td class="product-indentification">
-                <img class="product-imagem" src="${item.image}" style="max-width:70px">
+                <img class="product-imagem" src="${item.image}" alt="${item.name}">
                 <strong class="product-title">${item.name}</strong>
             </td>
 
-            <td class="product-price">
+            <td class="product-price" data-label="Preço">
                 <span class="price-single">${item.price}</span>
             </td>
 
-            <td class="qtd-rem">
+            <td class="qtd-rem" data-label="Quantidade">
                 <div class="flex">
-                    <img src="../images/menos.png" width="10"  class="remove-button" style="cursor:pointer">
+                    <img src="../images/menos.png" width="10" alt="Diminuir quantidade" class="remove-button" style="cursor:pointer">
                     <input class="product-qtd" type="number" value="${item.quantity}" min="1" style="width:45px;text-align:center">
-                    <img src="../images/mais.png" width="10"  class="add-button" style="cursor:pointer">
+                    <img src="../images/mais.png" width="10" alt="Aumentar quantidade" class="add-button" style="cursor:pointer">
                 </div>
             </td>
         `;
@@ -239,22 +239,36 @@ function calcularSubtotal() {
     return subtotal;
 }
 
+/**
+ * Retorna o valor do frete atualmente selecionado.
+ * Antes essa lógica ficava espalhada e sempre lia o valor do Sedex,
+ * mesmo quando nenhuma opção tinha sido escolhida. Agora ela pergunta
+ * para carrinhoFrete.js (via window.getFreteSelecionado) qual opção
+ * está marcada.
+ */
+function getFreteAtual() {
+    if (typeof window.getFreteSelecionado === "function") {
+        return window.getFreteSelecionado();
+    }
+    return 0;
+}
+
 function updateTotal() {
     const subtotal = calcularSubtotal();
-
-    const freteText = document.querySelector("#val-frete")?.textContent || "R$ 0,00";
-    const frete = parseBRL(freteText);
-
-    let desconto = getDesconto();
+    const frete = getFreteAtual();
+    const desconto = getDesconto();
 
     const descontoEl = document.querySelector(".price-des");
     if (descontoEl) descontoEl.textContent = formatBRL(desconto);
 
-    const total = subtotal + frete - desconto;
+    const total = Math.max(0, subtotal + frete - desconto);
 
     const totalElement = document.getElementById("total");
     if (totalElement) totalElement.textContent = formatBRL(total);
 }
+// Exposto globalmente para que carrinhoFrete.js consiga recalcular o total
+// assim que o usuário escolher uma opção de frete.
+window.updateTotal = updateTotal;
 
 function checkEmptyCartUI() {
     const cart = getCart();
@@ -283,35 +297,26 @@ function checkEmptyCartUI() {
         CUPOM DE DESCONTO
 ------------------------------ */
 function aplicarCupom() {
-    const cupom = document.getElementById('cupom').value;
+    const cupomInput = document.getElementById('cupom');
     const msg = document.getElementById('mensagem-cupom');
+    const cupom = cupomInput.value.trim().toUpperCase();
 
     if (cupom === 'DESCONTO10') {
-
-        setDesconto(10); // Aplica desconto
-
-        msg.textContent = 'Cupom aplicado! Desconto de R$ 10.';
+        setDesconto(10);
+        msg.textContent = 'Cupom aplicado! Desconto de R$ 10,00.';
         msg.style.color = 'green';
-
-        updateTotal();
-
     } else {
-
-        setDesconto(0); // Remove desconto
-
+        setDesconto(0);
         msg.textContent = 'Cupom inválido.';
         msg.style.color = 'red';
-
-        updateTotal();
     }
+
+    updateTotal();
 }
 
 /* ------------------------------
         CARRINHO PAGAMENTO
         (para pagamento.html)
------------------------------- */
-/* ------------------------------
-        CARRINHO PAGAMENTO HTML
 ------------------------------ */
 function loadPaymentCart() {
     const cart = getCart();
@@ -338,7 +343,7 @@ function loadPaymentCart() {
         li.className = "product-item";
         li.innerHTML = `
             <img src="${item.image}" alt="${item.name}" style="max-width:50px; margin-right:10px;">
-            <strong>${item.name}</strong> - ${item.quantity} x <span>R$ ${item.price}</span>
+            <strong>${item.name}</strong> - ${item.quantity} x <span>${item.price}</span>
         `;
         productsList.appendChild(li);
 
@@ -350,9 +355,6 @@ function loadPaymentCart() {
     totalValue.textContent = formatBRL(subtotal);
 }
 
-
-// Chame esta função quando a página pagamento.html carregar
 if (window.location.pathname.includes("pagamento.html")) {
     document.addEventListener("DOMContentLoaded", loadPaymentCart);
 }
-
