@@ -1,185 +1,211 @@
-/* INICIO CÓDIGO  CADASTRO */
-
+/* =====================================================
+   CADASTRO - reset local e utilitários
+   Mesma paleta usada em carrinho.css/entrega.css:
+   vermelho principal #8f0700, acento #ff2134, bordas #ccc/#e0e0e0.
+===================================================== */
+* {
+  box-sizing: border-box;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-
-}
-.container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto; 
-}
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.choice {
-    text-align: center;
-    margin-bottom: 20px;
-}
-button {
-    padding: 12px 24px;
-    margin: 0 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    background-color: #8F0700;
-    color: white;
-    transition: background-color 0.3s;
-}
-button:hover {
-    background-color:  #8F0700;
-}
-.form {
-    display: none;
-}
-.form.active {
-    display: block;
-}
-.form-group {
-    margin-bottom: 15px;
-}
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-textarea {
-    resize: vertical;
-}
-.submit-btn {
-    width: 100%;
-    padding: 12px;
-    background-color:   #8F0700;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.submit-btn:hover {
-    background-color:   #8F0700;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
 }
 
+.cadastro-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px 60px;
+  margin-top: 40px; /* respiro pra sombra do header (box-shadow) não sobrepor o conteúdo */
+}
 
+/* =====================================================
+   ESCOLHA DO TIPO DE CADASTRO
+===================================================== */
+.selecao-tipo {
+  text-align: center;
+  padding: 20px 0 10px;
+}
 
+.selecao-tipo h2 {
+  margin-bottom: 20px;
+}
+
+.selecao-botoes {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tipo-btn {
+  padding: 12px 25px;
+  border: 1px solid #8f0700;
+  background-color: #8f0700;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tipo-btn:hover {
+  background-color: #fff;
+  color: #8f0700;
+}
+
+/* Os formulários ficam escondidos até a pessoa escolher um tipo */
+.form-secao {
+  display: none;
+}
+
+/* =====================================================
+   CARTÃO DO FORMULÁRIO
+===================================================== */
 .cadastro-container {
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background: white;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto 0;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 9px;
 }
 
 .cadastro-title {
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 0 20px;
 }
 
 .linha {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 15px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
 }
 
 .campo {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
 }
 
 label {
-    font-size: 14px;
-    margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 
-input, select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
 }
 
-.btn-continuar {
-    background: white;
-    border: 2px solid #ff2134;
-    color: #ff2134;
-    padding: 8px 18px;
-    font-weight: bold;
-    cursor: pointer;
-    height: 40px;
-    align-self: end;
+input:focus {
+  outline: 2px solid #ff2134;
+  outline-offset: 1px;
 }
 
-.btn-cadastrar {
-    width: 100%;
-    background: #ff2134;
-    color: white;
-    border: none;
-    padding: 2%;
-    font-size: 5%;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 4px;
+/* Bloco de endereço, preenchido depois da busca por CEP */
+.endereco-bloco {
+  display: none;
+}
+
+.endereco-bloco.aberto {
+  display: block;
 }
 
 .checkbox-area {
-    margin: 10px 0;
+  margin: 10px 0 20px;
+  font-size: 0.9rem;
 }
 
+.checkbox-area input {
+  width: auto;
+  margin-right: 6px;
+}
 
+.erro-msg {
+  color: #b00020;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  margin: -6px 0 10px;
+}
 
+.btn-cadastrar {
+  width: 100%;
+  background: #8f0700;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
 
-  
-  
-  @media screen and (max-width: 600px){
-    /*minhas alteracoes: Ednilson*/
-        .form-superior{
-          display: block;
-          width: 80%;
-      }
-      .form-senha {
-          width: 80%;
-          margin-right: 12%;
-      }
-      label, input{
-          margin-left: 3%;
-      }
-      .form-dados-pessoa, .form-dados-endereco {
-          width: 100%;
-          margin-left: 10%;
-      }
-      .form-dados-pessoa, .form-dados-endereco, .form-senha{
-          margin-bottom: 17px;
-      }
-      .form-descricao h2{
-      padding: 0 5% 0 10%;
-      font-size: 1.8rem;
-      
-      }
-      .form-descricao p{
-      padding: 1.5% 7% 2% 12%;
-      font-size: 1rem;
-     
+.btn-cadastrar:hover {
+  background: #c11313;
+}
+
+.btn-cadastrar:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   RESPONSIVO - TABLET (até 768px)
+===================================================== */
+@media (max-width: 768px) {
+  .cadastro-container {
+    padding: 20px;
   }
-  
-  } 
-  
+
+  .linha {
+    gap: 12px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVO - CELULAR (até 600px)
+===================================================== */
+@media (max-width: 600px) {
+  .cadastro-wrapper {
+    padding: 12px 12px 40px;
+  }
+
+  .linha {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .selecao-botoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tipo-btn {
+    width: 100%;
+  }
+
+  .cadastro-container {
+    padding: 16px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .cadastro-title {
+    font-size: 1.3rem;
+  }
+}
