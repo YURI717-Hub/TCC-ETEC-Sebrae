@@ -28,7 +28,7 @@ a {
 
 .caminho-ativo-P {
   padding: 15px 20px;
-  margin-top: 20px; /* respiro pra sombra do header (box-shadow) não sobrepor o conteúdo */
+  margin-top: 100px; /* respiro pra sombra do header (box-shadow) não sobrepor o conteúdo */
   background-color: #fff;
   font-size: 14px;
 }
