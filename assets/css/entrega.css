@@ -1,342 +1,295 @@
+/* =====================================================
+   ENTREGA - reset local e utilitários
+   Paleta e padrões seguem os mesmos usados em carrinho.css:
+   vermelho principal #8f0700, acento #ff2134, bordas #ccc/#e0e0e0,
+   textos em Roboto, cartões com border-radius 8-9px.
+===================================================== */
+* {
+  box-sizing: border-box;
+}
 
-
-/*INICIO CÓDIGO - css */
+body {
+  background-color: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #222;
+}
 
 .caminho-ativo-E {
   padding: 15px 20px;
-  background-color: #ffffff;
+  margin-top: 40px; /* mesmo respiro do carrinho, pra sombra do header não sobrepor o conteúdo */
+  background-color: #fff;
   font-size: 14px;
+  color: #555;
 }
 
 .ativo-entrega {
-  color: #4AC741;
+  color: #8f0700;
   font-weight: bold;
 }
-/* entrega */
+
 .conteudo-entrega {
-  padding: 20px;
-  background-color: #ffffff;
-  font-family: 'Roboto', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
 }
 
+.conteudo-entrega h2 {
+  margin: 10px 0 24px;
+  font-size: 1.6rem;
+  color: #222;
+}
+
+/* =====================================================
+   LAYOUT PRINCIPAL (endereço + opções de frete)
+===================================================== */
 .entrega-box-entrega {
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10%;
+  align-items: flex-start;
+  gap: 24px;
 }
-p{
-  font-size: 20;
-}
+
 .coluna-esquerda-entrega {
-  flex: 1;
+  width: 58%;
 }
 
 .coluna-direita {
-  flex: 1;
+  width: 42%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: flex-end;
+  gap: 16px;
 }
 
-.radio-group-E {
-  margin-bottom: 20px;
+/* =====================================================
+   CAIXA DE ENDEREÇO
+===================================================== */
+.endereco {
+  border: 1px solid #ccc;
+  border-radius: 9px;
+  padding: 20px;
 }
 
-.endereco .link {
-  color: #1d49a8;
-  font-size: 14px;
-  margin-left: 10px;
+.endereco-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #8f0700;
+  font-size: 0.9rem;
   cursor: pointer;
-  line-height: 1.6;
+  text-decoration: underline;
 }
 
-/* opcao de entrega */
+.link:hover {
+  color: #c11313;
+}
 
+.ende {
+  margin: 4px 0;
+  color: #333;
+  font-size: 0.95rem;
+}
 
+.novo-endereco-form {
+  display: none;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.novo-endereco-form.aberto {
+  display: block;
+}
+
+.novo-endereco-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.novo-endereco-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.novo-endereco-form button {
+  padding: 10px;
+  background-color: #8f0700;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.novo-endereco-form button:hover {
+  background-color: #c11313;
+}
+
+/* =====================================================
+   OPÇÕES DE FRETE
+===================================================== */
 .opcao-entrega {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  border: 1px solid #000000;
-  border-radius: 6px;
-  padding: 10px 15px;
   align-items: center;
-  background-color: #ffffff;
-}
-
-.opcao-entrega input {
-  width: 18px;
-  height: 18px;
-}
-
-.botao-avancar {
-  background-color: #8F0700;
-  color: #fff;
-  padding: 10px 30px;
-  border: none;
-  border-radius: 4px;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 9px;
+  padding: 16px;
   cursor: pointer;
-  align-self: flex-end;
+  transition: 0.2s ease;
+}
+
+.opcao-entrega:hover {
+  background: #f0f8ff;
+  border-color: #2c2c2c;
+}
+
+.opcao-entrega p {
+  margin: 2px 0;
+}
+
+.opcao-entrega i {
+  color: #8f0700;
+  margin-right: 6px;
+}
+
+.opcao-preco {
   font-weight: bold;
+  color: #009900;
+  font-size: 1.05rem;
+}
+
+.opcao-prazo {
+  font-size: 0.8rem;
+  color: #777;
+  text-transform: uppercase;
+}
+
+.opcao-entrega input[type="radio"] {
+  accent-color: #ff2134;
+  transform: scale(1.3);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Destaca o card quando o rádio dele está marcado */
+.opcao-entrega:has(input:checked) {
+  border-color: #8f0700;
+  background: #fff5f4;
+}
+
+/* =====================================================
+   BOTÃO AVANÇAR (mesmo estilo do "Finalizar Compra")
+===================================================== */
+.botao-avancar {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+  padding: 1rem;
+  background-color: #8f0700;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .botao-avancar a {
+  color: inherit;
   text-decoration: none;
-  color: white;
 }
 
-p .ende{
-  font-size: large;
+.botao-avancar:hover {
+  background-color: #fff;
+  color: #8f0700;
+  border: 1px solid #8f0700;
 }
 
-
-#novo-endereco {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-}
-
-#novo-endereco input {
-  display: block;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-#novo-endereco button {
-  background-color: #4AC741;
-  color: white;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-
-/* cupom */
-.cupom-desconto {
-  margin-bottom: 1rem;
-}
-
-.cupom-desconto input {
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-right: 0.5rem;
-}
-
-.cupom-desconto button {
-  background-color: #8F0700;
-  color: white;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#mensagem-cupom {
-  margin-top: 0.5rem;
-  font-weight: bold;
-}
-/* dicas */
+/* =====================================================
+   DICAS DE ENTREGA
+===================================================== */
 .dicas-entrega {
-  margin-top: 0.5rem;
-  padding: 1rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  margin-top: 32px;
+  padding: 16px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 9px;
+  background: #fafafa;
 }
 
 .dicas-entrega h4 {
-  margin-top: 0;
-  color: #333;
+  margin: 0 0 8px;
 }
 
 .dicas-entrega p {
-  margin-bottom: 0.5rem;
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #555;
 }
 
 .dicas-entrega i {
-  margin-right: 0.5rem;
-  color: #4AC741;
+  color: #8f0700;
+  margin-right: 6px;
 }
 
-/*FIM CODIGO - ENTREGAcss*/
-
-/* RESPONSIVIDADE  */
-
-/* Telas pequenas  */
-@media screen and (max-width: 677px) {
-  body, html {
-    overflow-x: hidden; 
+/* =====================================================
+   RESPONSIVO - TABLET (até 1024px)
+===================================================== */
+@media (max-width: 1024px) {
+  .coluna-esquerda-entrega {
+    width: 55%;
   }
 
+  .coluna-direita {
+    width: 45%;
+  }
+}
+
+/* =====================================================
+   RESPONSIVO - TABLET/CELULAR (até 800px)
+   Endereço e frete empilham verticalmente.
+===================================================== */
+@media (max-width: 800px) {
   .entrega-box-entrega {
     flex-direction: column;
-    gap: 15px;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
   }
 
-  .coluna-direita, .coluna-esquerda-entrega {
+  .coluna-esquerda-entrega,
+  .coluna-direita {
     width: 100%;
-    align-items: stretch;
+  }
+}
+
+/* =====================================================
+   RESPONSIVO - CELULAR (até 480px)
+===================================================== */
+@media (max-width: 480px) {
+  .conteudo-entrega {
+    padding: 0 12px 40px;
   }
 
-  .opcao-entrega {
+  .endereco-topo {
     flex-direction: column;
     align-items: flex-start;
-    padding: 8px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .botao-avancar {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-    box-sizing: border-box;
-  }
-
-  .caminho-ativo-E {
-    padding: 8px;
-    font-size: 11px;
-    box-sizing: border-box;
-  }
-
-  .endereco p {
-    font-size: 13px;
-  }
-
-  .radio-group-E input {
-    width: 16px;
-    height: 16px;
-  }
-
-  .resumo-pedido {
-    padding: 0.5rem;
-  }
-
-  .lista-produtos li {
-    font-size: 12px;
-  }
-
-  #novo-endereco {
-    padding: 0.5rem;
-  }
-
-  .cupom-desconto input {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-
-  .dicas-entrega {
-    padding: 0.5rem;
-  }
-}
-
-/*  Telas médias */
-@media screen and (min-width: 678px) and (max-width: 1024px) {
-  .entrega-box-entrega {
-    flex-direction: column;
-    gap: 20px;
-    padding: 15px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .coluna-direita {
-    align-items: stretch;
   }
 
   .opcao-entrega {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 12px;
+    padding: 12px;
   }
 
   .botao-avancar {
-    width: 100%;
-    text-align: center;
-    padding: 12px 0;
-    font-size: 15px;
-  }
-
-  .caminho-ativo-E {
-    padding: 12px 15px;
-    font-size: 13px;
-  }
-
-  .endereco p {
-    font-size: 20px;
-  }
-
-  .resumo-pedido {
-    padding: 0.75rem;
-  }
-
-  .cupom-desconto input {
-    width: 60%;
-  }
-
-  .dicas-entrega {
-    padding: 0.75rem;
-  }
-}
-
-/* Telas grandes */
-@media screen and (min-width: 1025px) {
-  .entrega-box-entrega {
-    flex-direction: row;
-    gap: 40px;
-    padding: 20px;
-  }
-
-  .coluna-direita {
-    align-items: flex-end;
-  }
-
-  .opcao-entrega {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 15px;
-  }
-
-  .botao-avancar {
-    width: auto;
-    padding: 10px 30px;
-    text-align: center;
-  }
-
-  .caminho-ativo-E {
-    padding: 15px 20px;
-    font-size: 14px;
-  }
-
-  .endereco p {
-    font-size: 18px;
-  }
-
-  .resumo-pedido {
-    padding: 1rem;
-  }
-
-  .cupom-desconto input {
-    width: 200px;
-  }
-
-  .dicas-entrega {
-    padding: 1rem;
+    font-size: 1rem;
   }
 }
