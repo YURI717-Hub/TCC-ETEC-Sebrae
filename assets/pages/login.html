@@ -93,12 +93,11 @@
 
 
   </main>
-  <script type="module">
+<script type="module">
     import {
-        auth
+        auth,
+        db
     } from "../js/firebaseConfig.js";
-
-    import { db } from "../js/firebaseConfig.js";
 
     import {
         signInWithEmailAndPassword,
@@ -116,33 +115,30 @@
     // =======================================
     async function redirecionarPorTipo(uid) {
 
-        const userRef = ref(db, "usuarios/" + uid + "/dados");
-        const snap = await get(userRef);
+        // 1️⃣ Verifica se é fornecedor
+        const fornecedorRef = ref(db, "fornecedores/" + uid);
+        const snapFornecedor = await get(fornecedorRef);
 
-        if (snap.exists()) {
+        if (snapFornecedor.exists()) {
 
-            const dados = snap.val();
-            const tipoUsuario = dados.tipo; // AJUSTE AQUI se o campo tiver outro nome
-
-            if (tipoUsuario === "fornecedor") {
-
-                window.location.href = "perfilFornecedor.html";
-
-            } else if (tipoUsuario === "consumidor") {
-
-                window.location.href = "produto.html";
-
-            } else {
-
-                alert("Tipo de usuário não identificado.");
-
-            }
-
-        } else {
-
-            alert("Dados do usuário não encontrados.");
+            window.location.href = "perfilFornecedor.html";
+            return;
 
         }
+
+        // 2️⃣ Verifica se é usuário/consumidor
+        const usuarioRef = ref(db, "usuarios/" + uid);
+        const snapUsuario = await get(usuarioRef);
+
+        if (snapUsuario.exists()) {
+
+            window.location.href = "produto.html";
+            return;
+
+        }
+
+        // 3️⃣ Não encontrado em nenhum dos dois
+        alert("Tipo de usuário não identificado.");
 
     }
 
@@ -173,29 +169,24 @@
 
         try {
 
-            // 1️⃣ Tentar fazer login
             const userCredential = await signInWithEmailAndPassword(auth, email, senha);
 
-            // 2️⃣ Login OK → redirecionar conforme tipo
             alert("Login realizado com sucesso!");
             await redirecionarPorTipo(userCredential.user.uid);
 
         } catch (error) {
 
-            // 3️⃣ Senha errada
             if (error.code === "auth/invalid-credential") {
                 alert("Senha incorreta!");
                 return;
             }
 
-            // 4️⃣ Usuário não existe
             if (error.code === "auth/user-not-found") {
                 alert("Usuário não encontrado. Crie uma conta.");
                 window.location.href = "cadastro.html";
                 return;
             }
 
-            // 5️⃣ Outros erros
             console.log(error);
             alert("Erro ao fazer login: " + error.message);
 
