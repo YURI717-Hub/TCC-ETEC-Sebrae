@@ -93,6 +93,116 @@
 
 
   </main>
+  <script type="module">
+    import {
+        auth
+    } from "../js/firebaseConfig.js";
+
+    import { db } from "../js/firebaseConfig.js";
+
+    import {
+        signInWithEmailAndPassword,
+        onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    import {
+        ref,
+        get
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+    // =======================================
+    // FUNÇÃO: REDIRECIONAR CONFORME TIPO
+    // =======================================
+    async function redirecionarPorTipo(uid) {
+
+        const userRef = ref(db, "usuarios/" + uid + "/dados");
+        const snap = await get(userRef);
+
+        if (snap.exists()) {
+
+            const dados = snap.val();
+            const tipoUsuario = dados.tipo; // AJUSTE AQUI se o campo tiver outro nome
+
+            if (tipoUsuario === "fornecedor") {
+
+                window.location.href = "perfilFornecedor.html";
+
+            } else if (tipoUsuario === "consumidor") {
+
+                window.location.href = "produto.html";
+
+            } else {
+
+                alert("Tipo de usuário não identificado.");
+
+            }
+
+        } else {
+
+            alert("Dados do usuário não encontrados.");
+
+        }
+
+    }
+
+
+    // =======================================
+    // 0️⃣ SE JÁ ESTIVER LOGADO → REDIRECIONAR
+    // =======================================
+    onAuthStateChanged(auth, (user) => {
+
+        if (user) {
+
+            redirecionarPorTipo(user.uid);
+
+        }
+
+    });
+
+
+    // =======================================
+    // LOGIN NORMAL
+    // =======================================
+    document.querySelector(".login-form").addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const senha = document.getElementById("senha").value;
+
+        try {
+
+            // 1️⃣ Tentar fazer login
+            const userCredential = await signInWithEmailAndPassword(auth, email, senha);
+
+            // 2️⃣ Login OK → redirecionar conforme tipo
+            alert("Login realizado com sucesso!");
+            await redirecionarPorTipo(userCredential.user.uid);
+
+        } catch (error) {
+
+            // 3️⃣ Senha errada
+            if (error.code === "auth/invalid-credential") {
+                alert("Senha incorreta!");
+                return;
+            }
+
+            // 4️⃣ Usuário não existe
+            if (error.code === "auth/user-not-found") {
+                alert("Usuário não encontrado. Crie uma conta.");
+                window.location.href = "cadastro.html";
+                return;
+            }
+
+            // 5️⃣ Outros erros
+            console.log(error);
+            alert("Erro ao fazer login: " + error.message);
+
+        }
+
+    });
+</script>
 
 
   <script type="module">
