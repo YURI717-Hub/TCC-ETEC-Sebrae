@@ -199,8 +199,7 @@ a {
     font-weight: bold;
     cursor: pointer;
     transition: background 0.25s ease, transform 0.2s ease;
-
-    margin-top: auto; /* ADICIONE ISSO */
+    margin-top: auto;
 }
 
 .botao-sair:hover {
