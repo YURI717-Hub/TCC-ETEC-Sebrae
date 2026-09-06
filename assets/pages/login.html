@@ -205,63 +205,7 @@
 </script>
 
 
-  <script type="module">
-    import {
-        auth,
-        signInWithEmailAndPassword
-    } from "../js/firebaseConfig.js";
-    
-    import { onAuthStateChanged }
-        from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-    
-    // =======================================
-    // 0️⃣ SE JÁ ESTIVER LOGADO → IR PARA PRODUTOS
-    // =======================================
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            window.location.href = "produto.html";
-        }
-    });
-    
-    // =======================================
-    // LOGIN NORMAL
-    // =======================================
-    document.querySelector(".login-form").addEventListener("submit", async (e) => {
-        e.preventDefault();
-    
-        const email = document.getElementById("email").value.trim();
-        const senha = document.getElementById("senha").value;
-    
-        try {
-            // 1️⃣ Tentar fazer login diretamente
-            await signInWithEmailAndPassword(auth, email, senha);
-    
-            // 2️⃣ Login OK → redirecionar
-            alert("Login realizado com sucesso!");
-            window.location.href = "produto.html";
-    
-        } catch (error) {
-    
-            // 3️⃣ Usuário digitou email correto, mas senha errada
-            if (error.code === "auth/invalid-credential") {
-                alert("Senha incorreta!");
-                return;
-            }
-    
-            // 4️⃣ Usuário não existe
-            if (error.code === "auth/user-not-found") {
-                alert("Usuário não encontrado. Crie uma conta.");
-                window.location.href = "cadastro.html";
-                return;
-            }
-    
-            // 5️⃣ Outros erros
-            console.log(error);
-            alert("Erro ao fazer login: " + error.message);
-        }
-    });
-    </script>
-    
+
     
     
 
