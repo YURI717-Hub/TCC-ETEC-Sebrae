@@ -195,7 +195,9 @@ a {
     padding: 12px;
     border-radius: 8px;
     background: var(--primary);
-    color: #FFFFFF;
+    color: #000000;
+   background-color:var(--primary);
+
     font-weight: bold;
     cursor: pointer;
     transition: background 0.25s ease, transform 0.2s ease;
