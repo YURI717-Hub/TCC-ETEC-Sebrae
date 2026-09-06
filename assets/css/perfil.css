@@ -96,6 +96,12 @@ a {
     border-right: 1px solid var(--border);
 
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.04);
+
+    /* ADICIONE ISTO: */
+    position: sticky;
+    top: 100px; /* mesma altura do header/margin-top do layout-principal */
+    align-self: flex-start;
+    height: calc(100vh - 100px);
 }
 
 
