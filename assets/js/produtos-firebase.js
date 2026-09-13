@@ -38,18 +38,24 @@ function criarCardProduto(produto) {
 }
 
 function renderizarProdutosFirebase(produtos) {
-  // Remove renderizações anteriores desta origem (evita duplicar em cada atualização do banco)
-  document.querySelectorAll(".cols-firebase").forEach(el => el.remove());
+  // Remove só os produtos do Firebase renderizados antes (mantém os manuais intactos)
+  document.querySelectorAll(".produto-firebase").forEach(el => el.remove());
+
+  // Usa o MESMO grid que já tem os produtos manuais, em vez de criar um novo
+  let grid = container.querySelector(".cols.cols-4");
+  if (!grid) {
+    grid = document.createElement("div");
+    grid.className = "cols cols-4";
+    container.appendChild(grid);
+  }
 
   const lista = Object.entries(produtos || {}).map(([id, dados]) => ({ id, ...dados }));
 
-  for (let i = 0; i < lista.length; i += 4) {
-    const grupo = lista.slice(i, i + 4);
-    const colsDiv = document.createElement("div");
-    colsDiv.className = "cols cols-4 cols-firebase"; // classe extra só pra controle interno
-    grupo.forEach(produto => colsDiv.appendChild(criarCardProduto(produto)));
-    container.appendChild(colsDiv);
-  }
+  lista.forEach(produto => {
+    const card = criarCardProduto(produto);
+    card.classList.add("produto-firebase"); // marca pra poder remover/atualizar depois
+    grid.appendChild(card);
+  });
 }
 
 const produtosRef = ref(db, "produtos");
