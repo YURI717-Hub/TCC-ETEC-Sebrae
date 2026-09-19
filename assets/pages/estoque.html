@@ -302,51 +302,8 @@ h1 {
       </footer>
 
 
+<script type="module" src="../js/estoque.js"></script>
 
-      <script>
-        const form = document.getElementById('addItemForm');
-        const table = document.getElementById('estoqueTable').getElementsByTagName('tbody')[0];
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o recarregamento da página
-            
-            // Obtém os valores dos campos
-            const nome = document.getElementById('nomePeca').value.trim();
-            const quantidade = document.getElementById('quantidade').value;
-            const fornecedor = document.getElementById('fornecedor').value.trim();
-            const preco = document.getElementById('preco').value;
-
-            // Validação básica (além do 'required')
-            if (!nome || !fornecedor || quantidade <= 0 || preco < 0) {
-                alert('Preencha todos os campos corretamente!');
-                return;
-            }
-
-            // Adiciona uma nova linha à tabela
-            const newRow = table.insertRow();
-            newRow.innerHTML = `
-                <td>${nome}</td>
-                <td>${quantidade}</td>
-                <td>${fornecedor}</td>
-                <td>${parseFloat(preco).toFixed(2)}</td>
-                <td><button onclick="removerItem(this)">Remover</button></td>
-            `;
-
-            // Confirmação e reseta o formulário
-            alert('Peça adicionada com sucesso!');
-            form.reset();
-        });
-
-        function removerItem(button) {
-            const row = button.parentNode.parentNode;
-            row.parentNode.removeChild(row);
-        }
-
-        function limparTabela() {
-            if (confirm('Tem certeza que deseja limpar toda a tabela?')) {
-                table.innerHTML = ''; // Remove todas as linhas
-            }
-        }
-    </script>
+    
 </body>
 </html>
