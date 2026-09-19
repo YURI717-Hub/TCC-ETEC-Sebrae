@@ -1,17 +1,11 @@
 // estoque.js
 // Carrega na tabela apenas as peças publicadas pelo fornecedor logado.
 
-import { db, auth } from "./firebaseConfig.js";
-import {
-  ref,
-  get,
-  set,
-  remove,
-  query,
-  orderByChild,
-  equalTo
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+// db, ref, set, auth e onAuthStateChanged vêm confirmadamente do seu firebaseConfig.js
+// (mesmo import usado no publicar.js). get/remove/query/orderByChild/equalTo, se o seu
+// firebaseConfig.js já exportar, troque a linha de baixo para importar de lá também.
+import { db, auth, onAuthStateChanged, ref, set } from "./firebaseConfig.js";
+import { get, remove, query, orderByChild, equalTo } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const tbody = document.querySelector("#estoqueTable tbody");
 
@@ -42,7 +36,7 @@ function criarLinha(id, produto, nomeFornecedorPadrao) {
 
   const nome = produto.nome ?? produto.nomePeca ?? produto.titulo ?? "(sem nome)";
   const quantidade = produto.estoque ?? produto.quantidade ?? 0;
-  const fornecedor = produto.fornecedorNome ?? nomeFornecedorPadrao;
+  const fornecedor = produto.fornecedorEmail ?? nomeFornecedorPadrao;
   const preco = produto.preco ?? produto.valor ?? 0;
 
   [nome, quantidade, fornecedor, formatarPreco(preco)].forEach(valor => {
@@ -66,7 +60,7 @@ function criarLinha(id, produto, nomeFornecedorPadrao) {
 async function carregarEstoque(user) {
   mensagem("Carregando estoque...");
 
-  const nomeFornecedor = user.displayName || user.email || "Fornecedor";
+  const nomeFornecedor = user.email || "Fornecedor";
 
   try {
     const consulta = query(
