@@ -1,9 +1,16 @@
 /* CORES */
 :root {
     --vermelho: #8F0700;
+    --vermelho-escuro: #6a0500;
     --branco: #ffffff;
     --cinza: #2c2c2c;
     --cinza-claro: #e6e6e6;
+    --sidebar-width: 260px;
+    --header-height: 90px; /* ajuste aqui se o header do site tiver outra altura */
+}
+
+* {
+    box-sizing: border-box;
 }
 
 /* ESTRUTURA */
@@ -15,17 +22,58 @@ body {
 
 .container {
     display: flex;
-    min-height: calc(100vh - 6rem); /* ocupa tudo abaixo do header */
-    margin-top: 6rem; /* evita sobrepor o header fixo */
+    min-height: calc(100vh - var(--header-height));
+    margin-top: var(--header-height);
 }
-/* MENU LATERAL */
 
+/* MENU LATERAL */
+.sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    background: var(--cinza);
+    color: var(--branco);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 22px;
+    margin: 0 0 30px;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.menu li a {
+    display: block;
+    padding: 14px 25px;
+    text-decoration: none;
+    color: var(--branco);
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.menu li a:hover,
+.menu li a.active {
+    background: var(--vermelho);
+}
 
 /* BOTÃO DE SAIR */
+.logout {
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
 .logout a {
     text-decoration: none;
     color: var(--branco);
-    background: #5a0500;
+    background: var(--vermelho-escuro);
     padding: 12px;
     text-align: center;
     border-radius: 5px;
@@ -37,55 +85,168 @@ body {
     background: #4a0400;
 }
 
+/* ÁREA PRINCIPAL */
 .content {
     flex: 1;
     padding: 40px;
-    max-width: 100%;
+    min-width: 0; /* impede que a tabela estoure o layout em vez de rolar */
 }
 
-table {
-    width: 95%;     /* antes era 100%, mantenho margem */
-    margin: auto;   /* centraliza levemente */
-    font-size: 16px;
-}
 .header h1 {
     margin: 0;
     color: var(--cinza);
+    font-size: 28px;
 }
 
 .header p {
     margin-top: 5px;
+    color: #444;
+}
+
+/* CARD COM OS DADOS DO FORNECEDOR */
+.perfil-card {
+    background: var(--branco);
+    padding: 20px 25px;
+    border-radius: 10px;
+    border-left: 5px solid var(--vermelho);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+}
+
+.perfil-card .rotulo {
+    display: block;
+    font-size: 13px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.perfil-card .valor {
+    display: block;
+    font-size: 18px;
     color: var(--cinza);
+    font-weight: bold;
+    margin-top: 3px;
+    word-break: break-word;
 }
 
 /* TABELA */
 .table-section {
-    margin-top: 25px;
+    margin-top: 10px;
+}
+
+.table-section h2 {
+    color: var(--cinza);
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* rola na horizontal em vez de espremer colunas */
+    background: var(--branco);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    min-width: 480px;
 }
 
 th, td {
-    padding: 15px;
+    padding: 14px 16px;
     border-bottom: 1px solid var(--cinza-claro);
     text-align: left;
+    white-space: nowrap;
 }
 
-th {
+thead th {
     background: var(--cinza);
     color: var(--branco);
+    font-size: 15px;
 }
 
-/* STATUS */
+tbody tr:nth-child(even) {
+    background: #f7f7f7;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* STATUS (caso volte a usar pedidos com status) */
 .status {
     padding: 5px 10px;
     border-radius: 4px;
     font-weight: bold;
     color: var(--branco);
+    display: inline-block;
 }
 
-.recebido {
-    background: #009432;
+.status.recebido { background: #009432; }
+.status.cancelado { background: #EA2027; }
+.status.pendente { background: var(--vermelho); }
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .sidebar h2 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .menu {
+        display: flex;
+        flex: none;
+        width: 100%;
+    }
+
+    .menu li {
+        flex: 1;
+    }
+
+    .menu li a {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .logout {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
 }
 
-.cancelado {
-    background: #EA2027;
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .perfil-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
 }
