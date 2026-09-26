@@ -6,661 +6,146 @@
   <link rel="stylesheet" href="../css/produto.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" src="../js/carinho.js"></script>
-  <script src="../js/menu.js"></script>
+  <script type="text/javascript" src="../js/carinho.js" defer></script>
+  <script src="../js/menu.js" defer></script>
+  <script src="../js/produtos.js" defer></script>
   <title>Produtos | Ecommercer</title>
 </head>
 
 <body>
   <header>
-  <div class="navbar">
-    <div class="header-linear-content">
+    <div class="navbar">
+      <div class="header-linear-content">
 
-      <a href="/index.html" class="logo-link">
-        <h1 class="logo">AutoPeças <span>Express</span></h1>
-      </a>
+        <a href="/index.html" class="logo-link">
+          <h1 class="logo">AutoPeças <span>Express</span></h1>
+        </a>
 
-      <div class="pesquisa">
-        <input type="text" class="busca-input" placeholder="Qual peça está procurando?">
+        <div class="pesquisa">
+          <input type="text" class="busca-input" placeholder="Qual peça está procurando?">
+        </div>
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="/assets/pages/perfil.html">Meu Perfil</a></li>
+            <li><a href="/assets/pages/produto.html">Produtos</a></li>
+            <li><a href="/assets/pages/sobre.html">Sobre</a></li>
+          </ul>
+
+          <!-- Aparece só no menu mobile (some no desktop, some no mobile via CSS) -->
+          <ul class="login login-mobile">
+            <li><a href="/assets/pages/login.html">Entrar</a></li>
+            <li>|</li>
+            <li><a href="/assets/pages/cadastro.html">Cadastro</a></li>
+          </ul>
+        </nav>
+
+        <div class="right-items">
+          <figure class="nav-icon-container">
+            <a href="/assets/pages/carrinho.html">
+              <img src="/assets/images/carrinho.png" alt="Carrinho">
+            </a>
+          </figure>
+
+          <!-- Aparece só no desktop -->
+          <ul class="login login-desktop">
+            <li><a href="/assets/pages/login.html">Entrar</a></li>
+            <li>|</li>
+            <li><a href="/assets/pages/cadastro.html">Cadastro</a></li>
+          </ul>
+
+          <button type="button" class="menu-button" aria-label="Abrir menu" aria-expanded="false">
+            <img src="/assets/images/menu.png" alt="">
+          </button>
+        </div>
+
       </div>
-
-      <nav id="main-nav">
-        <ul>
-          <li><a href="/assets/pages/perfil.html">Meu Perfil</a></li>
-          <li><a href="/assets/pages/produto.html">Produtos</a></li>
-          <li><a href="/assets/pages/sobre.html">Sobre</a></li>
-        </ul>
-
-        <!-- Aparece só no menu mobile (some no desktop, some no mobile via CSS) -->
-        <ul class="login login-mobile">
-          <li><a href="/assets/pages/login.html">Entrar</a></li>
-          <li>|</li>
-          <li><a href="/assets/pages/cadastro.html">Cadastro</a></li>
-        </ul>
-      </nav>
-
-      <div class="right-items">
-        <figure class="nav-icon-container">
-          <a href="/assets/pages/carrinho.html">
-            <img src="/assets/images/carrinho.png" alt="Carrinho">
-          </a>
-        </figure>
-
-        <!-- Aparece só no desktop -->
-        <ul class="login login-desktop">
-          <li><a href="/assets/pages/login.html">Entrar</a></li>
-          <li>|</li>
-          <li><a href="/assets/pages/cadastro.html">Cadastro</a></li>
-        </ul>
-
-        <button type="button" class="menu-button" aria-label="Abrir menu" aria-expanded="false">
-          <img src="/assets/images/menu.png" alt="">
-        </button>
-      </div>
-
     </div>
-  </div>
-</header>
+  </header>
+
   <main>
-<br><br><br>
-
-
-    <div class="page-inner-content" id="produtos-container">
-      <h3 class="section-title">Produtos </h3>
+    <div class="page-inner-content">
+      <h3 class="section-title">Produtos</h3>
       <div class="subtitle-underline"></div>
-       <div class="cols cols-4">
-           <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/2021-Alta-Qualidade-22.2V-106ah-Módulo-de-Bateria-6s2p-Módulo-de-Bateria-de-Íon-de-Lítio-para-Veículo-Elétrico.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Módulo de bateria de alta capacidade para veículos elétricos e híbridos, modelo padrão, ideal para reposição ou projetos automotivos.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-       
-          <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/difusor-de-ar-eletrico.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Difusor de ar automotivo modelo padrão, indicado para reposição em painéis veiculares. Unidade avulsa, oferece encaixe preciso e acabamento original.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-                 <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/Bomba-de-Líquido-de-Arrefecimento-Auxiliar.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Bomba d’água elétrica automotiva, modelo padrão, ideal para reposição no sistema de arrefecimento. Unidade avulsa, compatível com diversos veículos.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-                 <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/modulos.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Módulo eletrônico automotivo para sistemas de alta potência, indicado para reposição técnica. Unidade avulsa, modelo padrão para aplicações diversas.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
 
-</div>
-</div>
+      <p class="produtos-status" id="produtos-status"></p>
 
-<div class="page-inner-content" id="produtos-container">
-  <div class="cols cols-4" >
-          <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/chicote-eletrico.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Conector automotivo de alta tensão, ideal para sistemas elétricos avançados. Unidade avulsa, modelo padrão, indicado para reposição técnica.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>          <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/motor-eleetrico.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Motor elétrico automotivo para sistemas de acionamento, modelo padrão. Unidade avulsa, ideal para reposição em veículos híbridos ou elétricos.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>          <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/contator-weg-220v-250a-2na2nf-cwm250-22-30v26-300x300.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Relé automotivo de alta corrente, modelo padrão, indicado para reposição em sistemas elétricos. Unidade avulsa para aplicação técnica
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>          <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/Conversor-CC-CC.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Módulo controlador automotivo de alta potência, ideal para sistemas elétricos. Unidade avulsa, modelo padrão para uso técnico especializado.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
+      <!-- Os produtos são inseridos aqui via JS (produtos.js / produtos-firebase.js).
+           Nada mais é escrito à mão no HTML: tudo vem do banco. -->
+      <div id="containerProdutos"></div>
 
-
-  </div>
-</div>
-
-
-<div class="page-inner-content" id="produtos-container">
-  <div class="cols cols-4">
-
-     <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/EVSE-J1772-Adaptador-Tipo-1-para-Tipo-2-Tomada-Veículo-Elétrico.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Conector automotivo para sistemas de carregamento elétrico, modelo padrão. Unidade avulsa, ideal para reposição em veículos elétricos.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-           <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/Fusível-de-alta-tensão-200A-400A-do-conector-MSD-Plug-para-veículo-elétrico-Carro.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Módulo isolador elétrico automotivo, indicado para proteção e gerenciamento de alta tensão. Unidade avulsa, modelo padrão para aplicações técnicas.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-
-           <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/Unidade-de-Distribuição-de-Energia.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Módulo de controle elétrico automotivo para sistemas de tração, modelo padrão. Unidade avulsa, ideal para reposição em veículos elétricos.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-
-           <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/Módulo-de-Bateria-EV-48V50Ah-14S1P-51.2V-50Ah-NCM-VDA-Lithium-Ion-Battery-Module-para-Veículo-Elétrico-Barco-Elétrico.png" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Módulo de bateria automotiva de alta capacidade, ideal para reposição ou projetos elétricos. Unidade avulsa, modelo padrão.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-
-
-  </div>
-</div>
-
-
-<div class="page-inner-content" id="produtos-container">
-  <div class="cols cols-4">
-
-     <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/Placa-fria-da-bateria.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Placa de proteção e controle para o conjunto de bateria, oferecendo estabilidade, segurança e melhor gerenciamento elétrico do sistema.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
- <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/Plugue-De-Carregamento-AC-Tipo-1-SAE-J1772-EV.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Conector resistente e ergonômico para recarga de carros elétricos, garantindo transferência de energia segura e confiável.
-            </a></p>
-              <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
- <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/RADIADOR-DE-AGUA-BYD-TAN-EV-2023-A-2025-ORIGINAL.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Radiador de água desenvolvido para modelos BYD, projetado para manter a temperatura ideal do motor e assegurar um arrefecimento eficiente.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
- <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/Sensor-De-Veículo-Elétrico-De-Alta-Precisão-Se-Encaixa-Na-placa-de-sensor-Hall.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"><a href="./descricao.html">Sensor automotivo de alta precisão usado em sistemas elétricos avançados, garantindo leitura exata e desempenho confiável.
-              </a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-
-  </div>
-</div>
-
-      <div class="page-inner-content" id="produtos-container">
-        <div class="cols cols-4">
-          <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/fltro-de-ar-uno.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Filtro de ar para Fiat Uno Mille 1.0, aplicação de 1997 a 2013, unidade avulsa,
-              modelo padrão.</a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-              <p class="produto-preco"><span>R$</span>37,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-          <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/-filtro-de-oleo.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Filtro de óleo lubrificante para Chevrolet Corsa 1.0, anos de 1995 a 2012,
-              unidade avulsa, rosca compatível.</a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-              <p class="produto-preco"><span>R$</span>32,50</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-          <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/filtro-de-combustivel.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"> <a href="./descricao.html">Filtro de combustível para VW Gol G4 1.0, anos de 2006 a 2014, unidade avulsa,
-              modelo inline com conexões rápidas.</a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-              <p class="produto-preco"><span>R$</span>40,00</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-          <div class="product">
-            <figure>
-              <img class="image-product" src="../images/Produtos/produtos/pastilhas-de-freio.jpg" alt="">
-            </figure>
-            <p class="produto-descricao"><a href="./descricao.html">Jogo com 4 pastilhas de freio dianteiras para Honda Civic 1.8, anos de 2007 a
-              2016, composto semi-metálico.</a></p>
-            <div class="rodape">
-              <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-              <p class="produto-preco"><span>R$</span>185,00</p>
-            </div>
-            <button class="button-colors">Adicionar ao Carrinho</button>
-          </div>
-        </div>
-            </div>
-      </div>
-
-
-    <div class="page-inner-content" id="produtos-container">
-
-      <div class="cols cols-4">
-
-        <div class="product">
-          <figure>
-            <img class="image-product" src="../images/Produtos/produtos/velas-de-iginição-onix.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"> <a href="./descricao.html">Vela de ignição para Chevrolet Onix 1.0, anos de 2017 a 2024, unidade avulsa,
-            rosca padrão M14.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-            <p class="produto-preco"><span>R$</span>40,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="product">
-          <figure>
-            <img class="image-product" src="../images/Produtos/produtos/Bateria-do-forka.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"><a href="./descricao.html">Bateria automotiva de 60Ah para Ford Ka 1.0, anos de 2015 a 2021, com 12 meses de
-            garantia, chumbo-ácido.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-            <p class="produto-preco"><span>R$</span>500,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="product">
-          <figure>
-            <img class="image-product" src="../images/Produtos/produtos/kit-embreagem-palio.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"> <a href="./descricao.html">Kit completo de embreagem (platô, disco e rolamento) para Fiat Palio Fire 1.0,
-            anos de 2001 a 2016.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-            <p class="produto-preco"><span>R$</span>575,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="product">
-          <figure>
-            <img src="../images/Produtos/produtos/corrente-dentada-sandero.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"> <a href="./descricao.html">Correia dentada de borracha reforçada para Renault Sandero 1.6, anos de 2007 a
-            2020, unidade avulsa.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-            <p class="produto-preco"><span>R$</span>140,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-
-
-      </div>
-
-    </div>
-
-
-    <div class="page-inner-content" id="produtos-container">
-      <div class="cols cols-4">
-
-        <div class="product">
-          <figure>
-            <img class="image-product" src="../images/Produtos/produtos/lampada-for-fiesta.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"><a href="./descricao.html">Lâmpada de farol H4, 12V e 55/60W, para Ford Fiesta, anos de 2002 a 2014, unidade
-            avulsa, halógena.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-            <p class="produto-preco"><span>R$</span>55,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="product">
-          <figure>
-            <img class="image-product" src="../images/Produtos/produtos/sensor-de-oxigenio.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"><a href="./descricao.html"> Sensor de oxigênio (sonda lambda) para Fiat Palio, anos de 2004 a 2016, unidade
-            avulsa, conexão de 4 fios.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-            <p class="produto-preco"><span>R$</span>300,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="product">
-          <figure>
-            <img class="image-product" src="../images/Produtos/produtos/radiador-celta.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"><a href="./descricao.html">Radiador de alumínio com tanque plástico para Chevrolet Celta 1.0, anos de 2001 a
-            2015, unidade completa</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-            <p class="produto-preco"><span>R$</span>375,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="product">
-          <figure>
-            <img src="../images/Produtos/produtos/motor-de-partida-saveiro.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"><a href="./descricao.html">Motor de partida de 9 dentes para VW Saveiro 1.6, anos de 2005 a 2019, unidade
-            avulsa, modelo remanufaturado ou novo.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-            <p class="produto-preco"><span>R$</span>675,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-
-
-      </div>
-
-
-    </div>
-    </div>
-
-    <div class="page-inner-content" id="produtos-container">
-      <div class="cols cols-4">
-
-        <div class="product">
-          <figure>
-            <img class="image-product" src="../images/Produtos/produtos/alternador-logan.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"><a href="./descricao.html">Alternador de 90A para Renault Logan 1.6, anos de 2007 a 2020, unidade avulsa,
-            com polia livre.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-            <p class="produto-preco"><span>R$</span>625,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="product">
-          <figure>
-            <img class="image-product" src="../images/Produtos/produtos/pneus-gol g5.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"> <a href="./descricao.html">Jogo com 2 pneus radiais, medida 175/70 R14, para VW Gol G5/G6, anos de 2008 a
-            2016, modelo de uso urbano.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-            <p class="produto-preco"><span>R$</span>400,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="product">
-          <figure>
-            <img class="image-product" src="../images/Produtos/produtos/Armotecedor.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"> <a href="./descricao.html">Amortecedor dianteiro para VW Fox 1.6, anos de 2004 a 2019, unidade avulsa,
-            modelo pressurizado.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-            <p class="produto-preco"><span>R$</span>325,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
-
-        <div class="product">
-          <figure>
-            <img class="image-product" src="../images/Produtos/produtos/disco-de-freio.jpg" alt="">
-          </figure>
-
-          <p class="produto-descricao"><a href="./descricao.html">Par de discos de freio ventilados para Toyota Corolla 1.8, anos de 2003 a 2014,
-            modelo original.</a></p>
-
-          <div class="rodape">
-            <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-            <p class="produto-preco"><span>R$</span>300,00</p>
-          </div>
-          <button class="button-colors">Adicionar ao Carrinho</button>
-        </div>
+      <div class="produtos-vazio" id="produtos-vazio">
+        <h4>Nenhum produto encontrado</h4>
+        <p>Tente buscar por outro termo.</p>
       </div>
     </div>
 
-  <!-- MENSAGEM DE ENVIO AO CARRINHO-->
-  <div id="mensagem-carrinho" class="mensagem-carrinho" role="status" aria-live="polite">
-  </div>
-<div id="containerProdutos"></div>
-
+    <!-- MENSAGEM DE ENVIO AO CARRINHO-->
+    <div id="mensagem-carrinho" class="mensagem-carrinho" role="status" aria-live="polite"></div>
   </main>
 
-  
-    
-  
-<script>
-let ordemOriginal = []; // Para guardar ordem inicial
-
-window.onload = function () {
-    // Salva a ordem original dos produtos
-    const produtos = document.querySelectorAll(".product");
-    ordemOriginal = Array.from(produtos);
-};
-
-function filtrarProdutos() {
-    const termo = document.querySelector(".busca-input").value.toLowerCase().trim();
-    const container = document.querySelector(".cols");
-    const produtos = Array.from(document.querySelectorAll(".product"));
-
-    if (termo === "") {
-        // Se a busca estiver vazia → volta para a ordem original
-        ordemOriginal.forEach(prod => container.appendChild(prod));
-        return;
-    }
-
-    let correspondentes = [];
-    let naoCorrespondentes = [];
-
-    produtos.forEach(prod => {
-        const descricao = prod.querySelector(".produto-descricao").innerText.toLowerCase();
-
-        if (descricao.includes(termo)) {
-            correspondentes.push(prod);  // produtos que combinam → vão para cima
-        } else {
-            naoCorrespondentes.push(prod);
-        }
-    });
-
-    // Reorganiza no container
-    correspondentes.forEach(prod => container.appendChild(prod));
-    naoCorrespondentes.forEach(prod => container.appendChild(prod));
-}
-</script>
-
-
-    
-
-   <footer>
+  <footer>
     <div class="footer-superior-completa">
-        <div class="footer-superior-esquerdo">
-            <h4 class="footer-topico">Institucional</h4>
-            <ul class="sub-topicos">
-                <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
-                <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
-                <li><a href="">Termos de Uso</a></li>
-            </ul>
-        </div>
+      <div class="footer-superior-esquerdo">
+        <h4 class="footer-topico">Institucional</h4>
+        <ul class="sub-topicos">
+          <li><a href="./assets/pages/sobre.html">Sobre a empresa</a></li>
+          <li><a href="./assets/pages/lgpd.html">Política de Privacidade</a></li>
+          <li><a href="">Termos de Uso</a></li>
+        </ul>
+      </div>
 
-        <div class="footer-superior-meio">
-            <h4 class="footer-topico">Ajuda</h4>
-            <ul class="sub-topicos">
-                <li><a href="">Fale Conosco/Suporte</a></li>
-                <li><a href="">Trocas e Devoluções</a></li>
-                <li><a href="">Formas de Pagamento</a></li>
-                <li><a href="">Prazo de Entrega</a></li>
-            </ul>
-        </div>
+      <div class="footer-superior-meio">
+        <h4 class="footer-topico">Ajuda</h4>
+        <ul class="sub-topicos">
+          <li><a href="">Fale Conosco/Suporte</a></li>
+          <li><a href="">Trocas e Devoluções</a></li>
+          <li><a href="">Formas de Pagamento</a></li>
+          <li><a href="">Prazo de Entrega</a></li>
+        </ul>
+      </div>
 
-        <div class="footer-superior-direito">
-            <h4 class="footer-topico">Contato</h4>
-            <ul class="lista-contato">
-                <li>Telefone: (11) 99999-9999</li>
-                <li>Email: contato@autoexpress.com.br</li>
-                <li>Horário: Seg a Sex, das 8h às 18h</li>
-            </ul>
-        </div>
+      <div class="footer-superior-direito">
+        <h4 class="footer-topico">Contato</h4>
+        <ul class="lista-contato">
+          <li>Telefone: (11) 99999-9999</li>
+          <li>Email: contato@autoexpress.com.br</li>
+          <li>Horário: Seg a Sex, das 8h às 18h</li>
+        </ul>
+      </div>
     </div>
 
     <hr class="footer-divisao" />
 
     <div class="footer-inferior-completa">
-        <div class="footer-inferior-esquerdo">
-            <h4 class="footer-topico">Meios de pagamento:</h4>
-            <figure class="image-pag">
-                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
-                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
-                <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
-            </figure>
-        </div>
+      <div class="footer-inferior-esquerdo">
+        <h4 class="footer-topico">Meios de pagamento:</h4>
+        <figure class="image-pag">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+          <img src="https://img.icons8.com/fluency/48/pix.png" alt="Pix" />
+        </figure>
+      </div>
 
-        <div class="footer-inferior-direito">
-            <h4 class="footer-topico">Redes Sociais</h4>
-            <figure class="image-rede-sociais">
-                <img src="../images/logo-facebook.png" alt="facebook-logo">
-                <img src="../images/logo-instagram.png" alt="instagram-logo">
-                <img src="../images/logo-whatsapp.png" alt="whatsapp-logo">
-            </figure>
-        </div>
+      <div class="footer-inferior-direito">
+        <h4 class="footer-topico">Redes Sociais</h4>
+        <figure class="image-rede-sociais">
+          <img src="../images/logo-facebook.png" alt="facebook-logo">
+          <img src="../images/logo-instagram.png" alt="instagram-logo">
+          <img src="../images/logo-whatsapp.png" alt="whatsapp-logo">
+        </figure>
+      </div>
     </div>
 
     <div class="footer-creditos">
-        <p>Creditos</p>
+      <p>Creditos</p>
     </div>
-</footer>
-<script type="module" src="../js/produtos-firebase.js"></script>
+  </footer>
+
+  <!-- Esse script deve, depois de buscar os dados, chamar:
+       window.renderizarProdutos(seuArrayDeProdutos)
+       (veja o formato esperado de cada produto no topo de js/produtos.js) -->
+  <script type="module" src="../js/produtos-firebase.js"></script>
 </body>
 
 </html>
