@@ -88,13 +88,33 @@ header {
 .busca-input {
   width: 100%;
   padding: 0.5rem 0.8rem;
-  border: none;
-  outline: none;
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #3a3a3a; /* mesma cor da div .pesquisa, forçada (transparent não funciona em todo navegador) */
-  color: #ffffff;
+  border: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-color: #3a3a3a !important; /* mesma cor da div .pesquisa, forçada */
+  color: #ffffff !important;
   font-size: 0.95rem;
+  box-shadow: none !important;
+}
+
+/* Alguns navegadores usam sombra interna própria pra type="search" */
+.busca-input::-webkit-search-decoration,
+.busca-input::-webkit-search-cancel-button,
+.busca-input::-webkit-search-results-button,
+.busca-input::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* Chrome no Windows/Android pinta o autofill de branco por cima do CSS */
+.busca-input:-webkit-autofill,
+.busca-input:-webkit-autofill:hover,
+.busca-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #3a3a3a inset;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 .busca-input::placeholder {
