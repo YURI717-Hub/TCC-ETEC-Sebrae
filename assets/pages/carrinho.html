@@ -12,45 +12,55 @@
 
 <body>
 
-  <header>
-    <div class="navbar">
-      <div class="header-linear-content">
+ <header>
+  <div class="navbar">
+    <div class="header-linear-content">
 
-        <a href="../../index.html">
-          <h1 class="logo">AutoPeças <span>Express</span></h1>
-        </a>
+      <a href="/index.html" class="logo-link">
+        <h1 class="logo">AutoPeças <span>Express</span></h1>
+      </a>
 
-        <nav>
-          <ul>
-            <li><a href="perfil.html">Meu Perfil</a></li>
-            <li><a href="produto.html">Produtos</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-          </ul>
-        </nav>
-
-        <div class="right-items">
-
-          <figure class="nav-icon-container">
-            <a href="carrinho.html">
-              <img src="../images/carrinho.png" alt="Carrinho de compras">
-            </a>
-          </figure>
-
-          <ul class="login">
-            <li><a href="login.html">Entrar</a></li>
-            <li>|</li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-          </ul>
-
-          <button type="button" class="menu-button" aria-label="Abrir menu" onclick="menu();">
-            <img src="../images/menu.png" alt="">
-          </button>
-
-        </div>
-
+      <div class="pesquisa">
+        <input type="text" class="busca-input" placeholder="Qual peça está procurando?">
       </div>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/assets/pages/perfil.html">Meu Perfil</a></li>
+          <li><a href="/assets/pages/produto.html">Produtos</a></li>
+          <li><a href="/assets/pages/sobre.html">Sobre</a></li>
+        </ul>
+
+        <!-- Aparece só no menu mobile (some no desktop, some no mobile via CSS) -->
+        <ul class="login login-mobile">
+          <li><a href="/assets/pages/login.html">Entrar</a></li>
+          <li>|</li>
+          <li><a href="/assets/pages/cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+
+      <div class="right-items">
+        <figure class="nav-icon-container">
+          <a href="/assets/pages/carrinho.html">
+            <img src="/assets/images/carrinho.png" alt="Carrinho">
+          </a>
+        </figure>
+
+        <!-- Aparece só no desktop -->
+        <ul class="login login-desktop">
+          <li><a href="/assets/pages/login.html">Entrar</a></li>
+          <li>|</li>
+          <li><a href="/assets/pages/cadastro.html">Cadastro</a></li>
+        </ul>
+
+        <button type="button" class="menu-button" aria-label="Abrir menu" aria-expanded="false">
+          <img src="/assets/images/menu.png" alt="">
+        </button>
+      </div>
+
     </div>
-  </header>
+  </div>
+</header>
 
   <nav class="caminho-ativo-P" aria-label="Etapas da compra">
     <span class="ativo-pagamento">Carrinho ></span>
