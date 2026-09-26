@@ -184,6 +184,19 @@ main {
   border: 1px solid #8F0700;
 }
 
+.button-colors:disabled {
+  background-color: #e0e0e0;
+  color: #8a8a8a;
+  cursor: not-allowed;
+  border: none;
+}
+
+.button-colors:disabled:hover {
+  background-color: #e0e0e0;
+  color: #8a8a8a;
+  border: none;
+}
+
 /* ------------------------- */
 /* SKELETON DE CARREGAMENTO (opcional, some quando os produtos chegam) */
 /* ------------------------- */
