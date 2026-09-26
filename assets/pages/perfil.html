@@ -23,85 +23,55 @@
 
     <!-- ================= HEADER ================= -->
 
-    <header class="site-header">
+   <header>
+  <div class="navbar">
+    <div class="header-linear-content">
 
-        <div class="navbar">
+      <a href="/index.html" class="logo-link">
+        <h1 class="logo">AutoPeças <span>Express</span></h1>
+      </a>
 
-            <div class="header-linear-content">
+      <div class="pesquisa">
+        <input type="text" class="busca-input" placeholder="Qual peça está procurando?">
+      </div>
 
-                <!-- LOGO -->
-                <a href="../../index.html" class="logo-link">
-                    <h1 class="logo">
-                        AutoPeças <span>Express</span>
-                    </h1>
-                </a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/assets/pages/perfil.html">Meu Perfil</a></li>
+          <li><a href="/assets/pages/produto.html">Produtos</a></li>
+          <li><a href="/assets/pages/sobre.html">Sobre</a></li>
+        </ul>
 
-                <!-- NAVEGAÇÃO -->
-                <nav class="main-navigation" aria-label="Navegação principal">
+        <!-- Aparece só no menu mobile (some no desktop, some no mobile via CSS) -->
+        <ul class="login login-mobile">
+          <li><a href="/assets/pages/login.html">Entrar</a></li>
+          <li>|</li>
+          <li><a href="/assets/pages/cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
 
-                    <ul>
-                        <li>
-                            <a href="perfil.html">Meu Perfil</a>
-                        </li>
+      <div class="right-items">
+        <figure class="nav-icon-container">
+          <a href="/assets/pages/carrinho.html">
+            <img src="/assets/images/carrinho.png" alt="Carrinho">
+          </a>
+        </figure>
 
-                        <li>
-                            <a href="produto.html">Produtos</a>
-                        </li>
+        <!-- Aparece só no desktop -->
+        <ul class="login login-desktop">
+          <li><a href="/assets/pages/login.html">Entrar</a></li>
+          <li>|</li>
+          <li><a href="/assets/pages/cadastro.html">Cadastro</a></li>
+        </ul>
 
-                        <li>
-                            <a href="sobre.html">Sobre</a>
-                        </li>
-                    </ul>
+        <button type="button" class="menu-button" aria-label="Abrir menu" aria-expanded="false">
+          <img src="/assets/images/menu.png" alt="">
+        </button>
+      </div>
 
-                </nav>
-
-                <!-- ITENS DO LADO DIREITO -->
-                <div class="right-items">
-
-                    <!-- CARRINHO -->
-                    <figure class="nav-icon-container">
-                        <a href="carrinho.html" aria-label="Carrinho">
-                            <img
-                                src="../images/carrinho.png"
-                                alt="Carrinho de compras"
-                            >
-                        </a>
-                    </figure>
-
-                    <!-- LOGIN -->
-                    <ul class="login">
-
-                        <li>
-                            <a href="login.html">Entrar</a>
-                        </li>
-
-                        <li aria-hidden="true">|</li>
-
-                        <li>
-                            <a href="cadastro.html">Cadastro</a>
-                        </li>
-
-                    </ul>
-
-                    <!-- MENU MOBILE -->
-                    <figure class="menu-container">
-
-                        <img
-                            src="../images/menu.png"
-                            alt="Abrir menu"
-                            class="menu-button"
-                            onclick="menu()"
-                        >
-
-                    </figure>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </header>
+    </div>
+  </div>
+</header>
  
     <div class="titulo-pagina">
 
