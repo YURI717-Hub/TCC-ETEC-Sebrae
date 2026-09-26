@@ -92,7 +92,7 @@ header {
   outline: none;
   appearance: none;
   -webkit-appearance: none;
-  background: transparent; /* herda o cinza #3a3a3a da div .pesquisa */
+  background-color: #3a3a3a; /* mesma cor da div .pesquisa, forçada (transparent não funciona em todo navegador) */
   color: #ffffff;
   font-size: 0.95rem;
 }
@@ -105,6 +105,10 @@ header {
 .pesquisa:focus-within {
   background: #4a4a4a;
   box-shadow: 0 0 6px #8f0700;
+}
+
+.pesquisa:focus-within .busca-input {
+  background-color: #4a4a4a;
 }
 
 /* ------------------------- */
