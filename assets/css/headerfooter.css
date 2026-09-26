@@ -90,8 +90,10 @@ header {
   padding: 0.5rem 0.8rem;
   border: none;
   outline: none;
-  background: #3a3a3a;
-  color: #3a3a3a;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent; /* herda o cinza #3a3a3a da div .pesquisa */
+  color: #ffffff;
   font-size: 0.95rem;
 }
 
