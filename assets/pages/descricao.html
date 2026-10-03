@@ -42,7 +42,7 @@
               },
           },
       };</script>
- 
+
 </head>
 
 <body>
@@ -67,7 +67,6 @@
           <li><a href="/assets/pages/sobre.html">Sobre</a></li>
         </ul>
 
-        <!-- Aparece só no menu mobile (some no desktop, some no mobile via CSS) -->
         <ul class="login login-mobile">
           <li><a href="/assets/pages/login.html">Entrar</a></li>
           <li>|</li>
@@ -82,7 +81,6 @@
           </a>
         </figure>
 
-        <!-- Aparece só no desktop -->
         <ul class="login login-desktop">
           <li><a href="/assets/pages/login.html">Entrar</a></li>
           <li>|</li>
@@ -97,52 +95,33 @@
     </div>
   </div>
 </header>
-<br><br><br>
-<br>
-<br>
+<br><br><br><br><br>
         <main>
           <div style="max-width: 1450px; margin: 0 auto; padding: 0 20px;">
 
-              
+            <!-- Mensagem de erro, se o produto não for encontrado -->
+            <p id="produto-nao-encontrado" class="hidden text-center text-lg text-text-light py-20">
+              Produto não encontrado.
+            </p>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              
+            <div id="conteudo-produto" class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <!-- IMAGEM DO PRODUTO (preenchida via JS a partir do banco) -->
                 <div>
-                    <div class="grid grid-cols-1 gap-4">
-                      <br>
-                        <div class="aspect-w-4 aspect-h-3 rounded-xl overflow-hidden bg-surface-light border-2 border-border-light group cursor-zoom-in shadow-subtle">
-                            <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwx_IJGMKbgOp6KDBNsU05H0OG_-WcOVZ41S2so6m0-Bk6EXAh0FVB39v4WJaf13F6ZCZKOJXxeBu9KmEGROo7ZtnynJLtHL64eG4txLbooOLAdPP5yeifIt3ocD7jDfSCGYGG7Zy2cYGSnW-Sl17ZYkREe8jAfhWFGg5YI0siU4eqsTOI7MbHXgXSSrwfCPZmqzmQGJwPJI8tdZ7XeoHBkvxRpzJXnP9eO4xCk58CFVOtXjCtuO-iXpuzXlrwohBCIBvXZZYvewfe");'></div>
-                        </div>
-                         <br>
-                        <figure>
-                          <img src="../images/produtos/produtos/disco-de-freio.jpg" alt="" width="500px" style="margin-left: 100px;">
-                        </figure>
-                        <br>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="aspect-w-1 aspect-h-1 rounded-xl overflow-hidden bg-surface-light border-2 border-border-light group cursor-zoom-in shadow-subtle">
-                                <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhASKShy4vwn6jopVgIhJ2x1qVDWLF_yXiCubiQprKnoh6CKCXtwCynj5wVc34pb7eNB9Y6BbgcW6dIHbLaH_W5VgbriUsE-TQyehsVNbyEYrQ2Yp-Jaj_7-gVf4ZqMJrZfDs7_h1Iq_j5IWjVA1HZrQvVaDoX3Yg8OzKtYSkgklhNBpuHlXZKUEmdEsUYIS3JN1f8kjXn-C_K_Ob-y7jKy1IegiLZMycuRSvpu7LKiwNu9EtZZje8dOUagAjHSCtQJL7HN2TJ9bK8");'></div>
-                            </div>
-                            <div class="aspect-w-1 aspect-h-1 rounded-xl overflow-hidden bg-surface-light border-2 border-border-light group cursor-zoom-in shadow-subtle">
-                                <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBq3hJ5mIJQyZRXEIvqkUhPefF1tklEjxVMEQUJ0VknibLLMXT5PmFuK8Twtd3iH_8yuyxQ36ynGxo3zkpfk2HLNrJFNZ3pXxIr8DEuwQ_RGiAJmogskmz-mWwRUUdryCmU4wnY1AgAjZHgx9L_OMCdfMeFJ2Qfqn6pTQgt5GAtF61BBic7mojjaTucfRVpdYMXxMGprMdZiucjyr6VZJB7cucOLSBh6ijhBif3yUOMXA0YSL-KfjSHwexsnUxcV6D8auyFmJSBtrp");'></div>
-                            </div>
-                        </div>
+                    <div class="aspect-[4/3] rounded-xl overflow-hidden bg-surface-light border-2 border-border-light shadow-subtle flex items-center justify-center">
+                        <img id="imagem-principal" src="" alt="" class="w-full h-full object-contain">
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-6">
                     <div>
-                        <h1 class="text-4xl font-black text-accent-dark uppercase tracking-wide">Filtro de Óleo - X100</h1>
-                        <p class="mt-4 text-text-light leading-relaxed">
-                            Potencialize a performance do seu motor. Este filtro de óleo de alta vazão assegura máxima proteção e eficiência, construído com tecnologia de ponta para resistir a condições extremas. Instalação rápida e vedação perfeita para um motor sempre limpo e potente.
-                        </p>
+                        <h1 id="produto-nome" class="text-4xl font-black text-accent-dark uppercase tracking-wide">Carregando...</h1>
+                        <p id="produto-preco" class="mt-2 text-3xl font-black text-primary">R$ 0,00</p>
+                        <p id="produto-descricao" class="mt-4 text-text-light leading-relaxed"></p>
                         <div class="mt-6 flex flex-col gap-3">
                             <div class="flex items-center gap-3 text-green-800 bg-green-100 rounded-lg p-3 text-sm font-bold border border-green-200">
                                 <span class="material-symbols-outlined"> verified_user </span>
                                 <span>100% COMPATÍVEL COM SEU CARRO</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-green-800 bg-green-100 rounded-lg p-3 text-sm font-bold border border-green-200">
-                                <span class="material-symbols-outlined"> aod </span>
-                                <span>VALIDADO POR INTELIGÊNCIA ARTIFICIAL</span>
                             </div>
                         </div>
                     </div>
@@ -150,210 +129,103 @@
                         <h3 class="text-xl font-bold text-accent-dark uppercase tracking-wider">Especificações</h3>
                         <ul class="mt-4 space-y-3 text-sm">
                             <li class="flex justify-between border-b border-border-light py-3">
-                                <span class="text-text-light font-medium">Código OEM</span>
-                                <span class="font-bold text-text-dark">12345-ABCDE</span>
+                                <span class="text-text-light font-medium">Fabricante</span>
+                                <span id="spec-fabricante" class="font-bold text-text-dark">—</span>
                             </li>
                             <li class="flex justify-between border-b border-border-light py-3">
-                                <span class="text-text-light font-medium">Marca</span>
-                                <span class="font-bold text-text-dark">Marca X</span>
+                                <span class="text-text-light font-medium">Categoria</span>
+                                <span id="spec-categoria" class="font-bold text-text-dark">—</span>
                             </li>
                             <li class="flex justify-between border-b border-border-light py-3">
-                                <span class="text-text-light font-medium">Modelo</span>
-                                <span class="font-bold text-text-dark">Modelo X100</span>
+                                <span class="text-text-light font-medium">EAN</span>
+                                <span id="spec-ean" class="font-bold text-text-dark">—</span>
                             </li>
                             <li class="flex justify-between py-3">
-                                <span class="text-text-light font-medium">Ano de Fabricação</span>
-                                <span class="font-bold text-text-dark">2018-2023</span>
+                                <span class="text-text-light font-medium">Estoque disponível</span>
+                                <span id="spec-estoque" class="font-bold text-text-dark">—</span>
                             </li>
                         </ul>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="flex-1 h-14 px-6 rounded-lg bg-primary text-white font-bold text-base uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-red-700 transform hover:-translate-y-1 shadow-lg hover:shadow-glow-primary transition-all duration-300">
-                            <span class="material-symbols-outlined">  </span>
+                        <button id="btn-adicionar-carrinho" class="flex-1 h-14 px-6 rounded-lg bg-primary text-white font-bold text-base uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-red-700 transform hover:-translate-y-1 shadow-lg hover:shadow-glow-primary transition-all duration-300">
                             <span>Adicionar ao Carrinho</span>
                         </button>
-                    <a href="./identificacao.html"> <button class="flex-1 h-14 px-6 rounded-lg bg-surface-light text-accent-dark font-bold text-base uppercase tracking-wider border border-border-light hover:bg-gray-100 hover:text-primary transition-colors duration-300">Comprar Agora</button></a>                    </div>
+                        <a href="./identificacao.html">
+                          <button class="flex-1 h-14 px-6 rounded-lg bg-surface-light text-accent-dark font-bold text-base uppercase tracking-wider border border-border-light hover:bg-gray-100 hover:text-primary transition-colors duration-300">Comprar Agora</button>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-
+            <!-- ===================== AVALIAÇÕES ===================== -->
             <div class="mt-20">
                 <div class="border-b-2 border-border-light mb-8">
                     <h2 class="text-3xl font-black text-accent-dark uppercase tracking-wider pb-4">Avaliações de Clientes</h2>
                 </div>
+
                 <div class="flex flex-col md:flex-row gap-10">
-                    <div class="flex flex-col items-center justify-center p-8 rounded-xl bg-surface-light shadow-subtle">
-                        <p class="text-6xl font-black text-accent-dark">4.5</p>
-                        <div class="flex text-secondary my-3">
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star</span>
-                            <span class="material-symbols-outlined">star_half</span>
-                        </div>
-                        <p class="text-sm text-text-light">Baseado em 125 avaliações</p>
+                    <div class="flex flex-col items-center justify-center p-8 rounded-xl bg-surface-light shadow-subtle min-w-[220px]">
+                        <p id="media-geral" class="text-6xl font-black text-accent-dark">0.0</p>
+                        <div id="estrelas-media" class="flex text-secondary my-3"></div>
+                        <p class="text-sm text-text-light"><span id="total-avaliacoes">0</span> avaliação(ões)</p>
                     </div>
-                    <div class="flex-1 space-y-3">
-                        <div class="flex items-center gap-4 text-sm">
-                            <span class="text-text-light w-16">5 estrelas</span>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-secondary to-primary h-3 rounded-full" style="width: 40%"></div>
-                            </div>
-                            <span class="text-text-light w-8 text-right">40%</span>
-                        </div>
-                        <div class="flex items-center gap-4 text-sm">
-                            <span class="text-text-light w-16">4 estrelas</span>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-secondary to-primary h-3 rounded-full" style="width: 30%"></div>
-                            </div>
-                            <span class="text-text-light w-8 text-right">30%</span>
-                        </div>
-                        <div class="flex items-center gap-4 text-sm">
-                            <span class="text-text-light w-16">3 estrelas</span>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-secondary to-primary h-3 rounded-full" style="width: 15%"></div>
-                            </div>
-                            <span class="text-text-light w-8 text-right">15%</span>
-                        </div>
-                        <div class="flex items-center gap-4 text-sm">
-                            <span class="text-text-light w-16">2 estrelas</span>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-secondary to-primary h-3 rounded-full" style="width: 10%"></div>
-                            </div>
-                            <span class="text-text-light w-8 text-right">10%</span>
-                        </div>
-                        <div class="flex items-center gap-4 text-sm">
-                            <span class="text-text-light w-16">1 estrela</span>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-secondary to-primary h-3 rounded-full" style="width: 5%"></div>
-                            </div>
-                            <span class="text-text-light w-8 text-right">5%</span>
-                        </div>
+                    <div class="flex-1 space-y-3" id="histograma-avaliacoes">
+                        <!-- barras de 5 a 1 estrela, geradas via JS -->
                     </div>
                 </div>
 
-                <div class="mt-12 space-y-8">
-                  <div class="flex gap-4 p-6 rounded-lg bg-surface-light/50 border border-border-light shadow-subtle">
-                      <img alt="Avatar João Pedro" class="w-12 h-12 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzDcVpwnpz6sFU05qpYZ-ILw_zoef250Fx5gzz9ohT9DRozr121r0Hn2ytRVfqrsEqRKJ6rn0xTAy_g9a8Mwp0ukFQLdBUQk4C3nb4DimNd4roIVkpX4Dwk1x0AjNggAQn4Q2wmeLPJAjXoVS_bzrPdGklMH9A7eQ_8oJ-q2XWSAxukHO4gM8asISrbEbaNeUexU1MwkBrnfnWE8F6XcJ1dFLdinprgLTMObitnYnRbPYI_kH8mxX1OFvVXwtsgBiMm2XFZ0Pj4JUh"/>
-                      <div>
-                          <div class="flex items-center gap-4">
-                              <h4 class="font-bold text-accent-dark">João Pedro</h4>
-                              <span class="text-xs text-text-light">15 de Julho de 2023</span>
-                          </div>
-                          <div class="flex text-secondary my-1">
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                          </div>
-                          <p class="text-text-dark leading-relaxed">Excelente produto! Encaixou perfeitamente no meu carro e a qualidade é visivelmente superior. Recomendo!</p>
-                      </div>
-                  </div>
-                  <div class="flex gap-4 p-6 rounded-lg bg-surface-light/50 border border-border-light shadow-subtle">
-                      <img alt="Avatar Maria Silva" class="w-12 h-12 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5-n5uA3OTUV26EN5h42OY-xYahjjJWhJW3b9u9-MfWUCEw2Rh-bL_JIbDMm6BYHVagYl4ZeHI8ZeHB7dTg-jZtTVsbeJbFuohtVk84-WrlsQbe37RWJ6_t6ucJGZSoYlHyuyhHUlC9PQ9JmM3H1okKiSpKS0YJYBK8veol2BtIROKLtpKDt_iwZN9BdrdvrArQckAeIqIjpYu3yq-m35m31klieYBQgJpFk_kszwoBtIvm3HKfWj_f2JmgDh5PdXH6IszDGMVEeFN"/>
-                      <div>
-                          <div class="flex items-center gap-4">
-                              <h4 class="font-bold text-accent-dark">Maria Silva</h4>
-                              <span class="text-xs text-text-light">20 de Junho de 2023</span>
-                          </div>
-                          <div class="flex text-secondary my-1">
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base text-gray-300">star</span>
-                          </div>
-                          <p class="text-text-dark leading-relaxed">Bom filtro, mas achei o preço um pouco elevado. No entanto, a entrega foi rápida e o produto chegou em ótimo estado.</p>
-                      </div>
-                  </div>
+                <!-- LISTA DE AVALIAÇÕES REAIS -->
+                <div class="mt-12 space-y-6" id="lista-avaliacoes">
+                    <p id="sem-avaliacoes" class="text-text-light text-center py-6 hidden">
+                      Ainda não há avaliações. Seja o primeiro a avaliar!
+                    </p>
+                </div>
 
+                <!-- FORMULÁRIO PRA DEIXAR AVALIAÇÃO -->
+                <div class="mt-10 p-6 rounded-xl bg-surface-light shadow-subtle max-w-xl">
+                    <h3 class="text-lg font-bold text-accent-dark uppercase tracking-wide mb-4">Deixe sua avaliação</h3>
+                    <form id="form-avaliacao" class="flex flex-col gap-4">
+                        <input
+                          type="text"
+                          id="avaliacao-nome"
+                          placeholder="Seu nome"
+                          required
+                          class="border border-border-light rounded-lg p-3 text-sm"
+                        >
 
-                  <div class="flex gap-4 p-6 rounded-lg bg-surface-light/50 border border-border-light shadow-subtle">
-                      <img alt="Avatar Pedro Santos" class="w-12 h-12 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzDcVpwnpz6sFU05qpYZ-ILw_zoef250Fx5gzz9ohT9DRozr121r0Hn2ytRVfqrsEqRKJ6rn0xTAy_g9a8Mwp0ukFQLdBUQk4C3nb4DimNd4roIVkpX4Dwk1x0AjNggAQn4Q2wmeLPJAjXoVS_bzrPdGklMH9A7eQ_8oJ-q2XWSAxukHO4gM8asISrbEbaNeUexU1MwkBrnfnWE8F6XcJ1dFLdinprgLTMObitnYnRbPYI_kH8mxX1OFvVXwtsgBiMm2XFZ0Pj4JUh"/>
-                      <div>
-                          <div class="flex items-center gap-4">
-                              <h4 class="font-bold text-accent-dark">Pedro Santos</h4>
-                              <span class="text-xs text-text-light">10 de Agosto de 2023</span>
+                        <div>
+                          <p class="text-sm text-text-light mb-1">Sua nota</p>
+                          <div id="avaliacao-estrelas" class="flex gap-1 text-4xl text-gray-300 cursor-pointer w-fit" data-nota="0">
+                            <span data-valor="1" class="material-symbols-outlined">star</span>
+                            <span data-valor="2" class="material-symbols-outlined">star</span>
+                            <span data-valor="3" class="material-symbols-outlined">star</span>
+                            <span data-valor="4" class="material-symbols-outlined">star</span>
+                            <span data-valor="5" class="material-symbols-outlined">star</span>
                           </div>
-                          <div class="flex text-secondary my-1">
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                          </div>
-                          <p class="text-text-dark leading-relaxed">Produto de qualidade, instalação fácil e durabilidade comprovada. Vale a pena!</p>
-                      </div>
-                  </div>
+                        </div>
 
+                        <textarea
+                          id="avaliacao-comentario"
+                          placeholder="Escreva seu comentário"
+                          required
+                          rows="3"
+                          class="border border-border-light rounded-lg p-3 text-sm"
+                        ></textarea>
 
-                  <div class="flex gap-4 p-6 rounded-lg bg-surface-light/50 border border-border-light shadow-subtle">
-                      <img alt="Avatar Ana Costa" class="w-12 h-12 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5-n5uA3OTUV26EN5h42OY-xYahjjJWhJW3b9u9-MfWUCEw2Rh-bL_JIbDMm6BYHVagYl4ZeHI8ZeHB7dTg-jZtTVsbeJbFuohtVk84-WrlsQbe37RWJ6_t6ucJGZSoYlHyuyhHUlC9PQ9JmM3H1okKiSpKS0YJYBK8veol2BtIROKLtpKDt_iwZN9BdrdvrArQckAeIqIjpYu3yq-m35m31klieYBQgJpFk_kszwoBtIvm3HKfWj_f2JmgDh5PdXH6IszDGMVEeFN"/>
-                      <div>
-                          <div class="flex items-center gap-4">
-                              <h4 class="font-bold text-accent-dark">Ana Costa</h4>
-                              <span class="text-xs text-text-light">5 de Setembro de 2023</span>
-                          </div>
-                          <div class="flex text-secondary my-1">
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base">star</span>
-                              <span class="material-symbols-outlined text-base text-gray-300">star</span>
-                          </div>
-                          <p class="text-text-dark leading-relaxed">Satisfeita com a compra, o filtro funciona bem, mas o atendimento poderia ser melhor.</p>
-                      </div>
-                  </div>
-              </div>
+                        <p id="avaliacao-erro" class="text-sm text-primary font-medium hidden"></p>
+
+                        <button
+                          type="submit"
+                          class="h-12 px-6 rounded-lg bg-primary text-white font-bold text-sm uppercase tracking-wider hover:bg-red-700 transition-colors duration-300 w-fit"
+                        >
+                          Enviar avaliação
+                        </button>
+                    </form>
+                </div>
+            </div>
+
           </div>
- 
-
-          <div class="mt-20">
-              <div class="border-b-2 border-border-light mb-8">
-                  <h2 class="text-3xl font-black text-accent-dark uppercase tracking-wider pb-4 flex items-center gap-3">
-                      <span class="material-symbols-outlined text-primary text-4xl">auto_awesome</span> Peças Relacionadas
-                  </h2>
-              </div>
-              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                  <div class="group bg-surface-light p-4 rounded-xl border border-border-light hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary/20 shadow-subtle">
-                      <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-background-light">
-                          <img alt="Pastilhas de Freio" class="h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-300" src="../images/Produtos/produtos/filtro-de-combustivel.jpg"/>
-                      </div>
-                      <h3 class="mt-4 text-base font-bold text-accent-dark">Pastilhas de Freio</h3>
-                      <p class="text-sm text-text-light">Para Modelo X100</p>
-                  </div>
-                  <div class="group bg-surface-light p-4 rounded-xl border border-border-light hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary/20 shadow-subtle">
-                      <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-background-light">
-                          <img alt="Filtro de filtro-de-combustivel" class="h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-300" src="../images/Produtos/produtos/fltro-de-ar-uno.jpg"/>
-                      </div>
-                      <h3 class="mt-4 text-base font-bold text-accent-dark">Filtro de Ar</h3>
-                      <p class="text-sm text-text-light">Para Modelo X100</p>
-                  </div>
-                  <div class="group bg-surface-light p-4 rounded-xl border border-border-light hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary/20 shadow-subtle">
-                      <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-background-light">
-                          <img alt="pastilhas de freio" class="h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-300" src="../images/Produtos/produtos/pastilhas-de-freio.jpg"/>
-                      </div>
-                      <h3 class="mt-4 text-base font-bold text-accent-dark">Velas de Ignição</h3>
-                      <p class="text-sm text-text-light">Para Modelo X100</p>
-                  </div>
-                  <div class="group bg-surface-light p-4 rounded-xl border border-border-light hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary/20 shadow-subtle">
-                      <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-background-light">
-                          <img alt="filtro de oleo" class="h-full w-full object-cover object-center group-hover:scale-110 transition-transform duration-300" src="../images/Produtos/produtos/-filtro-de-oleo.jpg"/>
-                      </div>
-                      <h3 class="mt-4 text-base font-bold text-accent-dark">Óleo de Motor 5W30</h3>
-                      <p class="text-sm text-text-light">Sintético</p>
-                  </div>
-              </div>
-          </div>
-          
       </main>
-<br><br>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-</div>
-
-<!-- resto do conteúdo -->
 
 </div>
 
@@ -413,9 +285,8 @@
     <div class="footer-creditos">
         <p>Creditos</p>
     </div>
-</footer>>
+</footer>
 
-  </div>
+  <script type="module" src="../js/descricao.js"></script>
 </body>
 </html>
-  </footer>
